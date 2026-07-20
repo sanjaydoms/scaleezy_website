@@ -55,19 +55,12 @@ export function Problem() {
           {BOTTLENECKS.map((item, index) => {
             const Icon = item.icon;
             const isOutcome = index === BOTTLENECKS.length - 1;
-            const number = String(index + 1).padStart(2, '0');
             return (
               <Reveal
                 key={item.label}
                 delay={index * 0.07}
                 className={`relative flex min-h-56 flex-col overflow-hidden border p-6 md:min-h-64 md:p-7 ${isOutcome ? 'border-red-200 bg-red-50 text-red-700' : 'border-forest/15 bg-cream-warm/35'}`}>
                 
-                <span
-                  aria-hidden="true"
-                  className={`absolute right-5 top-3 text-6xl font-semibold leading-none tracking-[-0.08em] md:right-6 md:top-4 md:text-7xl ${isOutcome ? 'text-red-600' : 'text-forest/8'}`}>
-                  
-                  {number}
-                </span>
 
                 <span
                   className={`relative inline-flex h-9 w-9 items-center justify-center rounded-lg ${isOutcome ? 'bg-red-100 text-red-600' : 'bg-lime/25 text-forest'}`}>
