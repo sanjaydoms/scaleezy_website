@@ -112,7 +112,7 @@ export function ConnectionMap() {
 
         {/* Right Column (Orbital circular diagram) */}
         <div className="lg:col-span-7 flex items-center justify-center mt-6 lg:mt-0">
-          <div className="relative w-full max-w-[340px] aspect-square xs:max-w-[380px] md:max-w-[560px] flex items-center justify-center">
+          <div className="relative w-[340px] h-[340px] xs:w-[380px] xs:h-[380px] md:w-[560px] md:h-[560px] flex-shrink-0 flex items-center justify-center">
             {/* SVG Connecting lines and ring */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
               {/* Outer dashed ring passing through the dots */}
