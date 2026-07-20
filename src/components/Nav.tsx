@@ -28,7 +28,8 @@ const LINKS = [
   { label: 'How it works', href: '/#journey' },
   { label: 'Industries', href: '/#industries' },
   { label: 'Stories', href: '/#stories' },
-  { label: 'About', href: '/about' }
+  { label: 'About', href: '/about' },
+  { label: 'Blog', href: '/blog' }
 ];
 
 export function Nav() {

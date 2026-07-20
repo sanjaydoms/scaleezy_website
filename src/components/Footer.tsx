@@ -48,6 +48,10 @@ const COLUMNS = [
   {
     label: 'Stories',
     href: '/#stories'
+  },
+  {
+    label: 'Blog',
+    href: '/blog'
   }]
 
 },
@@ -96,7 +100,7 @@ export function Footer() {
               <ul className="mt-5 space-y-3">
                 {column.links.map((link) =>
               <li key={link.label}>
-                    {link.href.startsWith('/platform/') || link.href === '/about' ?
+                    {link.href.startsWith('/platform/') || link.href === '/about' || link.href === '/blog' ?
                 <Link
                   to={link.href}
                   className="text-sm text-forest/70 transition-colors hover:text-lime-dark">

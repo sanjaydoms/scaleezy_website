@@ -23,6 +23,8 @@ import { BookDemoModal } from './components/BookDemoModal';
 import { ModuleDetailPage } from './pages/ModuleDetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { AboutPage } from './pages/AboutPage';
+import { BlogListPage } from './pages/BlogListPage';
+import { BlogDetailPage } from './pages/BlogDetailPage';
 
 export function App() {
   return (
@@ -34,6 +36,8 @@ export function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/platform/:moduleId" element={<ModuleDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/blog" element={<BlogListPage />} />
+          <Route path="/blog/:blogId" element={<BlogDetailPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
