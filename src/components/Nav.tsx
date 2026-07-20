@@ -25,9 +25,9 @@ const MODULES = [
 ];
 
 const LINKS = [
-  { label: 'How it works', href: '/#journey' },
-  { label: 'Industries', href: '/#industries' },
-  { label: 'Stories', href: '/#stories' },
+  { label: 'How it works', href: '/how-it-works' },
+  { label: 'Industries', href: '/industries' },
+  { label: 'Stories', href: '/stories' },
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' }
 ];

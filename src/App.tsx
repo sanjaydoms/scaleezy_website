@@ -34,6 +34,10 @@ export function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/how-it-works" element={<HomePage />} />
+          <Route path="/industries" element={<HomePage />} />
+          <Route path="/stories" element={<HomePage />} />
+          <Route path="/platform" element={<HomePage />} />
           <Route path="/platform/:moduleId" element={<ModuleDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/blog" element={<BlogListPage />} />

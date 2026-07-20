@@ -35,19 +35,19 @@ const COLUMNS = [
   links: [
   {
     label: 'All modules',
-    href: '/#platform'
+    href: '/platform'
   },
   {
     label: 'How it works',
-    href: '/#journey'
+    href: '/how-it-works'
   },
   {
     label: 'Industries',
-    href: '/#industries'
+    href: '/industries'
   },
   {
     label: 'Stories',
-    href: '/#stories'
+    href: '/stories'
   },
   {
     label: 'Blog',
@@ -100,7 +100,7 @@ export function Footer() {
               <ul className="mt-5 space-y-3">
                 {column.links.map((link) =>
               <li key={link.label}>
-                    {link.href.startsWith('/platform/') || link.href === '/about' || link.href === '/blog' ?
+                    {link.href.startsWith('/') && !link.href.includes('#') ?
                 <Link
                   to={link.href}
                   className="text-sm text-forest/70 transition-colors hover:text-lime-dark">
