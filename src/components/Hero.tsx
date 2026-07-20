@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon, PlayIcon } from 'lucide-react';
+import { triggerBookDemo } from './BookDemoModal';
 import { IMAGES } from './assets';
 import { EASE } from './motion';
 export function Hero() {
@@ -68,10 +69,10 @@ export function Hero() {
         ease: EASE,
         delay: 0.85
       }}>
-          <a href="#cta" className="group inline-flex items-center gap-3 rounded-full bg-lime px-6 py-3.5 text-sm font-medium tracking-wide text-forest-deep transition-colors duration-500 hover:bg-lime-dark">
+          <button onClick={triggerBookDemo} className="group inline-flex items-center gap-3 rounded-full bg-lime px-6 py-3.5 text-sm font-medium tracking-wide text-forest-deep transition-colors duration-500 hover:bg-lime-dark">
             Book Demo
             <ArrowRightIcon className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
-          </a>
+          </button>
           <a href="#platform" className="group inline-flex items-center gap-2 border-b border-cream/45 pb-1.5 text-sm tracking-wide text-cream transition-colors duration-300 hover:border-lime hover:text-lime">
             <PlayIcon className="h-3.5 w-3.5 fill-current" />
             Watch Product Tour

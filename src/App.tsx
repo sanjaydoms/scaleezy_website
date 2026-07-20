@@ -19,8 +19,10 @@ import { SoftwareGap } from './components/SoftwareGap';
 import { Stories } from './components/Stories';
 import { TrustedBy } from './components/TrustedBy';
 import { TryOn } from './components/TryOn';
+import { BookDemoModal } from './components/BookDemoModal';
 import { ModuleDetailPage } from './pages/ModuleDetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+
 export function App() {
   return (
     <BrowserRouter>
@@ -33,6 +35,7 @@ export function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
+        <BookDemoModal />
       </div>
     </BrowserRouter>);
 

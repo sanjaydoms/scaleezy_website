@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon } from 'lucide-react';
+import { triggerBookDemo } from './BookDemoModal';
 import { IMAGES } from './assets';
 import { EASE } from './motion';
 export function FinalCTA() {
@@ -76,13 +77,13 @@ export function FinalCTA() {
         ease: EASE,
         delay: 0.45
       }}>
-          <a href="#top" className="group inline-flex items-center justify-center gap-2 rounded-full bg-lime px-8 py-4 text-sm font-medium text-forest-deep transition-colors duration-300 hover:bg-lime-dark">
+          <button onClick={triggerBookDemo} className="group inline-flex items-center justify-center gap-2 rounded-full bg-lime px-8 py-4 text-sm font-medium text-forest-deep transition-colors duration-300 hover:bg-lime-dark">
             Book a Demo{' '}
             <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
-          <a href="#top" className="inline-flex items-center justify-center rounded-full border border-cream/50 px-8 py-4 text-sm font-medium text-cream transition-colors duration-300 hover:bg-cream hover:text-forest">
+          </button>
+          <button onClick={triggerBookDemo} className="inline-flex items-center justify-center rounded-full border border-cream/50 px-8 py-4 text-sm font-medium text-cream transition-colors duration-300 hover:bg-cream hover:text-forest">
             Talk to Sales
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>;

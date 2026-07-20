@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon, MenuIcon, XIcon } from 'lucide-react';
+import { triggerBookDemo } from './BookDemoModal';
 const LINKS = [
 {
   label: 'Platform',
@@ -78,8 +79,8 @@ export function Nav() {
               </li>
             )}
           </ul>
-          <a
-            href="/#cta"
+          <button
+            onClick={triggerBookDemo}
             className={`group inline-flex items-center gap-2 rounded-full border px-5 py-2 text-sm transition-colors duration-300 ${isLight ? 'border-forest/30 text-forest hover:bg-forest hover:text-cream' : 'border-cream/40 text-cream hover:bg-cream hover:text-forest'}`}>
             
             Book Demo
@@ -87,7 +88,7 @@ export function Nav() {
               aria-hidden="true"
               className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
             
-          </a>
+          </button>
         </div>
         <button
           type="button"
@@ -128,13 +129,15 @@ export function Nav() {
               </li>
           )}
             <li>
-              <a
-              href="/#cta"
-              onClick={() => setOpen(false)}
-              className="mt-5 block rounded-full bg-forest px-5 py-3 text-center text-sm text-cream">
-              
+              <button
+                onClick={() => {
+                  setOpen(false);
+                  triggerBookDemo();
+                }}
+                className="mt-5 block w-full rounded-full bg-forest px-5 py-3 text-center text-sm font-medium text-cream">
+                
                 Book Demo
-              </a>
+              </button>
             </li>
           </ul>
         </motion.div>
