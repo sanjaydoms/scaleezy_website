@@ -57,9 +57,15 @@ export function Platform() {
       id="platform"
       className="relative h-[430vh] w-full bg-cream text-forest"
     >
-      <div className="sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden py-12">
+      <div 
+        className="sticky top-0 z-10 flex h-[100dvh] w-full flex-col justify-center overflow-hidden bg-cream"
+        style={{ paddingTop: 'clamp(1rem, 3vh, 3rem)', paddingBottom: 'clamp(1rem, 3vh, 3rem)' }}
+      >
         <PlatformHeading title="Six modules. One connected operating system." />
-        <div className="mt-12 w-full md:mt-16">
+        <div 
+          className="w-full"
+          style={{ marginTop: 'clamp(1rem, 4vh, 4rem)' }}
+        >
           <motion.div
             ref={railRef}
             style={{ x }}
@@ -84,7 +90,10 @@ function PlatformHeading({ title }: PlatformHeadingProps) {
     <div className="mx-auto w-full max-w-[1600px] px-6 md:px-12">
       <Reveal>
         <p className="eyebrow text-lime-dark">Explore the platform</p>
-        <h2 className="font-serif-display mt-5 max-w-3xl text-5xl leading-[0.98] md:text-7xl">
+        <h2 
+          className="font-serif-display mt-2 sm:mt-5 max-w-3xl text-4xl sm:text-5xl md:text-7xl"
+          style={{ fontSize: 'clamp(2rem, 5.5vh, 4.5rem)', lineHeight: '0.98' }}
+        >
           {title}
         </h2>
       </Reveal>
@@ -102,8 +111,10 @@ function ModuleCard({ module, index, compact = false }: ModuleCardProps) {
   const Icon = module.icon;
   const number = String(index + 1).padStart(2, '0');
   return (
-    <article
-      className={`group relative flex h-[33rem] w-[84vw] flex-none overflow-hidden rounded-[1.35rem] bg-forest text-cream shadow-[0_20px_40px_rgba(15,61,46,0.12)] sm:w-[25rem] md:h-[35rem] md:w-[27rem] ${compact ? 'snap-center' : ''}`}
+    <Link
+      to={`/platform/${module.id}`}
+      className={`group relative flex h-[33rem] w-[84vw] flex-none overflow-hidden rounded-[1.35rem] bg-forest text-cream shadow-[0_20px_40px_rgba(15,61,46,0.12)] sm:w-[25rem] md:h-[35rem] md:w-[27rem] ${compact ? 'snap-center' : 'block'}`}
+      style={{ height: 'clamp(25rem, 56vh, 35rem)' }}
     >
       <img
         src={module.image}
@@ -138,14 +149,11 @@ function ModuleCard({ module, index, compact = false }: ModuleCardProps) {
             </li>
           ))}
         </ul>
-        <Link
-          to={`/platform/${module.id}`}
-          className="group/link mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-lime/65 bg-forest-deep/35 px-4 py-2 text-sm font-medium text-lime transition-colors hover:bg-lime hover:text-forest-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-4 focus-visible:ring-offset-forest"
-        >
+        <div className="group/link mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-lime/65 bg-forest-deep/35 px-4 py-2 text-sm font-medium text-lime transition-colors group-hover:bg-lime group-hover:text-forest-deep">
           Explore now
-          <ArrowRightIcon aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
-        </Link>
+          <ArrowRightIcon aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </div>
       </div>
-    </article>
+    </Link>
   );
 }
