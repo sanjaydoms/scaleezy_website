@@ -87,8 +87,8 @@ export function Footer() {
       <div className="mx-auto max-w-[1600px] px-6 py-16 md:px-12 md:py-20">
         <div className="grid gap-12 md:grid-cols-[1.6fr_repeat(3,1fr)]">
           <div>
-            <Link to="/" className="text-2xl font-semibold tracking-tight">
-              scale<span className="text-lime-dark">ezy</span>
+            <Link to="/" className="flex items-center">
+              <img src="/Scaleezy logo.png" alt="Scaleezy" className="h-8 w-auto object-contain" />
             </Link>
             <p className="mt-4 max-w-xs text-sm font-light leading-relaxed text-forest/60">
               The operating system for apparel commerce.

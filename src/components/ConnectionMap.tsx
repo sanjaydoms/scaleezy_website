@@ -164,10 +164,7 @@ export function ConnectionMap() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
               whileHover={{ scale: 1.03, x: '-50%', y: '-50%' }}
-            >
-              <h3 className="font-serif-display text-2xl md:text-4xl text-[#F5F2EC] font-semibold tracking-tight">
-                scale<span className="text-[#9FC131]">ezy</span>
-              </h3>
+              <img src="/Scaleezy logo.png" alt="Scaleezy" className="h-8 md:h-12 w-auto object-contain brightness-0 invert" />
               <p className="mt-2 md:mt-3 text-[6px] md:text-[9px] font-bold text-[#F5F2EC]/80 tracking-[0.25em] leading-none uppercase">
                 All Solutions.
               </p>
