@@ -119,7 +119,7 @@ export function ConnectionMap() {
               <circle 
                 cx="50" 
                 cy="50" 
-                r="24" 
+                r="26" 
                 stroke="#8FB926" 
                 strokeWidth="0.3" 
                 strokeDasharray="1.5,1.5" 
@@ -131,11 +131,11 @@ export function ConnectionMap() {
               {MODULES.map((m, i) => {
                 const rad = (m.angle * Math.PI) / 180;
                 // Coordinates for line (ends near card center)
-                const x2 = 50 + 36 * Math.cos(rad);
-                const y2 = 50 + 36 * Math.sin(rad);
+                const x2 = 50 + 40 * Math.cos(rad);
+                const y2 = 50 + 40 * Math.sin(rad);
                 // Coordinates for green dot on the dashed ring
-                const dotX = 50 + 24 * Math.cos(rad);
-                const dotY = 50 + 24 * Math.sin(rad);
+                const dotX = 50 + 26 * Math.cos(rad);
+                const dotY = 50 + 26 * Math.sin(rad);
                 return (
                   <g key={i}>
                     {/* Radial line */}
@@ -158,12 +158,12 @@ export function ConnectionMap() {
 
             {/* Central scaleezy Hub */}
             <motion.div 
-              className="absolute z-20 w-32 h-32 md:w-56 md:h-56 rounded-full bg-[#0F3D2E] border-[6px] border-[#F5F2EC] md:border-[12px] flex flex-col items-center justify-center text-center shadow-xl p-4 cursor-pointer"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="absolute z-20 w-32 h-32 md:w-56 md:h-56 rounded-full bg-[#0F3D2E] border-[6px] border-[#F5F2EC] md:border-[12px] flex flex-col items-center justify-center text-center shadow-xl p-4 cursor-pointer left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+              initial={{ opacity: 0, scale: 0.9, x: '-50%', y: '-50%' }}
+              whileInView={{ opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.03, x: '-50%', y: '-50%' }}
             >
               <h3 className="font-serif-display text-2xl md:text-4xl text-[#F5F2EC] font-semibold tracking-tight">
                 scale<span className="text-[#9FC131]">ezy</span>
@@ -180,8 +180,8 @@ export function ConnectionMap() {
             {MODULES.map((m, index) => {
               const Icon = m.icon;
               const rad = (m.angle * Math.PI) / 180;
-              const x = 50 + 37 * Math.cos(rad);
-              const y = 50 + 37 * Math.sin(rad);
+              const x = 50 + 41.5 * Math.cos(rad);
+              const y = 50 + 41.5 * Math.sin(rad);
 
               return (
                 <motion.div
