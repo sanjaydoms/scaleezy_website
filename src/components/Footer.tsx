@@ -55,6 +55,10 @@ const COLUMNS = [
   heading: 'Company',
   links: [
   {
+    label: 'About Us',
+    href: '/#about-us'
+  },
+  {
     label: 'Book a demo',
     href: '/#cta'
   },

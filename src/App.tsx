@@ -22,6 +22,7 @@ import { TryOn } from './components/TryOn';
 import { BookDemoModal } from './components/BookDemoModal';
 import { ModuleDetailPage } from './pages/ModuleDetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { AboutUs } from './components/AboutUs';
 
 export function App() {
   return (
@@ -56,6 +57,7 @@ function HomePage() {
       <Outcomes />
       <Industries />
       <Comparison />
+      <AboutUs />
       <Stories />
       <FAQ />
       <FinalCTA />
