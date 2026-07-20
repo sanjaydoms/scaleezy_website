@@ -13,7 +13,7 @@ import {
   Boxes,
   Truck
 } from 'lucide-react';
-import { triggerBookDemo } from './BookDemoModal';
+import { triggerBookDemo } from '../BookDemoModal';
 
 const MODULES = [
   { id: 'inventory', name: 'Inventory', description: 'Live stock intelligence', icon: PackageSearch },
@@ -63,7 +63,7 @@ export function Nav() {
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-700 ${isLight ? 'border-b border-forest/10 bg-cream/95 backdrop-blur-sm' : 'bg-transparent'}`}
     >
-      <nav aria-label="Primary" className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-12">
+      <nav aria-label="Primary" className="mx-auto flex max-w-[1600px] items-center justify-between px-4 py-5 sm:px-6 md:px-12">
         <Link to="/" className={`text-2xl font-semibold tracking-tight transition-colors duration-700 ${isLight ? 'text-forest' : 'text-cream'}`}>
           scale<span className="text-lime-dark">ezy</span>
         </Link>
@@ -72,7 +72,7 @@ export function Nav() {
         <div className="hidden items-center gap-10 md:flex">
           <ul className="flex items-center gap-8">
             {/* Modules Dropdown Trigger */}
-            <li 
+            <li
               className="relative"
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
@@ -157,7 +157,7 @@ export function Nav() {
           animate={{ opacity: 1, height: 'auto' }}
           className="overflow-hidden bg-cream md:hidden"
         >
-          <ul className="flex flex-col px-6 pb-6">
+          <ul className="flex flex-col px-4 pb-6 sm:px-6">
             {/* Mobile Modules Dropdown */}
             <li>
               <button

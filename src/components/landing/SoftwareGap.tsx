@@ -1,20 +1,16 @@
 import React from 'react';
-import { Reveal } from './motion';
-const TOOLS = [{
-  name: 'Traditional ERP',
-  limitation: 'Inventory only'
-}, {
-  name: 'CRM',
-  limitation: 'Customer only'
-}, {
-  name: 'POS',
-  limitation: 'Billing only'
-}, {
-  name: 'Marketing tools',
-  limitation: 'Campaign only'
-}];
+import { Reveal } from '../motion';
+
+const TOOLS = [
+  { name: 'Traditional ERP', limitation: 'Inventory only' },
+  { name: 'CRM', limitation: 'Customer only' },
+  { name: 'POS', limitation: 'Billing only' },
+  { name: 'Marketing tools', limitation: 'Campaign only' },
+];
+
 export function SoftwareGap() {
-  return <section className="w-full bg-forest py-24 text-cream md:py-36">
+  return (
+    <section className="w-full bg-forest py-24 text-cream md:py-36">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <Reveal>
           <p className="eyebrow text-lime">Why current software falls short</p>
@@ -23,13 +19,15 @@ export function SoftwareGap() {
           </h2>
         </Reveal>
         <div className="mt-16 grid gap-px overflow-hidden border border-cream/20 bg-cream/20 sm:grid-cols-2 lg:grid-cols-4">
-          {TOOLS.map((tool, index) => <Reveal key={tool.name} delay={index * 0.08} className="min-h-52 bg-forest p-7 md:p-8">
+          {TOOLS.map((tool, index) => (
+            <Reveal key={tool.name} delay={index * 0.08} className="min-h-52 bg-forest p-7 md:p-8">
               <p className="eyebrow text-cream/45">{tool.name}</p>
               <p className="mt-12 text-lg text-cream/75">
                 <span className="mr-2 text-lime">×</span>
                 {tool.limitation}
               </p>
-            </Reveal>)}
+            </Reveal>
+          ))}
         </div>
         <Reveal className="mt-10 flex flex-col justify-between gap-6 border-t border-lime pt-8 md:flex-row md:items-end">
           <div>
@@ -44,5 +42,6 @@ export function SoftwareGap() {
           </p>
         </Reveal>
       </div>
-    </section>;
+    </section>
+  );
 }

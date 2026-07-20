@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Reveal } from './motion';
+import { Reveal } from '../motion';
 import {
   Database,
   Package,
@@ -12,7 +12,7 @@ import {
   Shirt,
   Shield,
   Zap,
-  Lock
+  Lock,
 } from 'lucide-react';
 
 const MODULES = [
@@ -32,21 +32,9 @@ export function ConnectionMap() {
       {/* Decorative bottom-left waves */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[350px] pointer-events-none z-0 hidden md:block">
         <svg className="w-full h-full opacity-90" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path 
-            d="M -100 350 C 50 320, 120 220, 10 160 C -80 110, -110 50, -50 0 L -120 0 L -120 350 Z" 
-            fill="#0F3D2E" 
-            opacity="0.9"
-          />
-          <path 
-            d="M -100 350 C 80 340, 160 250, 40 180 C -50 120, -70 60, -20 10 L -120 10 L -120 350 Z" 
-            fill="#1b4d3e" 
-            opacity="0.4"
-          />
-          <path 
-            d="M -100 350 C 110 360, 200 270, 70 200 C -30 140, -40 70, 10 20 L -120 20 L -120 350 Z" 
-            fill="#2c5e4f" 
-            opacity="0.15"
-          />
+          <path d="M -100 350 C 50 320, 120 220, 10 160 C -80 110, -110 50, -50 0 L -120 0 L -120 350 Z" fill="#0F3D2E" opacity="0.9" />
+          <path d="M -100 350 C 80 340, 160 250, 40 180 C -50 120, -70 60, -20 10 L -120 10 L -120 350 Z" fill="#1b4d3e" opacity="0.4" />
+          <path d="M -100 350 C 110 360, 200 270, 70 200 C -30 140, -40 70, 10 20 L -120 20 L -120 350 Z" fill="#2c5e4f" opacity="0.15" />
         </svg>
       </div>
 
@@ -112,44 +100,22 @@ export function ConnectionMap() {
 
         {/* Right Column (Orbital circular diagram) */}
         <div className="lg:col-span-7 flex items-center justify-center mt-6 lg:mt-0">
-          <div className="relative w-[340px] h-[340px] xs:w-[380px] xs:h-[380px] md:w-[560px] md:h-[560px] flex-shrink-0 flex items-center justify-center">
+          {/* Responsive orbit sizes: 280px xs → 340px sm → 560px md */}
+          <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[560px] md:h-[560px] flex-shrink-0 flex items-center justify-center">
             {/* SVG Connecting lines and ring */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
-              {/* Outer dashed ring passing through the dots */}
-              <circle 
-                cx="50" 
-                cy="50" 
-                r="26" 
-                stroke="#8FB926" 
-                strokeWidth="0.3" 
-                strokeDasharray="1.5,1.5" 
-                fill="none" 
-                opacity="0.4" 
-              />
-              
+              {/* Outer dashed ring */}
+              <circle cx="50" cy="50" r="26" stroke="#8FB926" strokeWidth="0.3" strokeDasharray="1.5,1.5" fill="none" opacity="0.4" />
               {/* Connecting lines from center to each card */}
               {MODULES.map((m, i) => {
                 const rad = (m.angle * Math.PI) / 180;
-                // Coordinates for line (ends near card center)
                 const x2 = 50 + 40 * Math.cos(rad);
                 const y2 = 50 + 40 * Math.sin(rad);
-                // Coordinates for green dot on the dashed ring
                 const dotX = 50 + 26 * Math.cos(rad);
                 const dotY = 50 + 26 * Math.sin(rad);
                 return (
                   <g key={i}>
-                    {/* Radial line */}
-                    <line 
-                      x1="50" 
-                      y1="50" 
-                      x2={x2} 
-                      y2={y2} 
-                      stroke="#8FB926" 
-                      strokeWidth="0.25" 
-                      strokeDasharray="1,1" 
-                      opacity="0.5" 
-                    />
-                    {/* Ring intersection dot */}
+                    <line x1="50" y1="50" x2={x2} y2={y2} stroke="#8FB926" strokeWidth="0.25" strokeDasharray="1,1" opacity="0.5" />
                     <circle cx={dotX} cy={dotY} r="0.8" fill="#8FB926" />
                   </g>
                 );
@@ -157,7 +123,7 @@ export function ConnectionMap() {
             </svg>
 
             {/* Central scaleezy Hub */}
-            <motion.div 
+            <motion.div
               className="absolute z-20 w-32 h-32 md:w-56 md:h-56 rounded-full bg-[#0F3D2E] border-[6px] border-[#F5F2EC] md:border-[12px] flex flex-col items-center justify-center text-center shadow-xl p-4 cursor-pointer left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
               initial={{ opacity: 0, scale: 0.9, x: '-50%', y: '-50%' }}
               whileInView={{ opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
@@ -186,7 +152,7 @@ export function ConnectionMap() {
               return (
                 <motion.div
                   key={m.label}
-                  className="absolute z-10 flex flex-col items-center justify-center bg-white/95 border border-forest/5 rounded-2xl shadow-[0_8px_20px_rgba(15,61,46,0.03)] hover:shadow-[0_12px_28px_rgba(15,61,46,0.08)] hover:border-lime-dark/30 transition-all duration-300 w-[80px] h-[80px] md:w-[125px] md:h-[125px] cursor-pointer"
+                  className="absolute z-10 flex flex-col items-center justify-center bg-white/95 border border-forest/5 rounded-2xl shadow-[0_8px_20px_rgba(15,61,46,0.03)] hover:shadow-[0_12px_28px_rgba(15,61,46,0.08)] hover:border-lime-dark/30 transition-all duration-300 w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] md:w-[125px] md:h-[125px] cursor-pointer"
                   style={{
                     left: `${x}%`,
                     top: `${y}%`,
@@ -198,10 +164,10 @@ export function ConnectionMap() {
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   whileHover={{ y: -3, scale: 1.03 }}
                 >
-                  <div className="flex items-center justify-center w-7 h-7 md:w-11 md:h-11 rounded-full bg-lime/10 text-forest mb-1 md:mb-2">
-                    <Icon className="w-3.5 h-3.5 md:w-5 md:h-5 text-[#0F3D2E]" strokeWidth={1.5} />
+                  <div className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-11 md:h-11 rounded-full bg-lime/10 text-forest mb-1 md:mb-2">
+                    <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-5 md:h-5 text-[#0F3D2E]" strokeWidth={1.5} />
                   </div>
-                  <span className="text-[8px] md:text-xs font-semibold text-[#0F3D2E] text-center tracking-tight leading-tight px-1">
+                  <span className="text-[7px] sm:text-[8px] md:text-xs font-semibold text-[#0F3D2E] text-center tracking-tight leading-tight px-1">
                     {m.label}
                   </span>
                 </motion.div>
