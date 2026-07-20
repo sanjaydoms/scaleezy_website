@@ -27,7 +27,8 @@ const MODULES = [
 const LINKS = [
   { label: 'How it works', href: '/#journey' },
   { label: 'Industries', href: '/#industries' },
-  { label: 'Stories', href: '/#stories' }
+  { label: 'Stories', href: '/#stories' },
+  { label: 'About', href: '/about' }
 ];
 
 export function Nav() {
@@ -114,9 +115,15 @@ export function Nav() {
 
             {LINKS.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className={`text-sm tracking-wide transition-colors duration-300 hover:text-lime-dark ${textClassName}`}>
-                  {link.label}
-                </a>
+                {link.href.startsWith('/') && !link.href.includes('#') ? (
+                  <Link to={link.href} className={`text-sm tracking-wide transition-colors duration-300 hover:text-lime-dark ${textClassName}`}>
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a href={link.href} className={`text-sm tracking-wide transition-colors duration-300 hover:text-lime-dark ${textClassName}`}>
+                    {link.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
@@ -190,13 +197,23 @@ export function Nav() {
 
             {LINKS.map((link) => (
               <li key={link.label}>
-                <a
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block border-b border-forest/10 py-3.5 text-sm tracking-wide text-forest"
-                >
-                  {link.label}
-                </a>
+                {link.href.startsWith('/') && !link.href.includes('#') ? (
+                  <Link
+                    to={link.href}
+                    onClick={() => setOpen(false)}
+                    className="block border-b border-forest/10 py-3.5 text-sm tracking-wide text-forest"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="block border-b border-forest/10 py-3.5 text-sm tracking-wide text-forest"
+                  >
+                    {link.label}
+                  </a>
+                )}
               </li>
             ))}
 

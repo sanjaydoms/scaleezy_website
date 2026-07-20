@@ -22,7 +22,7 @@ import { TryOn } from './components/TryOn';
 import { BookDemoModal } from './components/BookDemoModal';
 import { ModuleDetailPage } from './pages/ModuleDetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { AboutUs } from './components/AboutUs';
+import { AboutPage } from './pages/AboutPage';
 
 export function App() {
   return (
@@ -33,6 +33,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/platform/:moduleId" element={<ModuleDetailPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
@@ -57,7 +58,6 @@ function HomePage() {
       <Outcomes />
       <Industries />
       <Comparison />
-      <AboutUs />
       <Stories />
       <FAQ />
       <FinalCTA />

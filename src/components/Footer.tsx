@@ -56,7 +56,7 @@ const COLUMNS = [
   links: [
   {
     label: 'About Us',
-    href: '/#about-us'
+    href: '/about'
   },
   {
     label: 'Book a demo',
@@ -96,7 +96,7 @@ export function Footer() {
               <ul className="mt-5 space-y-3">
                 {column.links.map((link) =>
               <li key={link.label}>
-                    {link.href.startsWith('/platform/') ?
+                    {link.href.startsWith('/platform/') || link.href === '/about' ?
                 <Link
                   to={link.href}
                   className="text-sm text-forest/70 transition-colors hover:text-lime-dark">
