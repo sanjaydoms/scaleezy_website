@@ -6,9 +6,9 @@ import {
   getModuleById,
   getRelatedModules,
   type PlatformModule } from
-'../components/moduleData';
-import { EASE, Reveal } from '../components/motion';
-import { NotFoundPage } from './NotFoundPage';
+'../../components/moduleData';
+import { EASE, Reveal } from '../../components/motion';
+import { NotFoundPage } from '../NotFound/NotFoundPage';
 export function ModuleDetailPage() {
   const { moduleId } = useParams<{
     moduleId: string;
@@ -107,16 +107,29 @@ function ModuleDetailContent({ module }: ModuleDetailContentProps) {
                   {module.bestFor}
                 </p>
               </div>
-              <a
-                href="#module-tour"
-                className="group mt-10 inline-flex items-center gap-3 rounded-full bg-lime px-6 py-3.5 text-sm font-medium text-forest-deep transition-colors hover:bg-lime-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-4 focus-visible:ring-offset-forest-deep">
-                
-                See the workspace
-                <ArrowRightIcon
-                  aria-hidden="true"
-                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                
-              </a>
+              {module.id === 'inventory' ? (
+                <Link
+                  to="/platform/inventory/workspace"
+                  className="group mt-10 inline-flex items-center gap-3 rounded-full bg-lime px-6 py-3.5 text-sm font-medium text-forest-deep transition-colors hover:bg-lime-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-4 focus-visible:ring-offset-forest-deep"
+                >
+                  See the workspace
+                  <ArrowRightIcon
+                    aria-hidden="true"
+                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
+              ) : (
+                <a
+                  href="#module-tour"
+                  className="group mt-10 inline-flex items-center gap-3 rounded-full bg-lime px-6 py-3.5 text-sm font-medium text-forest-deep transition-colors hover:bg-lime-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-4 focus-visible:ring-offset-forest-deep"
+                >
+                  See the workspace
+                  <ArrowRightIcon
+                    aria-hidden="true"
+                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </a>
+              )}
             </motion.div>
           </div>
         </section>

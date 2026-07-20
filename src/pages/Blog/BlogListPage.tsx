@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ArrowRight, BookOpen, Clock, Calendar } from 'lucide-react';
-import { BLOG_ARTICLES, type BlogArticle } from '../components/blogData';
-import { Reveal } from '../components/motion';
+import { BLOG_ARTICLES, type BlogArticle } from '../../components/blogData';
+import { Reveal } from '../../components/motion';
 
 const CATEGORIES = ['All', 'Inventory', 'Clienteling', 'Marketing', 'Logistics', 'Operations', 'Technology'];
 

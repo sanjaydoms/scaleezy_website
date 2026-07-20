@@ -2,9 +2,9 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Calendar, ArrowRight, Sparkles, BookOpen, Share2 } from 'lucide-react';
-import { BLOG_ARTICLES, type BlogArticle } from '../components/blogData';
-import { Reveal } from '../components/motion';
-import { triggerBookDemo } from '../components/BookDemoModal';
+import { BLOG_ARTICLES, type BlogArticle } from '../../components/blogData';
+import { Reveal } from '../../components/motion';
+import { triggerBookDemo } from '../../components/BookDemoModal';
 
 export function BlogDetailPage() {
   const { blogId } = useParams<{ blogId: string }>();

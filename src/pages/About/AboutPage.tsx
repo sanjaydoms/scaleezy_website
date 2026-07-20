@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Check, AlertCircle } from 'lucide-react';
-import { AboutUs } from '../components/AboutUs';
-import { Reveal } from '../components/motion';
+import { AboutUs } from '../../components/AboutUs';
+import { Reveal } from '../../components/motion';
 
 export function AboutPage() {
   return (
