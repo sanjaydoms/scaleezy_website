@@ -178,16 +178,7 @@ export function Journey() {
                 <article
                   className={`relative col-start-2 w-full rounded-lg border border-forest/15 bg-white px-5 py-4 shadow-[0_8px_20px_rgba(15,61,46,0.05)] md:row-start-1 md:max-w-md md:px-6 md:py-5 ${isRight ? 'md:col-start-3 md:justify-self-start' : 'md:col-start-1 md:justify-self-end'}`}>
                   
-                  <div className="flex items-center gap-2">
-                    <span className="eyebrow text-[0.58rem] tracking-[0.18em] text-lime-dark">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="h-px w-4 bg-lime-dark/55" />
-                    
-                  </div>
-                  <h3 className="mt-2 text-base font-semibold tracking-[-0.02em] text-forest md:text-lg">
+                  <h3 className="text-base font-semibold tracking-[-0.02em] text-forest md:text-lg">
                     {step.title}
                   </h3>
                   <p className="mt-1.5 text-xs leading-relaxed text-forest/60 md:text-sm">
