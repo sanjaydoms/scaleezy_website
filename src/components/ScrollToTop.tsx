@@ -14,24 +14,7 @@ export function ScrollToTop() {
       return () => window.cancelAnimationFrame(frame);
     }
 
-    // Scroll mapping for clean URLs
-    let targetId = '';
-    if (pathname === '/how-it-works') targetId = 'journey';
-    else if (pathname === '/industries') targetId = 'industries';
-    else if (pathname === '/stories') targetId = 'stories';
-    else if (pathname === '/platform') targetId = 'platform';
-
-    if (targetId) {
-      const frame = window.requestAnimationFrame(() => {
-        // Use a timeout to allow components to mount and render fully
-        setTimeout(() => {
-          document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      });
-      return () => window.cancelAnimationFrame(frame);
-    }
-
-    // Default to top of the page
+    // Default to top of the page on route transition
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, [hash, pathname]);
 
