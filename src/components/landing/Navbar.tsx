@@ -64,8 +64,8 @@ export function Nav() {
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-700 ${isLight ? 'border-b border-forest/10 bg-cream/95 backdrop-blur-sm' : 'bg-transparent'}`}
     >
       <nav aria-label="Primary" className="mx-auto flex max-w-[1600px] items-center justify-between px-4 py-5 sm:px-6 md:px-12">
-        <Link to="/" className={`text-2xl font-semibold tracking-tight transition-colors duration-700 ${isLight ? 'text-forest' : 'text-cream'}`}>
-          scale<span className="text-lime-dark">ezy</span>
+        <Link to="/" className="transition-opacity duration-300 hover:opacity-90">
+          <img src="/logo.png" alt="Scaleezy" className="h-8 w-auto object-contain" />
         </Link>
 
         {/* Desktop Navigation */}

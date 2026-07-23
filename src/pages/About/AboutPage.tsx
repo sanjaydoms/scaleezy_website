@@ -43,9 +43,9 @@ export function AboutPage() {
             <div className="absolute inset-0 rounded-full border border-lime/20 animate-[spin_60s_linear_infinite]" />
             <div className="absolute inset-4 rounded-full border border-dashed border-lime/10" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-forest rounded-full shadow-2xl border-4 border-white/5">
-              <h3 className="font-serif-display text-4xl text-[#F5F2EC] font-semibold tracking-tight">
-                scale<span className="text-lime">ezy</span>
-              </h3>
+              <div className="flex justify-center w-full">
+                <img src="/logo.png" alt="Scaleezy" className="h-10 w-auto object-contain" />
+              </div>
               <p className="mt-2 text-[10px] font-bold text-[#F5F2EC]/60 tracking-[0.25em] leading-none uppercase">
                 Est. 2026
               </p>

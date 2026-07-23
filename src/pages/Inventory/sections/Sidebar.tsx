@@ -101,8 +101,8 @@ export function Sidebar({
     <div className="flex flex-col h-full bg-[#0D1712] text-[#FAF8F5]/90 border-r border-[#FAF8F5]/5 select-none">
       {/* Sidebar Header / Logo */}
       <div className="flex items-center justify-between px-6 py-6 border-b border-[#FAF8F5]/5 shrink-0">
-        <Link to="/" className="text-2xl font-semibold tracking-tight text-white hover:opacity-90 transition-opacity">
-          scale<span className="text-[#C2FF3D]">ezy</span>
+        <Link to="/" className="hover:opacity-90 transition-opacity">
+          <img src="/logo.png" alt="Scaleezy" className="h-8 w-auto object-contain" />
         </Link>
         <button
           onClick={onClose}

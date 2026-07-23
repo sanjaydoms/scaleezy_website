@@ -18,9 +18,9 @@ export function ConnectedBusiness() {
         <div className="mt-16 grid items-center gap-8 sm:grid-cols-[1fr_auto_1fr] lg:grid-cols-[1fr_auto_1fr] lg:gap-12">
           <SignalList heading="What happens" items={SIGNALS} align="left" />
           <Reveal className="mx-auto flex min-h-40 w-full max-w-56 shrink-0 items-center justify-center border border-lime/70 bg-forest px-8 text-center md:min-h-48">
-            <p className="font-serif-display whitespace-nowrap text-4xl leading-none">
-              scale<span className="text-lime">ezy</span>
-            </p>
+            <div className="flex justify-center w-full">
+              <img src="/logo.png" alt="Scaleezy" className="h-10 w-auto object-contain" />
+            </div>
           </Reveal>
           <SignalList heading="What moves forward" items={ACTIONS} align="right" />
         </div>
