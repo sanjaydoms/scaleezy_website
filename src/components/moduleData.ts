@@ -79,7 +79,7 @@ export type PlatformModule = {
 export const PLATFORM_MODULES: PlatformModule[] = [
 {
   id: 'inventory',
-  name: 'Inventory',
+  name: 'Inventory for Boutiques',
   eyebrow: 'Inventory intelligence',
   subtitle: 'Live stock intelligence across every channel.',
   description:
@@ -172,7 +172,7 @@ export const PLATFORM_MODULES: PlatformModule[] = [
 },
 {
   id: 'crm',
-  name: 'CRM',
+  name: 'CRM for Boutiques',
   eyebrow: 'Customer intelligence',
   subtitle: 'Know every customer, automatically.',
   description:
@@ -265,7 +265,7 @@ export const PLATFORM_MODULES: PlatformModule[] = [
 },
 {
   id: 'marketing',
-  name: 'Marketing',
+  name: 'Marketing for Boutiques',
   eyebrow: 'Marketing automation',
   subtitle: 'Campaigns that run themselves.',
   description:
@@ -358,7 +358,7 @@ export const PLATFORM_MODULES: PlatformModule[] = [
 },
 {
   id: 'try-on-studio',
-  name: 'Try-On Studio',
+  name: 'Try-On Studio for Boutiques',
   eyebrow: 'Virtual try-on',
   subtitle: 'See it before you buy it.',
   description:
@@ -451,7 +451,7 @@ export const PLATFORM_MODULES: PlatformModule[] = [
 },
 {
   id: 'product-management',
-  name: 'Order Management',
+  name: 'Product Management for Boutiques',
   eyebrow: 'Order operations',
   subtitle: 'Every order, from confirmation to confident handoff.',
   description:
@@ -551,7 +551,7 @@ export const PLATFORM_MODULES: PlatformModule[] = [
 },
 {
   id: 'logistics',
-  name: 'Logistics',
+  name: 'Logistics for Boutiques',
   eyebrow: 'Fulfilment visibility',
   subtitle: 'Every parcel, fully tracked.',
   description:

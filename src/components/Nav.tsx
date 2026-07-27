@@ -16,12 +16,12 @@ import {
 import { triggerBookDemo } from './BookDemoModal';
 
 const MODULES = [
-  { id: 'inventory', name: 'Inventory', description: 'Live stock intelligence', icon: PackageSearch },
-  { id: 'crm', name: 'CRM', description: 'Know every customer', icon: Users },
-  { id: 'marketing', name: 'Marketing', description: 'Personalised outreach', icon: Megaphone },
-  { id: 'try-on-studio', name: 'Try-On Studio', description: 'AI virtual try-on', icon: Sparkles },
-  { id: 'product-management', name: 'Product Management', description: 'Unified data model', icon: Boxes },
-  { id: 'logistics', name: 'Logistics', description: 'Streamlined fulfilment', icon: Truck },
+  { id: 'inventory', name: 'Inventory for Boutiques', description: 'Live stock intelligence', icon: PackageSearch },
+  { id: 'crm', name: 'CRM for Boutiques', description: 'Know every customer', icon: Users },
+  { id: 'marketing', name: 'Marketing for Boutiques', description: 'Personalised outreach', icon: Megaphone },
+  { id: 'try-on-studio', name: 'Try-On Studio for Boutiques', description: 'AI virtual try-on', icon: Sparkles },
+  { id: 'product-management', name: 'Product Management for Boutiques', description: 'Unified data model', icon: Boxes },
+  { id: 'logistics', name: 'Logistics for Boutiques', description: 'Streamlined fulfilment', icon: Truck },
 ];
 
 const LINKS = [
