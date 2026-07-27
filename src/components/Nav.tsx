@@ -26,6 +26,7 @@ const MODULES = [
 
 const LINKS = [
   { label: 'How it works', href: '/how-it-works' },
+  { label: 'For Boutiques', href: 'https://boutique.scaleezy.com/' },
   { label: 'Industries', href: '/industries' },
   { label: 'Stories', href: '/stories' },
   { label: 'About', href: '/about' },
@@ -121,7 +122,12 @@ export function Nav() {
                     {link.label}
                   </Link>
                 ) : (
-                  <a href={link.href} className={`text-sm tracking-wide transition-colors duration-300 hover:text-lime-dark ${textClassName}`}>
+                  <a 
+                    href={link.href} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-sm tracking-wide transition-colors duration-300 hover:text-lime-dark ${textClassName}`}
+                  >
                     {link.label}
                   </a>
                 )}
@@ -209,6 +215,8 @@ export function Nav() {
                 ) : (
                   <a
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
                     className="block border-b border-forest/10 py-3.5 text-sm tracking-wide text-forest"
                   >

@@ -42,6 +42,10 @@ const COLUMNS = [
     href: '/how-it-works'
   },
   {
+    label: 'For Boutiques',
+    href: 'https://boutique.scaleezy.com/'
+  },
+  {
     label: 'Industries',
     href: '/industries'
   },
@@ -110,6 +114,8 @@ export function Footer() {
 
                 <a
                   href={link.href}
+                  target={link.href.startsWith('http') ? "_blank" : undefined}
+                  rel={link.href.startsWith('http') ? "noopener noreferrer" : undefined}
                   className="text-sm text-forest/70 transition-colors hover:text-lime-dark">
                   
                         {link.label}
