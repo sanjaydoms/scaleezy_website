@@ -1,7 +1,6 @@
 import React, { useState, useId } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Lock } from 'lucide-react';
-import { BrandPatternAtelier } from './BrandPattern';
 
 export default function BookingFormCard({
   title = 'Book a Demo',
@@ -178,24 +177,20 @@ export default function BookingFormCard({
   };
 
   return (
-    <div className={`rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-black/10 bg-white text-left ${className}`}>
+    <div className={`bg-[var(--color-paper)] text-[var(--color-primary)] text-left ${className}`}>
       
       {/* Dark Card Header */}
       {showHeader && (
-        <div className="bg-[#0A2F1D] text-white p-7 sm:p-9 text-center relative overflow-hidden">
-          <BrandPatternAtelier mode="dark" opacity={0.06} size={280} />
+        <div className="bg-[var(--color-primary)] text-[var(--color-paper)] p-7 sm:p-9 relative">
           
           <div className="relative z-10">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white mb-2">
+            <h3 className="t-lead mb-2">
               {title}
             </h3>
-            <p className="text-xs sm:text-sm text-gray-200 font-normal">
+            <p className="t-small">
               {subtitle}
             </p>
           </div>
-
-          {/* Accent hairline underline */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent" />
         </div>
       )}
 
@@ -208,41 +203,41 @@ export default function BookingFormCard({
             animate={{ opacity: 1, scale: 1 }}
             className="py-8 text-center"
           >
-            <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-inner">
+            <div className="w-16 h-16 bg-[var(--color-accent)] text-[var(--color-primary)] flex items-center justify-center mx-auto mb-6 text-2xl font-medium">
               ✓
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-bold text-[#14263D] tracking-tight mb-3">
+            <h3 className="t-lead mb-3">
               Demo request received
             </h3>
 
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-normal max-w-md mx-auto mb-8">
-              Thank you, <span className="font-semibold text-[#14263D]">{formData.fullName}</span>. Our team will contact you at <span className="font-semibold text-[#14263D]">{formData.email}</span> to confirm a time for your walkthrough.
+              Thank you, <span className="font-semibold text-[var(--color-primary)]">{formData.fullName}</span>. Our team will contact you at <span className="font-semibold text-[var(--color-primary)]">{formData.email}</span> to confirm a time for your walkthrough.
             </p>
 
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 mb-8 text-left text-xs sm:text-sm space-y-2.5 max-w-md mx-auto">
+            <div className="bg-[var(--color-stone)] p-5 mb-8 text-left t-small space-y-2.5 max-w-md mx-auto">
               <div className="flex justify-between">
-                <span className="text-gray-600">Brand:</span>
-                <span className="font-semibold text-[#14263D]">{formData.brandName}</span>
+                <span className="text-black/60">Brand:</span>
+                <span className="font-semibold text-[var(--color-primary)]">{formData.brandName}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Phone:</span>
-                <span className="font-semibold text-[#14263D]">{formData.countryCode} {formData.phone}</span>
+                <span className="text-black/60">Phone:</span>
+                <span className="font-semibold text-[var(--color-primary)]">{formData.countryCode} {formData.phone}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Selected Module:</span>
-                <span className="font-semibold text-[#14263D]">{formData.interestedModule}</span>
+                <span className="text-black/60">Selected Module:</span>
+                <span className="font-semibold text-[var(--color-primary)]">{formData.interestedModule}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Preferred Slot:</span>
-                <span className="font-semibold text-[#14263D]">{formData.preferredTime}</span>
+                <span className="text-black/60">Preferred Slot:</span>
+                <span className="font-semibold text-[var(--color-primary)]">{formData.preferredTime}</span>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
                 onClick={handleReset}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-7 py-3 rounded-full font-medium text-sm hover:bg-gray-100 transition-all active:scale-98 cursor-pointer"
+                className="btn btn-dark"
               >
                 <span>Send Another Request</span>
               </button>
@@ -254,7 +249,7 @@ export default function BookingFormCard({
             
             {/* General Error Alert */}
             {errors.general && (
-              <div role="alert" className="p-3.5 bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm rounded-xl">
+              <div role="alert" className="p-3.5 bg-[var(--color-maroon)] text-[var(--color-paper)] t-small">
                 {errors.general}
               </div>
             )}
@@ -262,8 +257,8 @@ export default function BookingFormCard({
             {/* Row 1: Name & Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               <div className="space-y-1.5">
-                <label htmlFor={`${uid}-fullName`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider flex items-center justify-between">
-                  <span>Name <span className="text-red-500">*</span></span>
+                <label htmlFor={`${uid}-fullName`} className="t-small font-medium flex items-center justify-between">
+                  <span>Name <span className="text-[#9B1C2C]">*</span></span>
                 </label>
                 <input
                   type="text"
@@ -273,20 +268,20 @@ export default function BookingFormCard({
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Enter your name"
-                  className={`w-full h-11 px-3.5 text-sm rounded-xl border bg-white transition-all outline-none ${
+                  className={`w-full h-12 px-3.5 t-body border bg-white transition-colors outline-none ${
                     touched.fullName && errors.fullName
-                      ? 'border-red-500 focus:ring-2 focus:ring-red-100'
-                      : 'border-gray-200 focus:border-[#0A2F1D] focus:ring-2 focus:ring-[#0A2F1D]/10'
+                      ? 'border-[#9B1C2C] focus:ring-2 focus:ring-[#9B1C2C]/20'
+                      : 'border-black/20 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/15'
                   }`}
                 />
                 {touched.fullName && errors.fullName && (
-                  <p id={`${uid}-fullName-error`} className="text-xs text-red-600 font-medium">{errors.fullName}</p>
+                  <p id={`${uid}-fullName-error`} className="t-small text-[#9B1C2C] font-medium">{errors.fullName}</p>
                 )}
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor={`${uid}-email`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider flex items-center justify-between">
-                  <span>Email <span className="text-red-500">*</span></span>
+                <label htmlFor={`${uid}-email`} className="t-small font-medium flex items-center justify-between">
+                  <span>Email <span className="text-[#9B1C2C]">*</span></span>
                 </label>
                 <input
                   type="email"
@@ -296,14 +291,14 @@ export default function BookingFormCard({
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="you@yourbusiness.com"
-                  className={`w-full h-11 px-3.5 text-sm rounded-xl border bg-white transition-all outline-none ${
+                  className={`w-full h-12 px-3.5 t-body border bg-white transition-colors outline-none ${
                     touched.email && errors.email
-                      ? 'border-red-500 focus:ring-2 focus:ring-red-100'
-                      : 'border-gray-200 focus:border-[#0A2F1D] focus:ring-2 focus:ring-[#0A2F1D]/10'
+                      ? 'border-[#9B1C2C] focus:ring-2 focus:ring-[#9B1C2C]/20'
+                      : 'border-black/20 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/15'
                   }`}
                 />
                 {touched.email && errors.email && (
-                  <p id={`${uid}-email-error`} className="text-xs text-red-600 font-medium">{errors.email}</p>
+                  <p id={`${uid}-email-error`} className="t-small text-[#9B1C2C] font-medium">{errors.email}</p>
                 )}
               </div>
             </div>
@@ -311,8 +306,8 @@ export default function BookingFormCard({
             {/* Row 2: Brand / Company Name & Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               <div className="space-y-1.5">
-                <label htmlFor={`${uid}-brandName`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider flex items-center justify-between">
-                  <span>Brand / Company Name <span className="text-red-500">*</span></span>
+                <label htmlFor={`${uid}-brandName`} className="t-small font-medium flex items-center justify-between">
+                  <span>Brand / Company Name <span className="text-[#9B1C2C]">*</span></span>
                 </label>
                 <input
                   type="text"
@@ -322,20 +317,20 @@ export default function BookingFormCard({
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Your boutique or brand name"
-                  className={`w-full h-11 px-3.5 text-sm rounded-xl border bg-white transition-all outline-none ${
+                  className={`w-full h-12 px-3.5 t-body border bg-white transition-colors outline-none ${
                     touched.brandName && errors.brandName
-                      ? 'border-red-500 focus:ring-2 focus:ring-red-100'
-                      : 'border-gray-200 focus:border-[#0A2F1D] focus:ring-2 focus:ring-[#0A2F1D]/10'
+                      ? 'border-[#9B1C2C] focus:ring-2 focus:ring-[#9B1C2C]/20'
+                      : 'border-black/20 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/15'
                   }`}
                 />
                 {touched.brandName && errors.brandName && (
-                  <p id={`${uid}-brandName-error`} className="text-xs text-red-600 font-medium">{errors.brandName}</p>
+                  <p id={`${uid}-brandName-error`} className="t-small text-[#9B1C2C] font-medium">{errors.brandName}</p>
                 )}
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor={`${uid}-phone`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider flex items-center justify-between">
-                  <span>Phone Number <span className="text-red-500">*</span></span>
+                <label htmlFor={`${uid}-phone`} className="t-small font-medium flex items-center justify-between">
+                  <span>Phone Number <span className="text-[#9B1C2C]">*</span></span>
                 </label>
                 <div className="flex gap-2">
                   <select
@@ -344,7 +339,7 @@ export default function BookingFormCard({
                     autoComplete="tel-country-code"
                     value={formData.countryCode}
                     onChange={handleChange}
-                    className="h-11 px-2.5 text-xs font-semibold rounded-xl border border-gray-200 bg-gray-50 focus:border-[#0A2F1D] outline-none cursor-pointer shrink-0"
+                    className="h-12 px-2.5 t-small border border-black/20 bg-white focus:border-[var(--color-primary)] outline-none cursor-pointer shrink-0"
                   >
                     {countryCodes.map(c => (
                       <option key={c.label} value={c.code}>{c.label}</option>
@@ -358,15 +353,15 @@ export default function BookingFormCard({
                     onChange={handleChange}
                     onBlur={handleBlur}
                     placeholder="98765 43210"
-                    className={`w-full h-11 px-3.5 text-sm rounded-xl border bg-white transition-all outline-none ${
+                    className={`w-full h-12 px-3.5 t-body border bg-white transition-colors outline-none ${
                       touched.phone && errors.phone
-                        ? 'border-red-500 focus:ring-2 focus:ring-red-100'
-                        : 'border-gray-200 focus:border-[#0A2F1D] focus:ring-2 focus:ring-[#0A2F1D]/10'
+                        ? 'border-[#9B1C2C] focus:ring-2 focus:ring-[#9B1C2C]/20'
+                        : 'border-black/20 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/15'
                     }`}
                   />
                 </div>
                 {touched.phone && errors.phone && (
-                  <p id={`${uid}-phone-error`} className="text-xs text-red-600 font-medium">{errors.phone}</p>
+                  <p id={`${uid}-phone-error`} className="t-small text-[#9B1C2C] font-medium">{errors.phone}</p>
                 )}
               </div>
             </div>
@@ -374,14 +369,14 @@ export default function BookingFormCard({
             {/* Row 3: Language & Interested Module */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               <div className="space-y-1.5">
-                <label htmlFor={`${uid}-preferredLanguage`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                  Choose Language <span className="text-red-500">*</span>
+                <label htmlFor={`${uid}-preferredLanguage`} className="t-small font-medium">
+                  Choose Language <span className="text-[#9B1C2C]">*</span>
                 </label>
                 <select
                   {...fieldProps('preferredLanguage')}
                   value={formData.preferredLanguage}
                   onChange={handleChange}
-                  className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
+                  className="w-full h-12 px-3.5 t-body border border-black/20 bg-white focus:border-[var(--color-primary)] outline-none cursor-pointer"
                 >
                   {languages.map(lang => (
                     <option key={lang} value={lang}>{lang}</option>
@@ -390,14 +385,14 @@ export default function BookingFormCard({
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor={`${uid}-interestedModule`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                  I'm Interested In <span className="text-red-500">*</span>
+                <label htmlFor={`${uid}-interestedModule`} className="t-small font-medium">
+                  I'm Interested In <span className="text-[#9B1C2C]">*</span>
                 </label>
                 <select
                   {...fieldProps('interestedModule')}
                   value={formData.interestedModule}
                   onChange={handleChange}
-                  className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
+                  className="w-full h-12 px-3.5 t-body border border-black/20 bg-white focus:border-[var(--color-primary)] outline-none cursor-pointer"
                 >
                   {modulesList.map(mod => (
                     <option key={mod} value={mod}>{mod}</option>
@@ -409,18 +404,18 @@ export default function BookingFormCard({
             {/* Row 4: Physical Retail Store Toggle & Business Type */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               <div className="space-y-1.5">
-                <span id={`${uid}-hasPhysicalStore`} className="block text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                  Do you have a physical store? <span className="text-red-500">*</span>
+                <span id={`${uid}-hasPhysicalStore`} className="block t-small font-medium">
+                  Do you have a physical store? <span className="text-[#9B1C2C]">*</span>
                 </span>
-                <div role="group" aria-labelledby={`${uid}-hasPhysicalStore`} className="grid grid-cols-2 gap-2 h-11">
+                <div role="group" aria-labelledby={`${uid}-hasPhysicalStore`} className="grid grid-cols-2 gap-2 h-12">
                   <button
                     type="button"
                     aria-pressed={formData.hasPhysicalStore === 'yes'}
                     onClick={() => setFormData(prev => ({ ...prev, hasPhysicalStore: 'yes' }))}
-                    className={`rounded-xl text-xs sm:text-sm font-semibold transition-all border cursor-pointer ${
+                    className={`t-small font-medium transition-colors border cursor-pointer ${
                       formData.hasPhysicalStore === 'yes'
-                        ? 'bg-[#0A2F1D] text-[var(--color-accent)] border-[#0A2F1D] shadow-sm'
-                        : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
+                        ? 'bg-[var(--color-primary)] text-[var(--color-accent)] border-[var(--color-primary)]'
+                        : 'bg-white text-[var(--color-primary)] border-black/20 hover:bg-[var(--color-stone)]'
                     }`}
                   >
                     Yes
@@ -429,10 +424,10 @@ export default function BookingFormCard({
                     type="button"
                     aria-pressed={formData.hasPhysicalStore === 'no'}
                     onClick={() => setFormData(prev => ({ ...prev, hasPhysicalStore: 'no' }))}
-                    className={`rounded-xl text-xs sm:text-sm font-semibold transition-all border cursor-pointer ${
+                    className={`t-small font-medium transition-colors border cursor-pointer ${
                       formData.hasPhysicalStore === 'no'
-                        ? 'bg-[#0A2F1D] text-[var(--color-accent)] border-[#0A2F1D] shadow-sm'
-                        : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
+                        ? 'bg-[var(--color-primary)] text-[var(--color-accent)] border-[var(--color-primary)]'
+                        : 'bg-white text-[var(--color-primary)] border-black/20 hover:bg-[var(--color-stone)]'
                     }`}
                   >
                     No (Online Only)
@@ -441,14 +436,14 @@ export default function BookingFormCard({
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor={`${uid}-businessType`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                  Business Type <span className="text-red-500">*</span>
+                <label htmlFor={`${uid}-businessType`} className="t-small font-medium">
+                  Business Type <span className="text-[#9B1C2C]">*</span>
                 </label>
                 <select
                   {...fieldProps('businessType')}
                   value={formData.businessType}
                   onChange={handleChange}
-                  className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
+                  className="w-full h-12 px-3.5 t-body border border-black/20 bg-white focus:border-[var(--color-primary)] outline-none cursor-pointer"
                 >
                   {businessTypes.map(type => (
                     <option key={type} value={type}>{type}</option>
@@ -459,7 +454,7 @@ export default function BookingFormCard({
 
             {/* Row 5: City / Location */}
             <div className="space-y-1.5">
-              <label htmlFor={`${uid}-city`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
+              <label htmlFor={`${uid}-city`} className="t-small font-medium">
                 City / Location
               </label>
               <input
@@ -469,14 +464,14 @@ export default function BookingFormCard({
                 value={formData.city}
                 onChange={handleChange}
                 placeholder="e.g. Mumbai, New York, London, Bangalore"
-                className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none transition-all"
+                className="w-full h-12 px-3.5 t-body border border-black/20 bg-white focus:border-[var(--color-primary)] outline-none transition-all"
               />
             </div>
 
             {/* Row 6: Preferred Date & Time Slot */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               <div className="space-y-1.5">
-                <label htmlFor={`${uid}-preferredDate`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
+                <label htmlFor={`${uid}-preferredDate`} className="t-small font-medium">
                   Preferred Date
                 </label>
                 <input
@@ -485,19 +480,19 @@ export default function BookingFormCard({
                   min={today}
                   value={formData.preferredDate}
                   onChange={handleChange}
-                  className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
+                  className="w-full h-12 px-3.5 t-body border border-black/20 bg-white focus:border-[var(--color-primary)] outline-none cursor-pointer"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor={`${uid}-preferredTime`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
+                <label htmlFor={`${uid}-preferredTime`} className="t-small font-medium">
                   Preferred Time
                 </label>
                 <select
                   {...fieldProps('preferredTime')}
                   value={formData.preferredTime}
                   onChange={handleChange}
-                  className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
+                  className="w-full h-12 px-3.5 t-body border border-black/20 bg-white focus:border-[var(--color-primary)] outline-none cursor-pointer"
                 >
                   {timeSlots.map(slot => (
                     <option key={slot} value={slot}>{slot}</option>
@@ -508,7 +503,7 @@ export default function BookingFormCard({
 
             {/* Row 7: Specific Requirements Textarea */}
             <div className="space-y-1.5">
-              <label htmlFor={`${uid}-specificRequirements`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
+              <label htmlFor={`${uid}-specificRequirements`} className="t-small font-medium">
                 Anything specific you'd like to see?
               </label>
               <textarea
@@ -517,7 +512,7 @@ export default function BookingFormCard({
                 onChange={handleChange}
                 rows={3}
                 placeholder="e.g. Barcode POS, multi-branch stock transfers, automated WhatsApp VIP lookbooks, factory tech packs..."
-                className="w-full p-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none transition-all resize-none"
+                className="w-full p-3.5 t-body border border-black/20 bg-white focus:border-[var(--color-primary)] outline-none transition-all resize-none"
               />
             </div>
 
@@ -526,11 +521,11 @@ export default function BookingFormCard({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full h-13 rounded-full bg-gradient-to-r from-[#0A2F1D] to-[#12422b] text-[var(--color-accent)] font-bold text-base hover:shadow-xl hover:scale-101 active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 shadow-md"
+                className="btn btn-dark w-full justify-center disabled:opacity-60"
               >
                 {isSubmitting ? (
                   <>
-                    <span className="w-4 h-4 border-2 border-[var(--color-accent)]/30 border-t-[var(--color-accent)] rounded-full animate-spin" />
+                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     <span>Sending Request...</span>
                   </>
                 ) : (
@@ -543,7 +538,7 @@ export default function BookingFormCard({
             </div>
 
             {/* Security Assurance */}
-            <p className="text-center text-xs text-gray-600 pt-2 flex items-center justify-center gap-1.5">
+            <p className="t-small pt-2 flex items-center gap-1.5">
               <Lock size={12} className="text-gray-500" />
               <span>Your data is strictly confidential. We will never share your contact details.</span>
             </p>
