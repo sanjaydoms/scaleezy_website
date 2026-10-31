@@ -7,49 +7,112 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://scaleezy.com/about</loc>
+    <loc>https://scaleezy.com/about-scaleezy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://scaleezy.com/blog</loc>
+    <loc>https://scaleezy.com/how-it-works</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/modules</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/solutions</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blogs</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Platform Module Pages -->
   <url>
-    <loc>https://scaleezy.com/platform/inventory</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://scaleezy.com/platform/crm</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://scaleezy.com/platform/marketing</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://scaleezy.com/platform/try-on-studio</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://scaleezy.com/platform/product-management</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://scaleezy.com/platform/logistics</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://scaleezy.com/book-a-demo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Blog Articles -->
+  <url>
+    <loc>https://scaleezy.com/blog/how-to-reduce-dead-stock-in-clothing-store</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/festive-season-inventory-planning-saree-stores</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/does-virtual-try-on-increase-sales</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/how-to-get-repeat-customers-boutique</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/how-to-choose-inventory-software-clothing-store</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/instagram-marketing-for-boutiques</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/whatsapp-commerce-for-fashion-sellers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/how-to-reduce-rto-in-fashion-ecommerce</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/scaleezy-vs-shopify-for-apparel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/ai-in-fashion-retail</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/diwali-marketing-ideas-for-clothing-stores</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/inventory-turnover-ratio-fashion-retail</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/loyalty-program-ideas-for-clothing-stores</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/sku-naming-convention-for-clothing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/boutique-management-software-what-to-look-for</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://scaleezy.com/blog/how-to-sync-boutique-and-shopify-inventory-real-time</loc>
     <changefreq>monthly</changefreq>
