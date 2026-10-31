@@ -1,4 +1,36 @@
 {
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/about-scaleezy",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blogs",
+      "permanent": true
+    },
+    {
+      "source": "/platform",
+      "destination": "/modules",
+      "permanent": true
+    },
+    {
+      "source": "/platform/:moduleId",
+      "destination": "/modules",
+      "permanent": true
+    },
+    {
+      "source": "/industries",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/stories",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
