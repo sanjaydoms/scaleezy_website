@@ -6,6 +6,18 @@ import { BrandPatternAtelier } from './BrandPattern';
 import { MODULE_URLS } from '../data/modulesData';
 import { submitDemoRequest } from '../lib/supabase';
 
+const MODULES_LIST = [
+  'Complete Scaleezy Platform',
+  'Inventory',
+  'CRM',
+  'Boutique',
+  'TRYON2BUY',
+  'Marketing',
+  'Analytics',
+  'Finance',
+  'Logistics'
+];
+
 export default function BookingFormCard({
   title = 'Book a Demo',
   subtitle = 'Fill in the form below to book a tailored walkthrough session',
@@ -27,7 +39,7 @@ export default function BookingFormCard({
     if (clean.includes('analytic')) return 'Analytics';
     if (clean.includes('finance')) return 'Finance';
     if (clean.includes('logistic')) return 'Logistics';
-    const match = modulesList.find(m => m.toLowerCase() === clean);
+    const match = MODULES_LIST.find(m => m.toLowerCase() === clean);
     return match || defaultModule || 'Complete Scaleezy Platform';
   };
 
@@ -80,17 +92,7 @@ export default function BookingFormCard({
     { code: '+1', label: '🇨🇦 Canada (+1)' }
   ];
 
-  const modulesList = [
-    'Complete Scaleezy Platform',
-    'Inventory',
-    'CRM',
-    'Boutique',
-    'TRYON2BUY',
-    'Marketing',
-    'Analytics',
-    'Finance',
-    'Logistics'
-  ];
+  const modulesList = MODULES_LIST;
 
   const businessTypes = [
     'Fashion Boutique',

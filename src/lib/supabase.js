@@ -65,6 +65,30 @@ export async function submitDemoRequest(formData, source = 'book_a_demo') {
     throw new Error(`Submission failed with status ${res.status}`);
   }
 
+  // Trigger email notification to domsgloballlp@gmail.com via Resend (non-blocking)
+  try {
+    fetch('/api/send-lead-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fullName: formData.fullName,
+        brandName: formData.brandName,
+        email: formData.email,
+        phone: `${formData.countryCode || '+91'} ${formData.phone || ''}`.trim(),
+        businessType: formData.businessType || 'Fashion Boutique',
+        interestedModule: selectedModule,
+        hasPhysicalStore: formData.hasPhysicalStore === 'yes' ? 'Yes' : 'No',
+        city: formData.city || 'Not specified',
+        specificRequirements: formData.specificRequirements || '',
+        source: sourceTag
+      })
+    }).catch(err => {
+      console.warn('Resend notification non-blocking warning:', err);
+    });
+  } catch (emailErr) {
+    console.warn('Failed to dispatch lead email:', emailErr);
+  }
+
   return true;
 }
 
