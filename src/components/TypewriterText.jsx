@@ -1,76 +1,85 @@
 import React, { useState, useEffect } from 'react';
 
 export default function TypewriterText({
-  words,
-  typingSpeed = 70,
-  deletingSpeed = 35,
+  words = [],
+  typingSpeed = 65,
+  deletingSpeed = 30,
   pauseDuration = 2200,
-  pauseBeforeDelete = 1800,
+  pauseEmptyDuration = 320,
   className = '',
-  cursorClassName = 'text-[var(--color-accent)] font-light',
+  cursorClassName = 'text-emerald-700 font-bold',
   cursorChar = '|',
-  showCursor = false,
-  // Type through the words once and stop, so the text doesn't move forever (WCAG 2.2.2)
-  loop = false
+  showCursor = true,
+  loop = true
 }) {
   const reduceMotion = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [currentText, setCurrentText] = useState(reduceMotion && words?.length ? words[words.length - 1] : '');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
+  const [wordIndex, setWordIndex] = useState(0);
+  // Pre-fill with the first word so initial render has zero layout shift
+  const [currentText, setCurrentText] = useState(() => (words && words.length > 0 ? words[0] : ''));
+  const [phase, setPhase] = useState('pausing_full');
 
   useEffect(() => {
     if (!words || words.length === 0 || reduceMotion) return;
 
-    const currentFullWord = words[currentWordIndex % words.length];
+    const currentWord = words[wordIndex % words.length] || '';
 
-    if (isPaused) {
-      const pauseTimer = setTimeout(() => {
-        setIsPaused(false);
-      }, isDeleting ? 400 : pauseBeforeDelete);
-      return () => clearTimeout(pauseTimer);
+    if (phase === 'pausing_full') {
+      if (!loop && wordIndex === words.length - 1) return;
+      const timer = setTimeout(() => {
+        setPhase('deleting');
+      }, pauseDuration);
+      return () => clearTimeout(timer);
     }
 
-    if (!isDeleting) {
-      // Typing forward
-      if (currentText.length < currentFullWord.length) {
-        const timeout = setTimeout(() => {
-          setCurrentText(currentFullWord.slice(0, currentText.length + 1));
-        }, typingSpeed);
-        return () => clearTimeout(timeout);
-      } else {
-        // Reached end of word
-        if (!loop && currentWordIndex === words.length - 1) {
-          return;
-        }
-        setIsPaused(true);
-        const pauseTimer = setTimeout(() => {
-          setIsDeleting(true);
-          setIsPaused(false);
-        }, pauseDuration);
-        return () => clearTimeout(pauseTimer);
-      }
-    } else {
-      // Backspacing / Deleting
+    if (phase === 'deleting') {
       if (currentText.length > 0) {
-        const timeout = setTimeout(() => {
-          setCurrentText(currentFullWord.slice(0, currentText.length - 1));
+        const timer = setTimeout(() => {
+          setCurrentText(prev => prev.slice(0, -1));
         }, deletingSpeed);
-        return () => clearTimeout(timeout);
+        return () => clearTimeout(timer);
       } else {
-        // Deleted completely, move to next word
-        setIsDeleting(false);
-        setCurrentWordIndex(prev => (prev + 1) % words.length);
-        setIsPaused(true);
+        const timer = setTimeout(() => {
+          setPhase('pausing_empty');
+        }, 40);
+        return () => clearTimeout(timer);
       }
     }
-  }, [currentText, isDeleting, isPaused, currentWordIndex, words, typingSpeed, deletingSpeed, pauseDuration, pauseBeforeDelete, loop, reduceMotion]);
+
+    if (phase === 'pausing_empty') {
+      const timer = setTimeout(() => {
+        setWordIndex(prev => (prev + 1) % words.length);
+        setPhase('typing');
+      }, pauseEmptyDuration);
+      return () => clearTimeout(timer);
+    }
+
+    if (phase === 'typing') {
+      if (currentText.length < currentWord.length) {
+        const timer = setTimeout(() => {
+          setCurrentText(currentWord.slice(0, currentText.length + 1));
+        }, typingSpeed);
+        return () => clearTimeout(timer);
+      } else {
+        const timer = setTimeout(() => {
+          setPhase('pausing_full');
+        }, 40);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [currentText, phase, wordIndex, words, typingSpeed, deletingSpeed, pauseDuration, pauseEmptyDuration, loop, reduceMotion]);
+
+  const isBlinking = phase === 'pausing_full' || phase === 'pausing_empty';
 
   return (
     <span className={`inline-flex items-baseline ${className}`}>
-      <span>{currentText}</span>
+      <span>{currentText || '\u00A0'}</span>
       {showCursor && (
-        <span className={`inline-block animate-pulse ml-0.5 select-none ${cursorClassName}`}>
+        <span
+          className={`inline-block ml-0.5 select-none transition-opacity ${cursorClassName} ${
+            isBlinking ? 'animate-pulse' : 'opacity-100'
+          }`}
+          aria-hidden="true"
+        >
           {cursorChar}
         </span>
       )}

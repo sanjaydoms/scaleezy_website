@@ -94,9 +94,11 @@ export default function HeroSection() {
                   'D2C Fashion',
                   'Wholesalers'
                 ]}
-                typingSpeed={65}
+                typingSpeed={60}
                 deletingSpeed={30}
-                pauseDuration={2400}
+                pauseDuration={2200}
+                showCursor={true}
+                loop={true}
                 cursorClassName="text-emerald-700 font-bold"
               />
             </span>
@@ -107,21 +109,24 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mb-5 md:mb-6 min-h-[140px] sm:min-h-[165px] md:min-h-[195px] lg:min-h-[225px] flex flex-col justify-start"
+            className="mb-5 md:mb-6 min-h-[105px] sm:min-h-[135px] md:min-h-[170px] lg:min-h-[200px] flex flex-col justify-start"
           >
             <TypingHeading
               line1="Total commerce,"
-              line1Class="font-serif italic font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] block text-center mb-1 text-[var(--color-primary)]"
+              line1Class="font-serif italic font-normal text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] block text-center mb-1 text-[var(--color-primary)]"
               line2Prefix="Totally "
               line2Words={['different.', 'synchronized.', 'connected.', 'automated.']}
               line2Class="font-sans font-bold tracking-tighter block text-center text-emerald-700"
               line2MinHeight="min-h-[1.2em]"
               wordClass="text-emerald-700"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] tracking-tight leading-[1.08] text-center"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] tracking-tight leading-[1.08] text-center"
               typingSpeed={60}
               deletingSpeed={30}
-              pauseDuration={2800}
+              pauseDuration={2600}
               seoText="Total commerce, Totally different."
+              showCursor={true}
+              cursorClassName="bg-emerald-700"
+              loop={true}
             />
           </motion.div>
 
