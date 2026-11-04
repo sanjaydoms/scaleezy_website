@@ -9,12 +9,30 @@ const defaultHeaders = {
   'Prefer': 'return=minimal'
 };
 
+function normalizeModuleSlug(modName = '') {
+  const clean = (modName || '').toLowerCase().trim();
+  if (clean.includes('inventory')) return 'inventory';
+  if (clean.includes('crm') || clean.includes('customer')) return 'crm';
+  if (clean.includes('boutique') || clean.includes('pos') || clean.includes('billing')) return 'boutique';
+  if (clean.includes('tryon') || clean.includes('try-on') || clean.includes('virtual')) return 'tryon2buy';
+  if (clean.includes('market')) return 'marketing';
+  if (clean.includes('analytic')) return 'analytics';
+  if (clean.includes('finance')) return 'finance';
+  if (clean.includes('logistic')) return 'logistics';
+  return 'all_modules';
+}
+
 /**
  * Submits a demo booking request or access request to tenants_demorequest table
+ * Differentiates module in source and notes so dedicated superadmins can filter by module
  * @param {Object} formData - Form field data
  * @param {string} source - 'book_a_demo' | 'request_access' | 'website'
  */
 export async function submitDemoRequest(formData, source = 'book_a_demo') {
+  const selectedModule = formData.interestedModule || 'Complete Scaleezy Platform';
+  const moduleSlug = normalizeModuleSlug(selectedModule);
+  const sourceTag = source === 'request_access' ? `request_access:${moduleSlug}` : moduleSlug;
+
   const payload = {
     name: formData.fullName || '',
     boutique: formData.brandName || '',
@@ -23,11 +41,13 @@ export async function submitDemoRequest(formData, source = 'book_a_demo') {
     makes: formData.businessType || 'Fashion Boutique',
     orders_per_month: formData.hasPhysicalStore === 'yes' ? 'Physical Store: Yes' : 'Physical Store: No',
     people: formData.preferredLanguage || 'English',
-    problem: `Module: ${formData.interestedModule || 'Complete Platform'} | Physical Store: ${formData.hasPhysicalStore === 'yes' ? 'Yes' : 'No'} | Slot: ${formData.preferredDate || 'Flexible'} (${formData.preferredTime || 'Anytime'})`,
-    notes: formData.specificRequirements || '',
+    problem: `Module: ${selectedModule} | Physical Store: ${formData.hasPhysicalStore === 'yes' ? 'Yes' : 'No'}`,
+    notes: formData.specificRequirements
+      ? `[Module: ${selectedModule}] ${formData.specificRequirements}`.trim()
+      : `[Module: ${selectedModule}]`,
     address: formData.city || '',
     status: 'pending',
-    source: source,
+    source: sourceTag,
     approved_by: '',
     terms_version: 'v1.0',
     created_at: new Date().toISOString()

@@ -42,8 +42,6 @@ export default function BookingFormCard({
     hasPhysicalStore: 'yes',
     businessType: 'Fashion Boutique',
     city: '',
-    preferredDate: '',
-    preferredTime: 'Afternoon (2:00 PM – 5:00 PM)',
     specificRequirements: ''
   });
 
@@ -60,7 +58,6 @@ export default function BookingFormCard({
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const uid = useId();
-  const [today] = useState(() => new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10));
 
   // id, name and error wiring shared by every field so labels and errors are announced
   const fieldProps = (name) => {
@@ -105,13 +102,6 @@ export default function BookingFormCard({
     'Wholesaler / Textile Distributor',
     'Online Store / Social Commerce',
     'Other'
-  ];
-
-  const timeSlots = [
-    'Morning (10:00 AM – 1:00 PM)',
-    'Afternoon (2:00 PM – 5:00 PM)',
-    'Evening (5:00 PM – 8:00 PM)',
-    'Immediate / As Soon As Possible'
   ];
 
   const languages = ['English', 'Hindi', 'Tamil', 'Telugu', 'Kannada', 'Gujarati', 'Marathi'];
@@ -190,8 +180,6 @@ export default function BookingFormCard({
       hasPhysicalStore: 'yes',
       businessType: 'Fashion Boutique',
       city: '',
-      preferredDate: '',
-      preferredTime: 'Afternoon (2:00 PM – 5:00 PM)',
       specificRequirements: ''
     });
     setTouched({});
@@ -256,8 +244,8 @@ export default function BookingFormCard({
                 <span className="font-semibold text-[#14263D]">{formData.interestedModule}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Preferred Slot:</span>
-                <span className="font-semibold text-[#14263D]">{formData.preferredTime}</span>
+                <span className="text-gray-600">Physical Store:</span>
+                <span className="font-semibold text-[#14263D]">{formData.hasPhysicalStore === 'yes' ? 'Yes' : 'No'}</span>
               </div>
             </div>
 
@@ -513,40 +501,7 @@ export default function BookingFormCard({
               />
             </div>
 
-            {/* Row 6: Preferred Date & Time Slot */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-              <div className="space-y-1.5">
-                <label htmlFor={`${uid}-preferredDate`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                  Preferred Date
-                </label>
-                <input
-                  type="date"
-                  {...fieldProps('preferredDate')}
-                  min={today}
-                  value={formData.preferredDate}
-                  onChange={handleChange}
-                  className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
-                />
-              </div>
-
-              <div className="space-y-1.5">
-                <label htmlFor={`${uid}-preferredTime`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                  Preferred Time
-                </label>
-                <select
-                  {...fieldProps('preferredTime')}
-                  value={formData.preferredTime}
-                  onChange={handleChange}
-                  className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
-                >
-                  {timeSlots.map(slot => (
-                    <option key={slot} value={slot}>{slot}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Row 7: Specific Requirements Textarea */}
+            {/* Row 6: Specific Requirements Textarea */}
             <div className="space-y-1.5">
               <label htmlFor={`${uid}-specificRequirements`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
                 Anything specific you'd like to see?
