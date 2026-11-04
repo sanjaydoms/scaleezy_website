@@ -91,18 +91,15 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-2 xl:gap-3">
           <Link 
             to="/login" 
-            className="text-xs xl:text-sm font-semibold text-[var(--color-primary)] hover:text-black py-2 px-3.5 rounded-full border border-black/15 hover:border-black/30 hover:bg-black/5 transition-all"
+            className="text-xs xl:text-sm font-semibold text-[var(--color-primary)] hover:text-black py-2.5 px-4 rounded-full border border-black/15 hover:border-black/30 hover:bg-black/5 transition-all"
           >
             Log in
           </Link>
           <Link 
             to="/request-access" 
-            className="text-xs xl:text-sm font-semibold text-[var(--color-primary)] hover:text-black py-2 px-3.5 rounded-full border border-emerald-700/25 bg-emerald-50/60 hover:bg-emerald-100/70 transition-all"
+            className="bg-[var(--color-primary)] text-white px-5 xl:px-6 py-2.5 rounded-full text-xs xl:text-sm font-semibold hover:bg-black transition-all shadow-md hover:shadow-lg hover:scale-102 active:scale-98"
           >
             Request Access
-          </Link>
-          <Link to="/book-a-demo" className="bg-[var(--color-primary)] text-white px-5 xl:px-6 py-2.5 rounded-full text-xs xl:text-sm font-semibold hover:bg-black transition-all shadow-md hover:shadow-lg hover:scale-102 active:scale-98">
-            Book a Demo
           </Link>
         </div>
 
@@ -168,16 +165,9 @@ export default function Header() {
               <Link
                 to="/request-access"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full block bg-emerald-50 text-[var(--color-primary)] border border-emerald-700/25 text-center py-3 rounded-full text-base font-semibold shadow-xs active:scale-98 transition-all hover:bg-emerald-100/70"
-              >
-                Request Access
-              </Link>
-              <Link
-                to="/book-a-demo"
-                onClick={() => setIsMobileMenuOpen(false)}
                 className="w-full block bg-[var(--color-primary)] text-white text-center py-3.5 rounded-full text-base font-semibold shadow-xl active:scale-98 transition-all"
               >
-                Book a Demo
+                Request Access
               </Link>
             </div>
           </motion.div>

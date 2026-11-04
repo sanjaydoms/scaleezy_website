@@ -29,7 +29,7 @@ export default function LoginPage() {
     setTimeout(() => {
       setIsSubmitting(false);
       // For demonstration in preview mode, show friendly notification or redirect
-      setErrorMessage('Scaleezy multi-tenant workspaces are accessed via your custom domain (e.g. yourbrand.scaleezy.com). If you are a new store, please request access or book a demo.');
+      setErrorMessage('Scaleezy multi-tenant workspaces are accessed via your custom domain (e.g. yourbrand.scaleezy.com). If you are a new store, please request platform access.');
     }, 900);
   };
 
@@ -167,22 +167,13 @@ export default function LoginPage() {
             <p className="text-xs sm:text-sm text-gray-600 mb-3">
               Don't have a Scaleezy store workspace yet?
             </p>
-            <div className="grid grid-cols-2 gap-2.5">
-              <Link
-                to="/request-access"
-                className="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-emerald-50 text-[var(--color-primary)] font-semibold text-xs sm:text-sm hover:bg-emerald-100/70 transition-colors border border-emerald-700/25"
-              >
-                <span>Request Access</span>
-                <ArrowRight size={14} />
-              </Link>
-              <Link
-                to="/book-a-demo"
-                className="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-[var(--color-warm-white)] text-[var(--color-primary)] font-semibold text-xs sm:text-sm hover:bg-[var(--color-stone)] transition-colors border border-black/10"
-              >
-                <span>Book a Demo</span>
-                <ArrowRight size={14} />
-              </Link>
-            </div>
+            <Link
+              to="/request-access"
+              className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-50 text-[var(--color-primary)] font-semibold text-sm hover:bg-emerald-100 transition-colors border border-emerald-700/25 shadow-xs"
+            >
+              <span>Request Platform Access</span>
+              <ArrowRight size={15} />
+            </Link>
           </div>
         </motion.div>
 

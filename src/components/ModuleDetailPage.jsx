@@ -156,10 +156,10 @@ export default function ModuleDetailPage() {
                 </a>
 
                 <a
-                  href="#book-module-demo"
+                  href="#request-access"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase text-white border border-white/25 hover:bg-white/10 transition-colors"
                 >
-                  <span>Book Demo</span>
+                  <span>Request Access</span>
                   <ArrowRight size={15} />
                 </a>
 
@@ -350,25 +350,26 @@ export default function ModuleDetailPage() {
         </section>
       )}
 
-      {/* 07 - DEDICATED BOOK A DEMO SECTION (PRE-CONFIGURED FOR THIS MODULE) */}
-      <section id="book-module-demo" className="py-16 sm:py-24 bg-[var(--color-warm-white)] border-t border-black/10 px-4 sm:px-6">
+      {/* 07 - DEDICATED REQUEST ACCESS SECTION (PRE-CONFIGURED FOR THIS MODULE) */}
+      <section id="request-access" className="py-16 sm:py-24 bg-[var(--color-warm-white)] border-t border-black/10 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <span className="text-xs font-semibold tracking-widest uppercase text-emerald-800 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-100 inline-block mb-3">
-              Tailored Walkthrough
+              Platform Access
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[var(--color-primary)] mb-3">
-              See <span className="font-serif italic font-normal text-3xl sm:text-4xl md:text-5xl">{moduleData.name}</span> in action
+              Request access for <span className="font-serif italic font-normal text-3xl sm:text-4xl md:text-5xl">{moduleData.name}</span>
             </h2>
             <p className="text-sm sm:text-base text-gray-700 max-w-xl mx-auto">
-              Book a 15-minute live walkthrough customized for your boutique or brand. We will showcase how {moduleData.name} fits into your daily store routine.
+              Request dedicated platform access customized for your boutique or brand. We will pre-configure {moduleData.name} for your daily store routine.
             </p>
           </div>
 
           <BookingFormCard 
-            title={`Book a Demo for ${moduleData.name}`}
-            subtitle={`Tailored 15-minute session focused on ${moduleData.name}`}
+            title={`Request Access for ${moduleData.name}`}
+            subtitle={`Dedicated onboarding focused on ${moduleData.name}`}
             defaultModule={moduleData.name}
+            source="request_access"
             className="shadow-xl rounded-3xl overflow-hidden border border-black/10"
           />
         </div>

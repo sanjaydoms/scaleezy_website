@@ -4,7 +4,7 @@ import BookingFormCard from './BookingFormCard';
 
 export default function SectionCTA() {
   return (
-    <section id="book-demo" className="relative py-16 sm:py-24 md:py-32 bg-[var(--color-warm-white)] overflow-hidden">
+    <section id="request-access" className="relative py-16 sm:py-24 md:py-32 bg-[var(--color-warm-white)] overflow-hidden">
       {/* Scaleezy Atelier Sewing & Tailoring Background Pattern */}
       <BrandPatternAtelier opacity={0.16} size={360} />
       <BrandWatermark className="-left-40 -bottom-40 text-[var(--color-primary)]" opacity={0.02} size={850} />
@@ -16,7 +16,7 @@ export default function SectionCTA() {
             Ready to transform?
           </span>
           <span className="font-sans font-bold tracking-tight block">
-            See Scaleezy in action.
+            Request platform access.
           </span>
         </h2>
         <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -24,7 +24,11 @@ export default function SectionCTA() {
         </p>
         
         <div className="max-w-2xl mx-auto">
-          <BookingFormCard />
+          <BookingFormCard 
+            title="Request Access"
+            subtitle="Fill in your boutique details below to request platform access"
+            source="request_access"
+          />
         </div>
       </div>
     </section>

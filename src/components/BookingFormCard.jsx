@@ -19,11 +19,11 @@ const MODULES_LIST = [
 ];
 
 export default function BookingFormCard({
-  title = 'Book a Demo',
-  subtitle = 'Fill in the form below to book a tailored walkthrough session',
+  title = 'Request Access',
+  subtitle = 'Fill in the form below to request exclusive platform access',
   showHeader = true,
   defaultModule = 'Complete Scaleezy Platform',
-  source = 'book_a_demo',
+  source = 'request_access',
   className = ''
 }) {
   const [searchParams] = useSearchParams();
@@ -225,11 +225,11 @@ export default function BookingFormCard({
             </div>
 
             <h3 className="text-2xl sm:text-3xl font-bold text-[#14263D] tracking-tight mb-3">
-              Demo request received
+              Access request received
             </h3>
 
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-normal max-w-md mx-auto mb-8">
-              Thank you, <span className="font-semibold text-[#14263D]">{formData.fullName}</span>. Our team will contact you at <span className="font-semibold text-[#14263D]">{formData.email}</span> to confirm a time for your walkthrough.
+              Thank you, <span className="font-semibold text-[#14263D]">{formData.fullName}</span>. Our team will contact you at <span className="font-semibold text-[#14263D]">{formData.email}</span> to set up your workspace access.
             </p>
 
             <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 mb-8 text-left text-xs sm:text-sm space-y-2.5 max-w-md mx-auto">
@@ -532,7 +532,7 @@ export default function BookingFormCard({
                   </>
                 ) : (
                   <>
-                    <span>Book a Demo</span>
+                    <span>Request Access</span>
                     <ArrowRight size={17} />
                   </>
                 )}

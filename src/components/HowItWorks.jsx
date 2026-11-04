@@ -364,10 +364,10 @@ export default function HowItWorks() {
           </p>
 
           <Link 
-            to="/book-a-demo" 
+            to="/request-access" 
             className="inline-flex items-center gap-3 bg-[var(--color-primary)] text-[var(--color-accent)] px-9 py-4 text-sm font-black tracking-widest uppercase rounded-full hover:bg-[var(--color-charcoal)] hover:text-white transition-all shadow-xl hover:scale-105 active:scale-95 group cursor-pointer"
           >
-            <span>BOOK A DEMO</span>
+            <span>REQUEST ACCESS</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
 

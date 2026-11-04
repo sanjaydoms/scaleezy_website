@@ -793,10 +793,10 @@ export default function About() {
                 </Link>
 
                 <Link 
-                  to="/book-a-demo" 
+                  to="/request-access" 
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[var(--color-accent)] text-[var(--color-primary)] px-9 py-4 text-sm sm:text-base font-bold hover:bg-white transition-all rounded-full shadow-xl hover:shadow-2xl hover:scale-102 active:scale-98"
                 >
-                  <span>Book a Demo</span>
+                  <span>Request Access</span>
                   <ArrowRight size={17} />
                 </Link>
               </div>

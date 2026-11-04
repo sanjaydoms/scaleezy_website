@@ -260,12 +260,12 @@ export default function ModulesPage() {
                     </Link>
 
                     <Link
-                      to="/book-a-demo"
+                      to="/request-access"
                       className={`inline-flex items-center justify-center px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase transition-colors ${
                         isDark ? 'text-white/70 hover:text-white hover:underline' : 'text-[var(--color-primary)]/70 hover:text-[var(--color-primary)] hover:underline'
                       }`}
                     >
-                      Book a Demo
+                      Request Access
                     </Link>
                   </div>
                 </div>

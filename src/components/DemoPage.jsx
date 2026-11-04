@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Sparkles, 
@@ -20,14 +20,9 @@ import Footer from './Footer';
 import usePageMeta from './usePageMeta';
 
 export default function DemoPage() {
-  const location = useLocation();
-  const isRequestAccess = location.pathname === '/request-access';
-
   usePageMeta(
-    isRequestAccess ? "Request Access — Scaleezy" : "Book a Demo — Scaleezy",
-    isRequestAccess 
-      ? "Request exclusive workspace access tailored to your boutique, ethnic wear store, D2C label or retail chain."
-      : "Book a personalised Scaleezy walkthrough tailored to your boutique, ethnic wear store, D2C label or multi-store business."
+    "Request Access — Scaleezy",
+    "Request exclusive workspace access tailored to your boutique, ethnic wear store, D2C label or retail chain."
   );
   return (
     <div className="min-h-screen bg-[var(--color-warm-white)] text-[var(--color-charcoal)] overflow-x-hidden selection:bg-[var(--color-accent)] selection:text-[var(--color-primary)]">
@@ -90,7 +85,7 @@ export default function DemoPage() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs sm:text-sm font-semibold tracking-wide text-[var(--color-accent)] mb-6 shadow-xs"
           >
             <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse" />
-            <span>{isRequestAccess ? '⚡ Request Exclusive Platform Access' : '⚡ 15-Minute Live Walkthrough'}</span>
+            <span>⚡ Request Exclusive Platform Access</span>
           </motion.div>
 
           <motion.div 
@@ -100,9 +95,9 @@ export default function DemoPage() {
             className="mb-6"
           >
             <TypingHeading
-              line1={isRequestAccess ? "Request access to Scaleezy," : "See Scaleezy in action,"}
+              line1="Request access to Scaleezy,"
               line1Class="font-serif italic font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] text-white/95 block text-center mb-1"
-              line2Prefix={isRequestAccess ? "Built for " : "Tailored for "}
+              line2Prefix="Built for "
               line2Words={[
                 'Your Fashion Boutique.',
                 'Your Ethnic Wear Store.',
@@ -115,7 +110,7 @@ export default function DemoPage() {
               typingSpeed={60}
               deletingSpeed={30}
               pauseDuration={2800}
-              seoText={isRequestAccess ? "Request access to Scaleezy tailored for your store." : "See Scaleezy in action, Book a personalized demo."}
+              seoText="Request access to Scaleezy tailored for your store."
             />
           </motion.div>
 
@@ -126,9 +121,7 @@ export default function DemoPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed font-normal mb-8 px-2"
           >
-            {isRequestAccess
-              ? "Tell us about your brand. We will review your store requirements, pre-configure your requested modules, and grant exclusive platform access."
-              : "Get a personalized, one-on-one walkthrough of Scaleezy tailored to your tailoring, boutique, or apparel business. Our specialist will show you exactly how to manage inventory, orders, billing, and staff — and answer all your questions."}
+            Tell us about your brand. We will review your store requirements, pre-configure your requested modules, and grant exclusive platform access.
           </motion.p>
 
           {/* 3 Trust Badges */}
@@ -145,7 +138,7 @@ export default function DemoPage() {
               <CheckCircle2 className="w-4 h-4 text-[var(--color-accent)]" /> No Obligation
             </span>
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white">
-              <CheckCircle2 className="w-4 h-4 text-[var(--color-accent)]" /> 20-Minute Session
+              <CheckCircle2 className="w-4 h-4 text-[var(--color-accent)]" /> Dedicated Onboarding
             </span>
           </motion.div>
 
@@ -158,17 +151,15 @@ export default function DemoPage() {
       <section className="relative px-4 sm:px-6 py-14 sm:py-20 md:py-24 bg-[var(--color-warm-white)]">
         <div className="max-w-2xl mx-auto w-full">
           <BookingFormCard 
-            title={isRequestAccess ? "Request Access" : "Book a Demo"}
-            subtitle={isRequestAccess 
-              ? "Fill in your boutique details below to request platform access" 
-              : "Fill in the form below to book a tailored walkthrough session"}
-            source={isRequestAccess ? "request_access" : "book_a_demo"}
+            title="Request Access"
+            subtitle="Fill in your boutique details below to request platform access"
+            source="request_access"
           />
         </div>
       </section>
 
       {/* ============================================================== */}
-      {/* 03 - WHAT HAPPENS AFTER YOU BOOK SECTION                       */}
+      {/* 03 - WHAT HAPPENS AFTER YOU REQUEST ACCESS SECTION             */}
       {/* ============================================================== */}
       <section className="py-20 sm:py-28 bg-[var(--color-soft-cream)] border-t border-[var(--color-primary)]/10 px-4 sm:px-6 relative">
         <div className="max-w-6xl mx-auto text-center">
@@ -179,11 +170,11 @@ export default function DemoPage() {
           </div>
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[var(--color-primary)] mb-5 text-balance">
-            What happens <span className="font-serif italic font-normal text-4xl sm:text-5xl md:text-6xl text-[var(--color-primary)] ml-2">after you book</span>
+            What happens <span className="font-serif italic font-normal text-4xl sm:text-5xl md:text-6xl text-[var(--color-primary)] ml-2">after you request access</span>
           </h2>
 
           <p className="text-base sm:text-lg text-gray-700 max-w-xl mx-auto leading-relaxed font-normal mb-14 sm:mb-18">
-            From your initial reservation to the tailored session, here is our simple zero-hassle onboarding journey.
+            From your request submission to full workspace activation, here is our simple zero-hassle onboarding journey.
           </p>
 
           {/* 3 Refined Process Cards */}
@@ -204,15 +195,15 @@ export default function DemoPage() {
                   </span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#14263D] tracking-tight mb-3">
-                  We Confirm Your Slot
+                  We Review Your Profile
                 </h3>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
-                  Our team emails you to confirm a time that suits you, with a video-call link and the session agenda.
+                  Our retail specialist reviews your store requirements and confirms your access details via WhatsApp and email.
                 </p>
               </div>
               <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between text-xs text-gray-600 font-medium">
-                <span>Confirmation: By email</span>
-                <span className="text-emerald-700 font-semibold">✓ Personal</span>
+                <span>Confirmation: Within 24h</span>
+                <span className="text-emerald-700 font-semibold">✓ Direct Review</span>
               </div>
             </motion.div>
 
@@ -231,15 +222,15 @@ export default function DemoPage() {
                   </span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#14263D] tracking-tight mb-3">
-                  Personalised Walkthrough
+                  Pre-Configured Walkthrough
                 </h3>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
-                  A live 20-minute tailored session focused strictly on your store type — boutique, ethnic wear, D2C, or multi-store.
+                  A tailored session pre-loaded with your chosen modules — boutique billing, inventory matrix, CRM, or virtual try-on.
                 </p>
               </div>
               <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between text-xs text-gray-600 font-medium">
-                <span>Duration: 20 Minutes</span>
-                <span className="text-emerald-700 font-semibold">✓ 1-on-1 Specialist</span>
+                <span>Format: 1-on-1 Session</span>
+                <span className="text-emerald-700 font-semibold">✓ Pre-Configured</span>
               </div>
             </motion.div>
 
@@ -258,10 +249,10 @@ export default function DemoPage() {
                   </span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#14263D] tracking-tight mb-3">
-                  Free Account Setup
+                  Complimentary Workspace Setup
                 </h3>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-normal">
-                  Like what you see? We help you import your existing SKUs, barcodes, and supplier masters to launch with zero downtime.
+                  We assist you with importing your SKUs, customer records, and barcode templates so you can launch with zero downtime.
                 </p>
               </div>
               <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between text-xs text-gray-600 font-medium">

@@ -257,10 +257,10 @@ export default function Section3() {
           </div>
           <div className="relative z-10 shrink-0">
             <Link
-              to="/book-a-demo"
+              to="/request-access"
               className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-full bg-[var(--color-accent)] hover:bg-[#c9e838] text-[var(--color-primary)] font-bold text-sm sm:text-base transition-all duration-300 shadow-[0_10px_25px_rgba(184,212,50,0.3)] hover:scale-105"
             >
-              <span>Book a Demo</span>
+              <span>Request Access</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

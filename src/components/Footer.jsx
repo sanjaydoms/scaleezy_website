@@ -96,10 +96,6 @@ export default function Footer() {
               <Link to="/solutions" className="text-white/85 hover:text-white transition-colors text-sm font-medium">Solutions</Link>
               <Link to="/blogs" className="text-white/85 hover:text-white transition-colors text-sm font-medium">Blog</Link>
               <div className="pt-2 space-y-2 border-t border-white/10">
-                <Link to="/book-a-demo" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center gap-1.5">
-                  <span>Book a Demo</span>
-                  <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/15 text-white/90">Tour</span>
-                </Link>
                 <Link to="/request-access" className="text-[var(--color-accent)] hover:underline transition-colors text-sm font-semibold flex items-center gap-1.5">
                   <span>Request Access</span>
                   <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-[var(--color-accent)]/20 text-[var(--color-accent)]">Onboarding</span>

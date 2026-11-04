@@ -20,7 +20,7 @@ const tiers = [
     monthlyPrice: 2499,
     annualPrice: 1999,
     badge: 'STARTER',
-    ctaText: 'Book a Demo',
+    ctaText: 'Request Access',
     ctaStyle: 'outline',
     features: [
       '1 Physical Boutique or Online Store',
@@ -243,7 +243,7 @@ export default function SectionPricing() {
               {/* Card Action Button */}
               <div className="p-6 sm:p-8 md:p-9 pt-0 relative z-10">
                 <Link
-                  to="/book-a-demo"
+                  to="/request-access"
                   className={`w-full py-4 px-6 rounded-full font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all duration-300 shadow-md ${
                     tier.ctaStyle === 'accent'
                       ? 'bg-[var(--color-accent)] hover:bg-[#cbf026] text-[var(--color-primary)] shadow-[0_10px_25px_rgba(184,212,50,0.3)] hover:scale-102'

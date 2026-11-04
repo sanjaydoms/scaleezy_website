@@ -145,10 +145,10 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto px-4 sm:px-0"
           >
             <Link
-              to="/book-a-demo"
+              to="/request-access"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[var(--color-primary)] text-white pl-8 pr-3 py-3.5 rounded-full font-semibold text-base hover:bg-black transition-all shadow-xl hover:shadow-2xl hover:scale-102 active:scale-98 group"
             >
-              <span>Book a Demo</span>
+              <span>Request Access</span>
               <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
                 <ArrowRight size={17} />
               </div>

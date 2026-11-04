@@ -16,7 +16,7 @@ const solutions = [
     desc: 'Effortlessly manage complex weaves, zari variants, matching blouses, and festive wedding rush with automated stock intake.',
     highlights: ['Zari & Silk Matrix', 'Festive Rush Forecasting', 'Dead-Stock Tracking', 'Weaver Line Sync'],
     img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=900&q=85',
-    link: '/book-a-demo'
+    link: '/request-access'
   },
   {
     id: 'bridal',
@@ -27,7 +27,7 @@ const solutions = [
     desc: 'Empower brides to visualize custom lehengas with AI try-on, coordinate delivery dates, and automate follow-ups.',
     highlights: ['AI Virtual Try-On', 'Fitting Milestones', 'Lehenga Customizer', 'Follow-up Automation'],
     img: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=85',
-    link: '/book-a-demo'
+    link: '/request-access'
   },
   {
     id: 'ethnic',
@@ -38,7 +38,7 @@ const solutions = [
     desc: 'Easily manage multi-piece kurti sets, dupattas, and seasonal surges with real-time stock and automated reordering.',
     highlights: ['Multi-Piece SKUs', 'Festive Demand Surge', 'Smart Size Breakdown', 'Catalog Broadcast'],
     img: 'https://images.unsplash.com/photo-1605763240000-7e93b172d754?w=900&q=85',
-    link: '/book-a-demo'
+    link: '/request-access'
   },
   {
     id: 'retailers',
@@ -49,7 +49,7 @@ const solutions = [
     desc: 'Synchronize multi-location inventory in real time, provide lightning-fast POS checkout, and unify customer loyalty points.',
     highlights: ['Multi-Store POS', 'Central Inventory', 'Fast Barcode Billing', 'Loyalty & Points'],
     img: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=900&q=85',
-    link: '/book-a-demo'
+    link: '/request-access'
   },
   {
     id: 'multibrand',
@@ -60,7 +60,7 @@ const solutions = [
     desc: 'Track vendor settlements, consignment stock, brand-wise margins, and automated restocking without spreadsheet chaos.',
     highlights: ['Brand Profitability', 'Consignment Ledgers', 'Automated Restocking', 'Vendor Telemetry'],
     img: 'https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=900&q=85',
-    link: '/book-a-demo'
+    link: '/request-access'
   },
   {
     id: 'd2c',
@@ -71,7 +71,7 @@ const solutions = [
     desc: 'Convert social traffic with behaviour-based campaigns, minimize return rates with AI sizing, and drive repeat purchases.',
     highlights: ['WhatsApp Automation', 'Return Minimisation', 'Drop Launch Telemetry', 'AI Segment Targeting'],
     img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=85',
-    link: '/book-a-demo'
+    link: '/request-access'
   },
   {
     id: 'wholesalers',
@@ -82,7 +82,7 @@ const solutions = [
     desc: 'Manage bulk buyer catalogs, custom price tiers, mill cutting queues, credit terms, and multi-location dispatch seamlessly.',
     highlights: ['B2B Buyer Portal', 'Price Tier Matrix', 'Production Telemetry', 'Credit & Ledgers'],
     img: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=900&q=85',
-    link: '/book-a-demo'
+    link: '/request-access'
   },
   {
     id: 'boutiques',
@@ -93,7 +93,7 @@ const solutions = [
     desc: 'High-ticket outfits, custom measurements, and loyal clientele. Track client history, styling preferences, and fittings.',
     highlights: ['VIP Client Profiles', 'Measurement History', 'Custom Alterations', 'Exclusive Previews'],
     img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=85',
-    link: '/book-a-demo'
+    link: '/request-access'
   }
 ];
 
@@ -248,10 +248,10 @@ export default function SolutionsPage() {
 
                   {/* Full-Width Action Button (matching reference) */}
                   <Link 
-                    to={sol.link || "/book-a-demo"} 
+                    to={sol.link || "/request-access"} 
                     className="w-full py-3.5 sm:py-4 bg-white text-[var(--color-primary)] font-bold text-sm sm:text-base rounded-full shadow-lg hover:bg-[var(--color-accent)] hover:text-[var(--color-primary)] transition-all duration-300 text-center flex items-center justify-center gap-2 group/btn active:scale-98"
                   >
-                    <span>Explore Boutiques</span>
+                    <span>Request Access</span>
                     <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
                   </Link>
                 </div>
@@ -275,8 +275,8 @@ export default function SolutionsPage() {
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 font-normal max-w-2xl mx-auto leading-relaxed">
             See how Scaleezy can connect the systems that matter most to your apparel business.
           </p>
-          <Link to="/book-a-demo" className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 text-base font-bold rounded-full hover:bg-[var(--color-accent)] transition-all shadow-2xl hover:scale-105 active:scale-95">
-            Book a Demo →
+          <Link to="/request-access" className="inline-block bg-white text-[var(--color-primary)] px-8 py-4 text-base font-bold rounded-full hover:bg-[var(--color-accent)] transition-all shadow-2xl hover:scale-105 active:scale-95">
+            Request Access →
           </Link>
         </div>
       </section>

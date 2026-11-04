@@ -52,7 +52,7 @@ Dead stock is hardest to prevent when your data lives in separate tools. When in
 
 Scaleezy's Inventory Intelligence module monitors stock in real time, flags fast-moving and dead stock, forecasts stock-out dates and recommends reorder quantities. Because it shares data with the CRM and Marketing Hub, you can turn a slow-moving alert into a targeted campaign in a few clicks.
 
-Want to see it in action? [Book a demo](/book-a-demo) and we will show you how it works with your own product categories.
+Want to see it in action? [Request access](/request-access) and we will show you how it works with your own product categories.
 Explore the full platform at [www.scaleezy.com](/).`
   },
   {
@@ -105,7 +105,7 @@ Decide in advance what you will do with leftover stock: which items go on discou
 
 Scaleezy's AI forecasting looks at demand trends and seasonality to predict stock-out dates and suggest reorder quantities. Its CRM tracks regional and festival preferences, so your campaigns and your buying stay in sync.
 
-Planning your next festive season? [Book a demo](/book-a-demo) and see how forecasting works for saree and ethnic wear stores.`
+Planning your next festive season? [Request access](/request-access) and see how forecasting works for saree and ethnic wear stores.`
   },
   {
     id: 3,
@@ -152,7 +152,7 @@ Virtual try-on is a tool, not magic. Results depend on how good the rendering is
 
 Scaleezy's Try-On Studio provides AI try-on rendering, product previews and try-on analytics, with conversion tracking. Abandoned try-ons flow into the CRM as alerts, so your team knows who to follow up with and which product they liked.
 
-Curious how it looks with your own catalog? [Book a demo](/book-a-demo).`
+Curious how it looks with your own catalog? [Request access](/request-access).`
   },
   {
     id: 4,
@@ -201,7 +201,7 @@ Track your repeat buyer percentage, average time between purchases and which fol
 
 Scaleezy's CRM keeps lifecycle tracking, purchase history, follow-up reminders and abandoned try-on alerts in one place. Combined with the Marketing Hub, you can turn those insights into personalised campaigns without manual spreadsheets.
 
-Ready to bring customers back? [Book a demo](/book-a-demo).`
+Ready to bring customers back? [Request access](/request-access).`
   },
   {
     id: 5,
@@ -248,7 +248,7 @@ Score each option from 1 to 5 on variants, stock alerts, forecasting, CRM connec
 ### How Scaleezy fits
 Scaleezy is built specifically for apparel commerce. Inventory, CRM, marketing, virtual try-on, finance, analytics and logistics share one data layer, so there is no integration work to do and no data to reconcile manually.
 
-Want to compare it against your current setup? [Book a demo](/book-a-demo) and bring your checklist.`
+Want to compare it against your current setup? [Request access](/request-access) and bring your checklist.`
   }
 ,
   {
@@ -296,7 +296,7 @@ This is where most boutiques lose value. Someone who messages you today may buy 
 ### How Scaleezy helps
 Scaleezy's Marketing Hub helps you create campaigns and AI-assisted social content, while the CRM keeps purchase history, preferences and follow-up reminders in one place. You can also generate QR codes for your physical store, so offline visitors can follow your online pages. Learn more at [www.scaleezy.com](https://www.scaleezy.com/).
 
-Want a smarter way to turn followers into customers? [Book a demo](/book-a-demo).`
+Want a smarter way to turn followers into customers? [Request access](/request-access).`
   },
   {
     id: 7,
@@ -346,7 +346,7 @@ When chat history, billing and customer details are in different places, follow-
 ### How Scaleezy helps
 Scaleezy's CRM tracks purchase history, preferences, follow-up reminders and abandoned try-on alerts, so you know who to message and about what. WhatsApp Commerce, which brings shopping and payment into chat, is *upcoming on our roadmap*. See what is available today at [www.scaleezy.com](https://www.scaleezy.com/).
 
-Want to see how follow-ups work? [Book a demo](/book-a-demo).`
+Want to see how follow-ups work? [Request access](/request-access).`
   },
   {
     id: 8,
@@ -394,7 +394,7 @@ Predicting the likelihood of RTO before shipping lets you apply extra checks onl
 ### How Scaleezy helps
 Scaleezy's logistics engine lets you integrate multiple carriers, select the best carrier by rates, speed and past performance, and route specific pincodes to designated carriers. It also tracks fulfilment efficiency. On our roadmap are *upcoming AI courier selection*, *upcoming RTO prediction* before shipping, route success scoring and regional insights. Learn more at [www.scaleezy.com](https://www.scaleezy.com/).
 
-Want fewer returns to origin? [Book a demo](/book-a-demo).`
+Want fewer returns to origin? [Request access](/request-access).`
   },
   {
     id: 9,
@@ -446,7 +446,7 @@ There is no single winner. Many sellers choose based on how fashion-specific the
 
 See how Scaleezy works at [www.scaleezy.com](https://www.scaleezy.com/).
 
-Want to compare it with your current setup? [Book a demo](/book-a-demo).`
+Want to compare it with your current setup? [Request access](/request-access).`
   },
   {
     id: 10,
@@ -491,7 +491,7 @@ AI works from your data. If your stock records are messy or your customer detail
 ### How Scaleezy helps
 Scaleezy puts AI inside the workflows retailers already use: forecasting in Inventory Intelligence, personalised campaigns in the Marketing Hub, virtual try-on in the Try-On Studio and a shared intelligence layer that learns from every action. Explore it at [www.scaleezy.com](https://www.scaleezy.com/).
 
-Curious where AI could help your business first? [Book a demo](/book-a-demo).`
+Curious where AI could help your business first? [Request access](/request-access).`
   }
 ,
   {
@@ -545,7 +545,7 @@ Send a thank-you, ask for feedback and plan the next touchpoint, whether it is w
 ### How Scaleezy helps
 Scaleezy connects your CRM, real-time inventory and marketing in one place. You can build campaigns based on customer behaviour, seasonality and geography, and tie them to what is actually in stock. Explore it at [www.scaleezy.com](https://www.scaleezy.com/).
 
-Planning your festive campaigns? [Book a demo](/book-a-demo).`
+Planning your festive campaigns? [Request access](/request-access).`
   },
   {
     id: 12,
@@ -593,7 +593,7 @@ Alongside turnover, keep an eye on stock-out frequency and gross margin. A healt
 ### How Scaleezy helps
 Scaleezy's Inventory Intelligence tracks real-time stock, highlights fast-moving and dead stock and forecasts stock-out dates. The Finance Dashboard shows revenue, net margins and pending payments, so you can read turnover alongside profitability. See more at [www.scaleezy.com](https://www.scaleezy.com/).
 
-Want to see your stock health at a glance? [Book a demo](/book-a-demo).`
+Want to see your stock health at a glance? [Request access](/request-access).`
   },
   {
     id: 13,
@@ -639,7 +639,7 @@ Begin with one or two benefits, test them for a season and improve. A simple pro
 ### How Scaleezy helps
 Scaleezy's CRM keeps purchase history, lifecycle stage, preferences and reminders for every customer, and the Marketing Hub lets you reach them with personalised campaigns. Roadmap items such as customer lifetime scoring will help identify your highest-value relationships. Learn more at [www.scaleezy.com](https://www.scaleezy.com/).
 
-Ready to reward your best customers? [Book a demo](/book-a-demo).`
+Ready to reward your best customers? [Request access](/request-access).`
   },
   {
     id: 14,
@@ -694,7 +694,7 @@ Write the rules down, share them with everyone who adds products and review them
 ### How Scaleezy helps
 Scaleezy's product upload system includes auto-SKU generation, variant handling, colour intelligence and size mapping, so every product is entered once and stays consistent across inventory and sales. Take a look at [www.scaleezy.com](https://www.scaleezy.com/).
 
-Want cleaner product data without the typing? [Book a demo](/book-a-demo).`
+Want cleaner product data without the typing? [Request access](/request-access).`
   },
   {
     id: 15,
@@ -746,6 +746,6 @@ Check for support in your time zone, help with setup and onboarding, and an unde
 ### How Scaleezy fits
 Scaleezy is an operating system for apparel commerce, built for boutiques, saree stores and fashion retailers. Inventory, CRM, marketing, virtual try-on, finance, analytics and logistics work together on one data layer. See how at [www.scaleezy.com](https://www.scaleezy.com/).
 
-Comparing boutique software? [Book a demo](/book-a-demo) and see it with your own collection.`
+Comparing boutique software? [Request access](/request-access) and see it with your own collection.`
   }
 ];

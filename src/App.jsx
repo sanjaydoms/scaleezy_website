@@ -34,8 +34,9 @@ function App() {
             <Route path="/solutions" element={<SolutionsPage />} />
             <Route path="/blogs" element={<BlogsPage />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/book-a-demo" element={<DemoPage />} />
             <Route path="/request-access" element={<DemoPage />} />
+            <Route path="/book-a-demo" element={<Navigate to="/request-access" replace />} />
+            <Route path="/demo" element={<Navigate to="/request-access" replace />} />
 
             {/* Direct convenience shortcuts for modules */}
             <Route path="/inventory" element={<Navigate to="/modules/inventory" replace />} />

@@ -520,10 +520,10 @@ export default function BlogPost() {
                   </p>
                   <div className="flex flex-wrap items-center gap-3">
                     <Link
-                      to="/book-a-demo"
+                      to="/request-access"
                       className="px-6 py-3 rounded-full bg-white text-[var(--color-primary)] font-bold text-sm hover:bg-emerald-50 transition-colors shadow-md inline-flex items-center gap-2"
                     >
-                      <span>Book a Personalized Demo</span>
+                      <span>Request Platform Access</span>
                       <ArrowUpRight size={16} />
                     </Link>
                     <Link
@@ -600,10 +600,10 @@ export default function BlogPost() {
                   See how Scaleezy replaces 4 disjointed tools with 1 connected apparel ecosystem.
                 </p>
                 <Link
-                  to="/book-a-demo"
+                  to="/request-access"
                   className="w-full py-2.5 px-4 rounded-xl bg-[var(--color-primary)] text-white text-xs font-bold hover:bg-emerald-900 transition-colors shadow-sm inline-flex items-center justify-center gap-1.5"
                 >
-                  <span>Request Live Boutique Demo</span>
+                  <span>Request Platform Access</span>
                   <ArrowUpRight size={14} />
                 </Link>
                 <p className="text-[11px] text-gray-500 mt-2.5">
