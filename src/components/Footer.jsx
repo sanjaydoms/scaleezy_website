@@ -15,8 +15,8 @@ export default function Footer() {
     setIsSubmittingNewsletter(true);
     setNewsletterNotice('');
     try {
-      await submitNewsletter(newsletterEmail);
-      setNewsletterNotice('Thank you for subscribing! You will receive our latest updates.');
+      const res = await submitNewsletter(newsletterEmail);
+      setNewsletterNotice(res.message || 'Thank you for subscribing! You will receive our latest updates.');
       setNewsletterEmail('');
     } catch (err) {
       console.error('Newsletter error:', err);
@@ -33,11 +33,11 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10">
         
-        {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-10 sm:mb-14">
+        {/* Top Section - 4 Distinct Columns: Brand, Modules, Company & Access, and Newsletter */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-8 mb-12 sm:mb-16">
           
-          {/* Brand & Newsletter */}
-          <div className="md:col-span-5 space-y-5 sm:space-y-6">
+          {/* Column 1: Brand & Identity */}
+          <div className="lg:col-span-3 sm:col-span-2 space-y-4">
             <Link to="/" className="inline-block group">
               <img 
                 src="/assets/logo.png" 
@@ -51,87 +51,103 @@ export default function Footer() {
             <p className="text-white/80 max-w-sm text-sm sm:text-base leading-relaxed">
               The intelligent operating system built specifically for boutiques and apparel brands. Stop guessing, start growing.
             </p>
-            
-            <div className="pt-1 sm:pt-2">
-              <label htmlFor="footer-newsletter-email" className="block text-xs font-bold tracking-widest text-[var(--color-accent)] uppercase mb-3">Join our newsletter</label>
-              <form
-                onSubmit={handleNewsletterSubmit}
-                className="flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full pl-4 pr-1.5 py-1.5 max-w-sm group focus-within:border-[var(--color-accent)] transition-colors"
-              >
-                <input
-                  id="footer-newsletter-email"
-                  type="email"
-                  required
-                  autoComplete="email"
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="bg-transparent border-none outline-none w-full text-white placeholder-white/60 text-sm py-1"
-                />
-                <button 
-                  type="submit" 
-                  disabled={isSubmittingNewsletter}
-                  className="w-11 h-11 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] flex items-center justify-center shrink-0 hover:bg-white hover:text-[var(--color-primary)] transition-all shadow-md active:scale-95 disabled:opacity-60 cursor-pointer" 
-                  aria-label="Subscribe to newsletter"
-                >
-                  {isSubmittingNewsletter ? (
-                    <span className="w-4 h-4 border-2 border-[var(--color-primary)]/30 border-t-[var(--color-primary)] rounded-full animate-spin" />
-                  ) : (
-                    <ArrowRight className="w-4 h-4" />
-                  )}
-                </button>
-              </form>
-              <p role="status" className="mt-2 text-sm text-white/85 min-h-5">{newsletterNotice}</p>
+            <div className="pt-2">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs text-[var(--color-accent)] font-medium border border-white/15">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]" />
+                Tailored for Retail & D2C
+              </span>
             </div>
           </div>
 
-          {/* Links Columns */}
-          <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8">
-            <div className="space-y-4 sm:space-y-5">
-              <h4 className="font-bold text-[var(--color-accent)] uppercase tracking-wider text-xs">Modules</h4>
-              <nav className="flex flex-col space-y-3 sm:space-y-3.5">
-                <a href="https://inventory.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group">
-                  <span>Inventory</span>
-                  <span className="text-xs text-white/50 group-hover:text-white">↗</span>
-                </a>
-                <a href="https://crm.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group">
-                  <span>CRM</span>
-                  <span className="text-xs text-white/50 group-hover:text-white">↗</span>
-                </a>
-                <a href="https://boutique.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group">
-                  <span>Boutique</span>
-                  <span className="text-xs text-white/50 group-hover:text-white">↗</span>
-                </a>
-                <a href="https://www.tryon2buy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group">
-                  <span>TRYON2BUY</span>
-                  <span className="text-xs text-white/50 group-hover:text-white">↗</span>
-                </a>
-                <a href="https://marketing.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group">
-                  <span>Marketing</span>
-                  <span className="text-xs text-white/50 group-hover:text-white">↗</span>
-                </a>
-                <Link to="/modules" className="text-[var(--color-accent)] hover:underline transition-colors text-sm font-semibold">All 8 Modules →</Link>
-              </nav>
-            </div>
-            
-            <div className="space-y-4 sm:space-y-5">
-              <h4 className="font-bold text-[var(--color-accent)] uppercase tracking-wider text-xs">Company</h4>
-              <nav className="flex flex-col space-y-3 sm:space-y-3.5">
-                <Link to="/about-scaleezy" className="text-white/85 hover:text-white transition-colors text-sm font-medium">About Us</Link>
-                <Link to="/how-it-works" className="text-white/85 hover:text-white transition-colors text-sm font-medium">How it Works</Link>
-                <Link to="/solutions" className="text-white/85 hover:text-white transition-colors text-sm font-medium">Solutions</Link>
-                <Link to="/book-a-demo" className="text-white/85 hover:text-white transition-colors text-sm font-medium">Book a Demo</Link>
-                <Link to="/login" className="text-white/85 hover:text-white transition-colors text-sm font-medium">Log in</Link>
-              </nav>
-            </div>
+          {/* Column 2: Modules (Separate Column with External Links) */}
+          <div className="lg:col-span-3 col-span-1 space-y-4">
+            <h4 className="font-bold text-[var(--color-accent)] uppercase tracking-wider text-xs">Modules</h4>
+            <nav className="flex flex-col space-y-3">
+              <a href="https://inventory.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
+                <span>Inventory</span>
+                <span className="text-xs text-white/50 group-hover:text-white">↗</span>
+              </a>
+              <a href="https://crm.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
+                <span>CRM</span>
+                <span className="text-xs text-white/50 group-hover:text-white">↗</span>
+              </a>
+              <a href="https://boutique.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
+                <span>Boutique</span>
+                <span className="text-xs text-white/50 group-hover:text-white">↗</span>
+              </a>
+              <a href="https://www.tryon2buy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
+                <span>TRYON2BUY</span>
+                <span className="text-xs text-white/50 group-hover:text-white">↗</span>
+              </a>
+              <a href="https://marketing.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
+                <span>Marketing</span>
+                <span className="text-xs text-white/50 group-hover:text-white">↗</span>
+              </a>
+              <Link to="/modules" className="text-[var(--color-accent)] hover:underline transition-colors text-sm font-semibold pt-1">All 8 Modules →</Link>
+            </nav>
+          </div>
 
-            <div className="space-y-4 sm:space-y-5 col-span-2 sm:col-span-1">
-              <h4 className="font-bold text-[var(--color-accent)] uppercase tracking-wider text-xs">Resources</h4>
-              <nav className="flex flex-col space-y-3 sm:space-y-3.5">
-                <Link to="/blogs" className="text-white/85 hover:text-white transition-colors text-sm font-medium">Blog</Link>
-                <a href="#" className="text-white/85 hover:text-white transition-colors text-sm font-medium">API Docs</a>
-              </nav>
+          {/* Column 3: Company & Request Access (Separate Column) */}
+          <div className="lg:col-span-3 col-span-1 space-y-4">
+            <h4 className="font-bold text-[var(--color-accent)] uppercase tracking-wider text-xs">Company & Access</h4>
+            <nav className="flex flex-col space-y-3">
+              <Link to="/about-scaleezy" className="text-white/85 hover:text-white transition-colors text-sm font-medium">About Us</Link>
+              <Link to="/how-it-works" className="text-white/85 hover:text-white transition-colors text-sm font-medium">How it Works</Link>
+              <Link to="/solutions" className="text-white/85 hover:text-white transition-colors text-sm font-medium">Solutions</Link>
+              <Link to="/blogs" className="text-white/85 hover:text-white transition-colors text-sm font-medium">Blog</Link>
+              <div className="pt-2 space-y-2 border-t border-white/10">
+                <Link to="/book-a-demo" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center gap-1.5">
+                  <span>Book a Demo</span>
+                  <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/15 text-white/90">Tour</span>
+                </Link>
+                <Link to="/request-access" className="text-[var(--color-accent)] hover:underline transition-colors text-sm font-semibold flex items-center gap-1.5">
+                  <span>Request Access</span>
+                  <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-[var(--color-accent)]/20 text-[var(--color-accent)]">Onboarding</span>
+                </Link>
+                <Link to="/login" className="text-white/85 hover:text-white transition-colors text-sm font-medium block">Log in</Link>
+              </div>
+            </nav>
+          </div>
+
+          {/* Column 4: Dedicated Newsletter Column */}
+          <div className="lg:col-span-3 sm:col-span-2 space-y-4">
+            <div>
+              <span className="inline-block text-xs font-bold tracking-widest text-[var(--color-accent)] uppercase mb-1">Stay Updated</span>
+              <h4 className="font-bold text-white text-base">Newsletter</h4>
             </div>
+            <p className="text-white/75 text-sm leading-relaxed">
+              Get boutique retail growth guides, product updates, and fashion commerce insights delivered straight to your inbox.
+            </p>
+            
+            <form
+              onSubmit={handleNewsletterSubmit}
+              className="flex items-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-full pl-4 pr-1.5 py-1.5 w-full group focus-within:border-[var(--color-accent)] transition-colors"
+            >
+              <input
+                id="footer-newsletter-email"
+                type="email"
+                required
+                autoComplete="email"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="bg-transparent border-none outline-none w-full text-white placeholder-white/60 text-sm py-1"
+              />
+              <button 
+                type="submit" 
+                disabled={isSubmittingNewsletter}
+                className="w-10 h-10 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] flex items-center justify-center shrink-0 hover:bg-white hover:text-[var(--color-primary)] transition-all shadow-md active:scale-95 disabled:opacity-60 cursor-pointer" 
+                aria-label="Subscribe to newsletter"
+              >
+                {isSubmittingNewsletter ? (
+                  <span className="w-4 h-4 border-2 border-[var(--color-primary)]/30 border-t-[var(--color-primary)] rounded-full animate-spin" />
+                ) : (
+                  <ArrowRight className="w-4 h-4" />
+                )}
+              </button>
+            </form>
+            <p role="status" className="text-xs text-white/90 min-h-4">{newsletterNotice}</p>
+            <p className="text-[11px] text-white/50">Strictly no spam. Unsubscribe anytime.</p>
           </div>
         </div>
 

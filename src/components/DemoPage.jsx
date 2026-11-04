@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Sparkles, 
@@ -20,7 +20,15 @@ import Footer from './Footer';
 import usePageMeta from './usePageMeta';
 
 export default function DemoPage() {
-  usePageMeta("Book a Demo — Scaleezy", "Book a personalised Scaleezy walkthrough tailored to your boutique, ethnic wear store, D2C label or multi-store business.");
+  const location = useLocation();
+  const isRequestAccess = location.pathname === '/request-access';
+
+  usePageMeta(
+    isRequestAccess ? "Request Access — Scaleezy" : "Book a Demo — Scaleezy",
+    isRequestAccess 
+      ? "Request exclusive workspace access tailored to your boutique, ethnic wear store, D2C label or retail chain."
+      : "Book a personalised Scaleezy walkthrough tailored to your boutique, ethnic wear store, D2C label or multi-store business."
+  );
   return (
     <div className="min-h-screen bg-[var(--color-warm-white)] text-[var(--color-charcoal)] overflow-x-hidden selection:bg-[var(--color-accent)] selection:text-[var(--color-primary)]">
       
@@ -82,7 +90,7 @@ export default function DemoPage() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs sm:text-sm font-semibold tracking-wide text-[var(--color-accent)] mb-6 shadow-xs"
           >
             <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse" />
-            <span>⚡ 15-Minute Live Walkthrough</span>
+            <span>{isRequestAccess ? '⚡ Request Exclusive Platform Access' : '⚡ 15-Minute Live Walkthrough'}</span>
           </motion.div>
 
           <motion.div 
@@ -92,9 +100,9 @@ export default function DemoPage() {
             className="mb-6"
           >
             <TypingHeading
-              line1="See Scaleezy in action,"
+              line1={isRequestAccess ? "Request access to Scaleezy," : "See Scaleezy in action,"}
               line1Class="font-serif italic font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] text-white/95 block text-center mb-1"
-              line2Prefix="Tailored for "
+              line2Prefix={isRequestAccess ? "Built for " : "Tailored for "}
               line2Words={[
                 'Your Fashion Boutique.',
                 'Your Ethnic Wear Store.',
@@ -107,7 +115,7 @@ export default function DemoPage() {
               typingSpeed={60}
               deletingSpeed={30}
               pauseDuration={2800}
-              seoText="See Scaleezy in action, Book a personalized demo."
+              seoText={isRequestAccess ? "Request access to Scaleezy tailored for your store." : "See Scaleezy in action, Book a personalized demo."}
             />
           </motion.div>
 
@@ -118,7 +126,9 @@ export default function DemoPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed font-normal mb-8 px-2"
           >
-            Get a personalized, one-on-one walkthrough of Scaleezy tailored to your tailoring, boutique, or apparel business. Our specialist will show you exactly how to manage inventory, orders, billing, and staff — and answer all your questions.
+            {isRequestAccess
+              ? "Tell us about your brand. We will review your store requirements, pre-configure your requested modules, and grant exclusive platform access."
+              : "Get a personalized, one-on-one walkthrough of Scaleezy tailored to your tailoring, boutique, or apparel business. Our specialist will show you exactly how to manage inventory, orders, billing, and staff — and answer all your questions."}
           </motion.p>
 
           {/* 3 Trust Badges */}
@@ -147,7 +157,13 @@ export default function DemoPage() {
       {/* ============================================================== */}
       <section className="relative px-4 sm:px-6 py-14 sm:py-20 md:py-24 bg-[var(--color-warm-white)]">
         <div className="max-w-2xl mx-auto w-full">
-          <BookingFormCard />
+          <BookingFormCard 
+            title={isRequestAccess ? "Request Access" : "Book a Demo"}
+            subtitle={isRequestAccess 
+              ? "Fill in your boutique details below to request platform access" 
+              : "Fill in the form below to book a tailored walkthrough session"}
+            source={isRequestAccess ? "request_access" : "book_a_demo"}
+          />
         </div>
       </section>
 

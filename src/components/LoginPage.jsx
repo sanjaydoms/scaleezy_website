@@ -167,13 +167,22 @@ export default function LoginPage() {
             <p className="text-xs sm:text-sm text-gray-600 mb-3">
               Don't have a Scaleezy store workspace yet?
             </p>
-            <Link
-              to="/book-a-demo"
-              className="inline-flex items-center justify-center gap-1.5 w-full py-2.5 px-4 rounded-xl bg-[var(--color-warm-white)] text-[var(--color-primary)] font-semibold text-xs sm:text-sm hover:bg-[var(--color-stone)] transition-colors border border-black/10"
-            >
-              <span>Book a Demo to Get Access</span>
-              <ArrowRight size={14} />
-            </Link>
+            <div className="grid grid-cols-2 gap-2.5">
+              <Link
+                to="/request-access"
+                className="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-emerald-50 text-[var(--color-primary)] font-semibold text-xs sm:text-sm hover:bg-emerald-100/70 transition-colors border border-emerald-700/25"
+              >
+                <span>Request Access</span>
+                <ArrowRight size={14} />
+              </Link>
+              <Link
+                to="/book-a-demo"
+                className="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-[var(--color-warm-white)] text-[var(--color-primary)] font-semibold text-xs sm:text-sm hover:bg-[var(--color-stone)] transition-colors border border-black/10"
+              >
+                <span>Book a Demo</span>
+                <ArrowRight size={14} />
+              </Link>
+            </div>
           </div>
         </motion.div>
 

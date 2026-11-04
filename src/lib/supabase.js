@@ -10,9 +10,11 @@ const defaultHeaders = {
 };
 
 /**
- * Submits a demo booking request to tenants_demorequest table
+ * Submits a demo booking request or access request to tenants_demorequest table
+ * @param {Object} formData - Form field data
+ * @param {string} source - 'book_a_demo' | 'request_access' | 'website'
  */
-export async function submitDemoRequest(formData) {
+export async function submitDemoRequest(formData, source = 'book_a_demo') {
   const payload = {
     name: formData.fullName || '',
     boutique: formData.brandName || '',
@@ -25,7 +27,7 @@ export async function submitDemoRequest(formData) {
     notes: formData.specificRequirements || '',
     address: formData.city || '',
     status: 'pending',
-    source: 'website',
+    source: source,
     approved_by: '',
     terms_version: 'v1.0',
     created_at: new Date().toISOString()
@@ -47,60 +49,34 @@ export async function submitDemoRequest(formData) {
 }
 
 /**
- * Submits an email to newsletter table, with seamless fallback
+ * Submits an email strictly to dedicated newsletter_subscribers table
+ * Never falls back to tenants_demorequest so tables remain strictly separate
+ * @param {string} email
  */
 export async function submitNewsletter(email) {
   const cleanEmail = email.trim().toLowerCase();
 
-  // 1. Try dedicated newsletter_subscribers table
-  try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/newsletter_subscribers`, {
-      method: 'POST',
-      headers: defaultHeaders,
-      body: JSON.stringify({
-        email: cleanEmail,
-        created_at: new Date().toISOString()
-      })
-    });
-
-    if (res.ok) {
-      return { success: true, table: 'newsletter_subscribers' };
-    }
-  } catch (err) {
-    console.warn('Dedicated newsletter_subscribers table not found, falling back to tenants_demorequest', err);
-  }
-
-  // 2. Fallback to tenants_demorequest with source: 'newsletter'
-  const fallbackPayload = {
-    name: 'Newsletter Subscriber',
-    boutique: 'Newsletter',
-    email: cleanEmail,
-    phone: '-',
-    makes: 'Newsletter',
-    orders_per_month: '0',
-    people: '0',
-    problem: 'Newsletter Subscription',
-    status: 'subscribed',
-    notes: 'Signed up via website footer newsletter',
-    source: 'newsletter',
-    address: '',
-    approved_by: '',
-    terms_version: 'v1.0',
-    created_at: new Date().toISOString()
-  };
-
-  const fallbackRes = await fetch(`${SUPABASE_URL}/rest/v1/tenants_demorequest`, {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/newsletter_subscribers`, {
     method: 'POST',
     headers: defaultHeaders,
-    body: JSON.stringify(fallbackPayload)
+    body: JSON.stringify({
+      email: cleanEmail,
+      created_at: new Date().toISOString()
+    })
   });
 
-  if (!fallbackRes.ok) {
-    const errText = await fallbackRes.text();
-    console.error('Newsletter fallback error:', errText);
-    throw new Error('Failed to subscribe');
+  // 409 Conflict means email already subscribed (unique constraint)
+  if (res.status === 409) {
+    return { success: true, message: 'You are already subscribed!' };
   }
 
-  return { success: true, table: 'tenants_demorequest' };
+  if (!res.ok) {
+    const errText = await res.text();
+    console.error('Newsletter submission error:', errText);
+    throw new Error('Subscription failed. Please check table permissions.');
+  }
+
+  return { success: true, message: 'Thank you for subscribing!' };
 }
+
 

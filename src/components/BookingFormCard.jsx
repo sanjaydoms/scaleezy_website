@@ -10,6 +10,7 @@ export default function BookingFormCard({
   subtitle = 'Fill in the form below to book a tailored walkthrough session',
   showHeader = true,
   defaultModule = 'Complete Scaleezy Platform',
+  source = 'book_a_demo',
   className = ''
 }) {
   const [formData, setFormData] = useState({
@@ -142,7 +143,7 @@ export default function BookingFormCard({
     setErrors({});
 
     try {
-      await submitDemoRequest(formData);
+      await submitDemoRequest(formData, source);
       setIsSubmitted(true);
     } catch (err) {
       console.error('Demo request not sent:', err);
