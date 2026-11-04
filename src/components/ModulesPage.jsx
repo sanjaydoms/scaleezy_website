@@ -13,6 +13,7 @@ const modules = [
     id: 'inventory',
     slug: 'inventory',
     name: 'Inventory',
+    isLive: true,
     externalUrl: 'https://inventory.scaleezy.com/',
     title: 'Scaleezy Inventory',
     subtitle: 'Stock Intelligence & Demand Forecasting',
@@ -27,7 +28,8 @@ const modules = [
     id: 'crm',
     slug: 'crm',
     name: 'CRM',
-    externalUrl: 'https://crm.scaleezy.com/',
+    isLive: false,
+    externalUrl: null,
     title: 'Scaleezy CRM',
     subtitle: 'Clienteling & VIP Profiles',
     desc: 'Remember every client’s sizes, preferences, anniversary dates, and past purchases on a single screen.',
@@ -41,6 +43,7 @@ const modules = [
     id: 'boutique',
     slug: 'boutique',
     name: 'Boutique',
+    isLive: true,
     externalUrl: 'https://boutique.scaleezy.com/',
     title: 'Scaleezy Boutique (POS)',
     subtitle: 'Counter POS & Alterations',
@@ -56,6 +59,7 @@ const modules = [
     id: 'tryon2buy',
     slug: 'tryon2buy',
     name: 'TRYON2BUY',
+    isLive: true,
     externalUrl: 'https://www.tryon2buy.com/',
     title: 'Scaleezy TRYON2BUY',
     subtitle: 'AI Virtual Try-On Studio',
@@ -70,6 +74,7 @@ const modules = [
     id: 'marketing',
     slug: 'marketing',
     name: 'Marketing',
+    isLive: true,
     externalUrl: 'https://marketing.scaleezy.com/',
     title: 'Scaleezy Marketing',
     subtitle: 'Automated WhatsApp & Campaigns',
@@ -84,7 +89,8 @@ const modules = [
     id: 'analytics',
     slug: 'analytics',
     name: 'Analytics',
-    externalUrl: 'https://analytics.scaleezy.com/',
+    isLive: false,
+    externalUrl: null,
     title: 'Scaleezy Analytics',
     subtitle: 'Merchandising & Sales Dashboard',
     desc: 'Combine data from every Scaleezy module into clear, actionable numbers you can review every Monday morning.',
@@ -98,7 +104,8 @@ const modules = [
     id: 'finance',
     slug: 'finance',
     name: 'Finance',
-    externalUrl: 'https://finance.scaleezy.com/',
+    isLive: false,
+    externalUrl: null,
     title: 'Scaleezy Finance',
     subtitle: 'Costing, Margins & Cash Flow',
     desc: 'Track raw fabric costs, tailor piece-rates, counter discounts, and net margins per collection.',
@@ -112,7 +119,8 @@ const modules = [
     id: 'logistics',
     slug: 'logistics',
     name: 'Logistics',
-    externalUrl: 'https://logistics.scaleezy.com/',
+    isLive: false,
+    externalUrl: null,
     title: 'Scaleezy Logistics',
     subtitle: 'Multi-Carrier Courier Dispatch',
     desc: 'Auto-select lowest-cost couriers, print bulk thermal labels, and reduce COD returns with WhatsApp verification.',
@@ -166,16 +174,27 @@ export default function ModulesPage() {
           {/* Dedicated Module Quick Launch Strip */}
           <div className="flex flex-wrap items-center justify-center gap-2.5 max-w-4xl mx-auto">
             {modules.map(m => (
-              <a
-                key={m.id}
-                href={m.externalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[var(--color-primary)] border border-black/15 text-xs sm:text-sm font-semibold hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all shadow-2xs hover:scale-102"
-              >
-                <span>{m.name}</span>
-                <ArrowUpRight size={14} className="text-black/50" />
-              </a>
+              m.isLive ? (
+                <a
+                  key={m.id}
+                  href={m.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[var(--color-primary)] border border-black/15 text-xs sm:text-sm font-semibold hover:bg-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all shadow-2xs hover:scale-102"
+                >
+                  <span>{m.name}</span>
+                  <ArrowUpRight size={14} className="text-black/50" />
+                </a>
+              ) : (
+                <Link
+                  key={m.id}
+                  to={`/modules/${m.slug}`}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/5 text-gray-700 border border-black/10 text-xs sm:text-sm font-semibold hover:bg-black/10 transition-all shadow-2xs"
+                >
+                  <span>{m.name}</span>
+                  <span className="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-amber-400 text-black">Soon</span>
+                </Link>
+              )
             ))}
           </div>
         </div>
@@ -199,6 +218,11 @@ export default function ModulesPage() {
                       <span>Module {mod.num}</span>
                       <span>•</span>
                       <span>{mod.name}</span>
+                      {!mod.isLive && (
+                        <span className="ml-1.5 px-2.5 py-0.5 rounded-full bg-amber-400 text-black text-[10px] font-bold tracking-wider uppercase">
+                          Coming Soon
+                        </span>
+                      )}
                     </div>
                     {mod.subtitle && (
                       <span className="font-serif italic font-normal text-xl sm:text-2xl md:text-3xl block mb-1 opacity-95">
@@ -237,17 +261,27 @@ export default function ModulesPage() {
                     </div>
                   )}
                   
-                  {/* Action Buttons: Open App, Dedicated Page & Demo */}
+                  {/* Action Buttons: Open App, Dedicated Page & Request Access */}
                   <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-8 sm:mt-10">
-                    <a 
-                      href={mod.externalUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-[var(--color-accent)] text-[var(--color-primary)] font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full hover:bg-white hover:scale-105 transition-all duration-300 uppercase tracking-widest text-xs sm:text-sm shadow-xl hover:shadow-2xl active:scale-95 gap-2"
-                    >
-                      <span>Open {mod.name}</span>
-                      <ArrowUpRight size={16} />
-                    </a>
+                    {mod.isLive ? (
+                      <a 
+                        href={mod.externalUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center bg-[var(--color-accent)] text-[var(--color-primary)] font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full hover:bg-white hover:scale-105 transition-all duration-300 uppercase tracking-widest text-xs sm:text-sm shadow-xl hover:shadow-2xl active:scale-95 gap-2"
+                      >
+                        <span>Open {mod.name}</span>
+                        <ArrowUpRight size={16} />
+                      </a>
+                    ) : (
+                      <Link 
+                        to={`/request-access?module=${mod.slug}`} 
+                        className="inline-flex items-center justify-center bg-amber-400 text-black font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full hover:bg-amber-300 hover:scale-105 transition-all duration-300 uppercase tracking-widest text-xs sm:text-sm shadow-xl hover:shadow-2xl active:scale-95 gap-2"
+                      >
+                        <span>Join Waitlist</span>
+                        <span className="text-[10px] font-bold bg-black text-amber-300 px-2 py-0.5 rounded-full uppercase">Coming Soon</span>
+                      </Link>
+                    )}
 
                     <Link 
                       to={`/modules/${mod.slug}`} 
@@ -260,7 +294,7 @@ export default function ModulesPage() {
                     </Link>
 
                     <Link
-                      to="/request-access"
+                      to={`/request-access?module=${mod.slug}`}
                       className={`inline-flex items-center justify-center px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase transition-colors ${
                         isDark ? 'text-white/70 hover:text-white hover:underline' : 'text-[var(--color-primary)]/70 hover:text-[var(--color-primary)] hover:underline'
                       }`}
@@ -275,14 +309,21 @@ export default function ModulesPage() {
                     <div className="w-full aspect-[4/3] bg-black/10 overflow-hidden rounded-2xl sm:rounded-3xl relative shadow-2xl group">
                       <img src={mod.img} alt={mod.title} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-6">
-                        <a
-                          href={mod.externalUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-white text-xs sm:text-sm font-semibold flex items-center gap-1.5 bg-black/50 backdrop-blur-md px-3.5 py-1.5 rounded-full hover:bg-black/75 transition-colors"
-                        >
-                          <span>Open {mod.name} ↗</span>
-                        </a>
+                        {mod.isLive ? (
+                          <a
+                            href={mod.externalUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-white text-xs sm:text-sm font-semibold flex items-center gap-1.5 bg-black/50 backdrop-blur-md px-3.5 py-1.5 rounded-full hover:bg-black/75 transition-colors"
+                          >
+                            <span>Open {mod.name} ↗</span>
+                          </a>
+                        ) : (
+                          <div className="text-white text-xs sm:text-sm font-semibold flex items-center gap-2 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-amber-400/30">
+                            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                            <span className="text-amber-300 font-bold uppercase text-[11px] tracking-wider">Coming Soon</span>
+                          </div>
+                        )}
                       </div>
                     </div>
                   ) : (
@@ -309,34 +350,34 @@ export default function ModulesPage() {
             </span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <a href="https://crm.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="px-4 py-6 sm:px-5 sm:py-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-xl hover:border-white/30 hover:bg-white/10 transition-all flex flex-col items-center justify-center group">
+            <Link to="/modules/crm" className="px-4 py-6 sm:px-5 sm:py-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-xl hover:border-white/30 hover:bg-white/10 transition-all flex flex-col items-center justify-center group">
               <div className="text-[var(--color-accent)] font-mono font-bold mb-2 uppercase text-xs tracking-widest flex items-center gap-1">
                 <span>CRM informs</span>
-                <span className="opacity-60 group-hover:opacity-100">↗</span>
+                <span className="opacity-60 group-hover:opacity-100">→</span>
               </div>
               <div className="text-lg sm:text-xl font-bold tracking-tight">Marketing</div>
-            </a>
-            <a href="https://inventory.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="px-4 py-6 sm:px-5 sm:py-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-xl hover:border-white/30 hover:bg-white/10 transition-all flex flex-col items-center justify-center group">
+            </Link>
+            <Link to="/modules/inventory" className="px-4 py-6 sm:px-5 sm:py-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-xl hover:border-white/30 hover:bg-white/10 transition-all flex flex-col items-center justify-center group">
               <div className="text-[var(--color-accent)] font-mono font-bold mb-2 uppercase text-xs tracking-widest flex items-center gap-1">
                 <span>Inventory informs</span>
-                <span className="opacity-60 group-hover:opacity-100">↗</span>
+                <span className="opacity-60 group-hover:opacity-100">→</span>
               </div>
               <div className="text-lg sm:text-xl font-bold tracking-tight">Boutique POS</div>
-            </a>
-            <a href="https://www.tryon2buy.com/" target="_blank" rel="noopener noreferrer" className="px-4 py-6 sm:px-5 sm:py-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-xl hover:border-white/30 hover:bg-white/10 transition-all flex flex-col items-center justify-center group">
+            </Link>
+            <Link to="/modules/tryon2buy" className="px-4 py-6 sm:px-5 sm:py-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-xl hover:border-white/30 hover:bg-white/10 transition-all flex flex-col items-center justify-center group">
               <div className="text-[var(--color-accent)] font-mono font-bold mb-2 uppercase text-xs tracking-widest flex items-center gap-1">
                 <span>TRYON2BUY informs</span>
-                <span className="opacity-60 group-hover:opacity-100">↗</span>
+                <span className="opacity-60 group-hover:opacity-100">→</span>
               </div>
               <div className="text-lg sm:text-xl font-bold tracking-tight">Recommendations</div>
-            </a>
-            <a href="https://finance.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="px-4 py-6 sm:px-5 sm:py-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-xl hover:border-white/30 hover:bg-white/10 transition-all flex flex-col items-center justify-center group">
+            </Link>
+            <Link to="/modules/finance" className="px-4 py-6 sm:px-5 sm:py-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-xl hover:border-white/30 hover:bg-white/10 transition-all flex flex-col items-center justify-center group">
               <div className="text-[var(--color-accent)] font-mono font-bold mb-2 uppercase text-xs tracking-widest flex items-center gap-1">
                 <span>Finance informs</span>
-                <span className="opacity-60 group-hover:opacity-100">↗</span>
+                <span className="opacity-60 group-hover:opacity-100">→</span>
               </div>
               <div className="text-lg sm:text-xl font-bold tracking-tight">Procurement</div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

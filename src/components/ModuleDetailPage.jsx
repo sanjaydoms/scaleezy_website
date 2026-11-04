@@ -67,21 +67,25 @@ export default function ModuleDetailPage() {
             {MODULES_DATA.map((m) => {
               const isActive = m.slug === moduleData.slug;
               return (
-                <a
+                <Link
                   key={m.id}
-                  href={m.externalUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all flex items-center gap-1 ${
+                  to={`/modules/${m.slug}`}
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all flex items-center gap-1.5 ${
                     isActive
                       ? 'bg-[var(--color-primary)] text-[var(--color-accent)] font-semibold shadow-xs'
                       : 'bg-black/5 text-gray-700 hover:bg-black/10'
                   }`}
-                  title={`Open ${m.name} in a new tab`}
+                  title={`View ${m.name} module details`}
                 >
                   <span>{m.name}</span>
-                  <ArrowUpRight size={11} className="opacity-60" />
-                </a>
+                  {!m.isLive ? (
+                    <span className="text-[9px] uppercase font-bold tracking-wider px-1 py-0.5 rounded bg-amber-400 text-black leading-none">
+                      Soon
+                    </span>
+                  ) : (
+                    <ArrowUpRight size={11} className="opacity-40" />
+                  )}
+                </Link>
               );
             })}
           </div>
@@ -109,6 +113,11 @@ export default function ModuleDetailPage() {
               >
                 <Sparkles size={13} />
                 <span>{moduleData.badge} • Scaleezy Module</span>
+                {!moduleData.isLive && (
+                  <span className="ml-1.5 px-2 py-0.5 rounded-full bg-amber-400 text-black text-[10px] font-bold tracking-wider uppercase leading-none">
+                    Coming Soon
+                  </span>
+                )}
               </motion.div>
 
               <motion.h1
@@ -145,15 +154,25 @@ export default function ModuleDetailPage() {
                 transition={{ duration: 0.6, delay: 0.25 }}
                 className="flex flex-wrap items-center gap-4"
               >
-                <a
-                  href={moduleData.externalUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[var(--color-accent)] text-[var(--color-primary)] font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full hover:bg-white hover:scale-105 transition-all duration-300 uppercase tracking-widest text-xs sm:text-sm shadow-xl active:scale-95"
-                >
-                  <span>Open {moduleData.name}</span>
-                  <ArrowUpRight size={17} />
-                </a>
+                {moduleData.isLive ? (
+                  <a
+                    href={moduleData.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-[var(--color-accent)] text-[var(--color-primary)] font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full hover:bg-white hover:scale-105 transition-all duration-300 uppercase tracking-widest text-xs sm:text-sm shadow-xl active:scale-95"
+                  >
+                    <span>Open {moduleData.name}</span>
+                    <ArrowUpRight size={17} />
+                  </a>
+                ) : (
+                  <a
+                    href="#request-access"
+                    className="inline-flex items-center gap-2 bg-amber-400 text-black font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full hover:bg-amber-300 hover:scale-105 transition-all duration-300 uppercase tracking-widest text-xs sm:text-sm shadow-xl active:scale-95"
+                  >
+                    <span>Join Waitlist</span>
+                    <span className="text-[10px] font-bold bg-black text-amber-300 px-2 py-0.5 rounded-full uppercase">Coming Soon</span>
+                  </a>
+                )}
 
                 <a
                   href="#request-access"

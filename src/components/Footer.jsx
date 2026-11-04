@@ -118,7 +118,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Modules (Separate Column with External Links) */}
+          {/* Column 2: Modules (Separate Column with Live & Upcoming Status) */}
           <div className="lg:col-span-3 col-span-1 space-y-4">
             <h4 className="font-bold text-[var(--color-accent)] uppercase tracking-wider text-xs">Modules</h4>
             <nav className="flex flex-col space-y-3">
@@ -126,12 +126,8 @@ export default function Footer() {
                 <span>Inventory</span>
                 <span className="text-xs text-white/50 group-hover:text-white">↗</span>
               </a>
-              <a href="https://crm.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
-                <span>CRM</span>
-                <span className="text-xs text-white/50 group-hover:text-white">↗</span>
-              </a>
               <a href="https://boutique.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
-                <span>Boutique</span>
+                <span>Boutique POS</span>
                 <span className="text-xs text-white/50 group-hover:text-white">↗</span>
               </a>
               <a href="https://www.tryon2buy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
@@ -142,6 +138,10 @@ export default function Footer() {
                 <span>Marketing</span>
                 <span className="text-xs text-white/50 group-hover:text-white">↗</span>
               </a>
+              <Link to="/modules/crm" className="text-white/75 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
+                <span>CRM</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-amber-400 text-black leading-none">Soon</span>
+              </Link>
               <Link to="/modules" className="text-[var(--color-accent)] hover:underline transition-colors text-sm font-semibold pt-1">All 8 Modules →</Link>
             </nav>
           </div>
@@ -238,8 +238,8 @@ export default function Footer() {
             </a>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-white/75">
-            <Link to="/" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms of Service</Link>
             <span>&copy; {new Date().getFullYear()} Scaleezy.</span>
           </div>
         </div>

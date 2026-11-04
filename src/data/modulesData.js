@@ -3,15 +3,15 @@
 
 export const MODULE_URLS = {
   inventory: 'https://inventory.scaleezy.com/',
-  crm: 'https://crm.scaleezy.com/',
+  crm: null, // Coming Soon
   boutique: 'https://boutique.scaleezy.com/',
   tryon2buy: 'https://www.tryon2buy.com/',
   tryon: 'https://www.tryon2buy.com/',
   pos: 'https://boutique.scaleezy.com/',
   marketing: 'https://marketing.scaleezy.com/',
-  analytics: 'https://analytics.scaleezy.com/',
-  finance: 'https://finance.scaleezy.com/',
-  logistics: 'https://logistics.scaleezy.com/'
+  analytics: null, // Coming Soon
+  finance: null, // Coming Soon
+  logistics: null // Coming Soon
 };
 
 export const MODULES_DATA = [
@@ -21,6 +21,7 @@ export const MODULES_DATA = [
     name: 'Inventory',
     fullName: 'Scaleezy Inventory',
     externalUrl: 'https://inventory.scaleezy.com/',
+    isLive: true,
     tagline: 'Stock Intelligence & Demand Forecasting',
     badge: 'Module 01',
     heroHeadline: 'Never run out of bestsellers. Never sit on dead stock.',
@@ -95,7 +96,8 @@ export const MODULES_DATA = [
     slug: 'crm',
     name: 'CRM',
     fullName: 'Scaleezy CRM',
-    externalUrl: 'https://crm.scaleezy.com/',
+    externalUrl: null,
+    isLive: false,
     tagline: 'Clienteling & VIP Customer Intelligence',
     badge: 'Module 02',
     heroHeadline: "Remember every client's size, taste, and occasion.",
@@ -171,6 +173,7 @@ export const MODULES_DATA = [
     name: 'Boutique',
     fullName: 'Scaleezy Boutique',
     externalUrl: 'https://boutique.scaleezy.com/',
+    isLive: true,
     tagline: 'In-Store Billing, Counter POS & Retail Operations',
     badge: 'Module 03',
     heroHeadline: 'Lightning-fast retail checkout made for apparel stores.',
@@ -246,6 +249,7 @@ export const MODULES_DATA = [
     name: 'TRYON2BUY',
     fullName: 'Scaleezy TRYON2BUY',
     externalUrl: 'https://www.tryon2buy.com/',
+    isLive: true,
     tagline: 'AI Virtual Try-On Studio for Fashion & Apparel',
     badge: 'Module 04',
     heroHeadline: 'Let shoppers visualize apparel on realistic body models.',
@@ -321,6 +325,7 @@ export const MODULES_DATA = [
     name: 'Marketing',
     fullName: 'Scaleezy Marketing',
     externalUrl: 'https://marketing.scaleezy.com/',
+    isLive: true,
     tagline: 'AI-Driven Marketing & Automated Campaigns',
     badge: 'Module 05',
     heroHeadline: 'Turn boutique inventory into automated high-converting campaigns.',
@@ -395,7 +400,8 @@ export const MODULES_DATA = [
     slug: 'analytics',
     name: 'Analytics',
     fullName: 'Scaleezy Analytics',
-    externalUrl: 'https://analytics.scaleezy.com/',
+    externalUrl: null,
+    isLive: false,
     tagline: 'Merchandising Insights & Executive Dashboard',
     badge: 'Module 06',
     heroHeadline: 'Clear numbers you can act on every single Monday morning.',
@@ -470,7 +476,8 @@ export const MODULES_DATA = [
     slug: 'finance',
     name: 'Finance',
     fullName: 'Scaleezy Finance',
-    externalUrl: 'https://finance.scaleezy.com/',
+    externalUrl: null,
+    isLive: false,
     tagline: 'Fashion Costing, Margins & Financial Health',
     badge: 'Module 07',
     heroHeadline: 'Know your true net margins after fabric, tailoring, and discounts.',
@@ -545,7 +552,8 @@ export const MODULES_DATA = [
     slug: 'logistics',
     name: 'Logistics',
     fullName: 'Scaleezy Logistics',
-    externalUrl: 'https://logistics.scaleezy.com/',
+    externalUrl: null,
+    isLive: false,
     tagline: 'Multi-Carrier Dispatch & Smart Courier Routing',
     badge: 'Module 08',
     heroHeadline: 'Ship orders faster with lowest courier rates and smart NDR tracking.',

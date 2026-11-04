@@ -14,6 +14,8 @@ const SolutionsPage = lazy(() => import('./components/SolutionsPage'));
 const DemoPage = lazy(() => import('./components/DemoPage'));
 const BlogsPage = lazy(() => import('./components/BlogsPage'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
+const TermsAndConditions = lazy(() => import('./components/TermsAndConditions'));
 
 function App() {
   return (
@@ -37,6 +39,11 @@ function App() {
             <Route path="/request-access" element={<DemoPage />} />
             <Route path="/book-a-demo" element={<Navigate to="/request-access" replace />} />
             <Route path="/demo" element={<Navigate to="/request-access" replace />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/terms" element={<Navigate to="/terms-and-conditions" replace />} />
+            <Route path="/terms-of-service" element={<Navigate to="/terms-and-conditions" replace />} />
 
             {/* Direct convenience shortcuts for modules */}
             <Route path="/inventory" element={<Navigate to="/modules/inventory" replace />} />
