@@ -44,17 +44,13 @@ export default function BookingFormCard({
   };
 
   const [formData, setFormData] = useState({
+    brandName: '',
     fullName: '',
     email: '',
-    brandName: '',
     countryCode: '+91',
     phone: '',
-    preferredLanguage: 'English',
     interestedModule: resolveModuleName(searchParams.get('module')),
-    hasPhysicalStore: 'yes',
-    businessType: 'Fashion Boutique',
-    city: '',
-    specificRequirements: ''
+    notes: ''
   });
 
   useEffect(() => {
@@ -94,33 +90,19 @@ export default function BookingFormCard({
 
   const modulesList = MODULES_LIST;
 
-  const businessTypes = [
-    'Fashion Boutique',
-    'Saree & Ethnic Wear Store',
-    'Bridal & Couture Studio',
-    'Fashion Brand / D2C Label',
-    'Multi-store Apparel Chain',
-    'Garment Manufacturer / Factory',
-    'Wholesaler / Textile Distributor',
-    'Online Store / Social Commerce',
-    'Other'
-  ];
-
-  const languages = ['English', 'Hindi', 'Tamil', 'Telugu', 'Kannada', 'Gujarati', 'Marathi'];
-
   const validate = () => {
     const newErrors = {};
-    if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
+    if (!formData.brandName.trim()) newErrors.brandName = 'Company name is required';
+    if (!formData.fullName.trim()) newErrors.fullName = 'Your name is required';
     if (!formData.email.trim()) {
       newErrors.email = 'Email address is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
       newErrors.email = 'Please enter a valid email address';
     }
-    if (!formData.brandName.trim()) newErrors.brandName = 'Store or brand name is required';
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
+      newErrors.phone = 'Mobile number is required';
     } else if (formData.phone.trim().length < 7) {
-      newErrors.phone = 'Please enter a valid phone number';
+      newErrors.phone = 'Please enter a valid mobile number';
     }
     return newErrors;
   };
@@ -142,16 +124,16 @@ export default function BookingFormCard({
   const handleSubmit = async (e) => {
     e.preventDefault();
     setTouched({
+      brandName: true,
       fullName: true,
       email: true,
-      brandName: true,
       phone: true
     });
 
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-      const firstInvalid = ['fullName', 'email', 'brandName', 'phone'].find(name => validationErrors[name]);
+      const firstInvalid = ['brandName', 'fullName', 'email', 'phone'].find(name => validationErrors[name]);
       e.currentTarget.elements.namedItem(firstInvalid)?.focus();
       return;
     }
@@ -163,7 +145,7 @@ export default function BookingFormCard({
       await submitDemoRequest(formData, source);
       setIsSubmitted(true);
     } catch (err) {
-      console.error('Demo request not sent:', err);
+      console.error('Access request not sent:', err);
       setErrors({ general: "We couldn't send your request just now. Please try again in a few minutes." });
     } finally {
       setIsSubmitting(false);
@@ -172,17 +154,13 @@ export default function BookingFormCard({
 
   const handleReset = () => {
     setFormData({
+      brandName: '',
       fullName: '',
       email: '',
-      brandName: '',
       countryCode: '+91',
       phone: '',
-      preferredLanguage: 'English',
       interestedModule: defaultModule,
-      hasPhysicalStore: 'yes',
-      businessType: 'Fashion Boutique',
-      city: '',
-      specificRequirements: ''
+      notes: ''
     });
     setTouched({});
     setErrors({});
@@ -234,21 +212,31 @@ export default function BookingFormCard({
 
             <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 mb-8 text-left text-xs sm:text-sm space-y-2.5 max-w-md mx-auto">
               <div className="flex justify-between">
-                <span className="text-gray-600">Brand:</span>
+                <span className="text-gray-600">Company:</span>
                 <span className="font-semibold text-[#14263D]">{formData.brandName}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Phone:</span>
+                <span className="text-gray-600">Name:</span>
+                <span className="font-semibold text-[#14263D]">{formData.fullName}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Email:</span>
+                <span className="font-semibold text-[#14263D]">{formData.email}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Mobile:</span>
                 <span className="font-semibold text-[#14263D]">{formData.countryCode} {formData.phone}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Selected Module:</span>
                 <span className="font-semibold text-[#14263D]">{formData.interestedModule}</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-gray-600">Physical Store:</span>
-                <span className="font-semibold text-[#14263D]">{formData.hasPhysicalStore === 'yes' ? 'Yes' : 'No'}</span>
-              </div>
+              {formData.notes && (
+                <div className="flex justify-between pt-1 border-t border-gray-200">
+                  <span className="text-gray-600">Notes:</span>
+                  <span className="font-semibold text-[#14263D] truncate max-w-[200px]">{formData.notes}</span>
+                </div>
+              )}
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -271,11 +259,34 @@ export default function BookingFormCard({
               </div>
             )}
 
-            {/* Row 1: Name & Email */}
+            {/* Row 1: Company Name & Your Name */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               <div className="space-y-1.5">
+                <label htmlFor={`${uid}-brandName`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider flex items-center justify-between">
+                  <span>Company Name <span className="text-red-500">*</span></span>
+                </label>
+                <input
+                  type="text"
+                  {...fieldProps('brandName')}
+                  autoComplete="organization"
+                  value={formData.brandName}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="Your boutique or brand name"
+                  className={`w-full h-11 px-3.5 text-sm rounded-xl border bg-white transition-all outline-none ${
+                    touched.brandName && errors.brandName
+                      ? 'border-red-500 focus:ring-2 focus:ring-red-100'
+                      : 'border-gray-200 focus:border-[#0A2F1D] focus:ring-2 focus:ring-[#0A2F1D]/10'
+                  }`}
+                />
+                {touched.brandName && errors.brandName && (
+                  <p id={`${uid}-brandName-error`} className="text-xs text-red-600 font-medium">{errors.brandName}</p>
+                )}
+              </div>
+
+              <div className="space-y-1.5">
                 <label htmlFor={`${uid}-fullName`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider flex items-center justify-between">
-                  <span>Name <span className="text-red-500">*</span></span>
+                  <span>Your Name <span className="text-red-500">*</span></span>
                 </label>
                 <input
                   type="text"
@@ -295,7 +306,10 @@ export default function BookingFormCard({
                   <p id={`${uid}-fullName-error`} className="text-xs text-red-600 font-medium">{errors.fullName}</p>
                 )}
               </div>
+            </div>
 
+            {/* Row 2: Email & Mobile Number */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               <div className="space-y-1.5">
                 <label htmlFor={`${uid}-email`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider flex items-center justify-between">
                   <span>Email <span className="text-red-500">*</span></span>
@@ -318,36 +332,10 @@ export default function BookingFormCard({
                   <p id={`${uid}-email-error`} className="text-xs text-red-600 font-medium">{errors.email}</p>
                 )}
               </div>
-            </div>
-
-            {/* Row 2: Brand / Company Name & Phone */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-              <div className="space-y-1.5">
-                <label htmlFor={`${uid}-brandName`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider flex items-center justify-between">
-                  <span>Brand / Company Name <span className="text-red-500">*</span></span>
-                </label>
-                <input
-                  type="text"
-                  {...fieldProps('brandName')}
-                  autoComplete="organization"
-                  value={formData.brandName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="Your boutique or brand name"
-                  className={`w-full h-11 px-3.5 text-sm rounded-xl border bg-white transition-all outline-none ${
-                    touched.brandName && errors.brandName
-                      ? 'border-red-500 focus:ring-2 focus:ring-red-100'
-                      : 'border-gray-200 focus:border-[#0A2F1D] focus:ring-2 focus:ring-[#0A2F1D]/10'
-                  }`}
-                />
-                {touched.brandName && errors.brandName && (
-                  <p id={`${uid}-brandName-error`} className="text-xs text-red-600 font-medium">{errors.brandName}</p>
-                )}
-              </div>
 
               <div className="space-y-1.5">
                 <label htmlFor={`${uid}-phone`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider flex items-center justify-between">
-                  <span>Phone Number <span className="text-red-500">*</span></span>
+                  <span>Mobile Number <span className="text-red-500">*</span></span>
                 </label>
                 <div className="flex gap-2">
                   <select
@@ -365,7 +353,7 @@ export default function BookingFormCard({
                   <input
                     type="tel"
                     {...fieldProps('phone')}
-                  autoComplete="tel-national"
+                    autoComplete="tel-national"
                     value={formData.phone}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -383,137 +371,46 @@ export default function BookingFormCard({
               </div>
             </div>
 
-            {/* Row 3: Language & Interested Module */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-              <div className="space-y-1.5">
-                <label htmlFor={`${uid}-preferredLanguage`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                  Choose Language <span className="text-red-500">*</span>
-                </label>
-                <select
-                  {...fieldProps('preferredLanguage')}
-                  value={formData.preferredLanguage}
-                  onChange={handleChange}
-                  className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
-                >
-                  {languages.map(lang => (
-                    <option key={lang} value={lang}>{lang}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <label htmlFor={`${uid}-interestedModule`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                    I'm Interested In <span className="text-red-500">*</span>
-                  </label>
-                  {formData.interestedModule !== 'Complete Scaleezy Platform' && (
-                    <a
-                      href={MODULE_URLS[formData.interestedModule.toLowerCase()] || `https://${formData.interestedModule.toLowerCase()}.scaleezy.com/`}
-                      className="text-xs text-emerald-800 hover:underline font-medium"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Open {formData.interestedModule} ↗
-                    </a>
-                  )}
-                </div>
-                <select
-                  {...fieldProps('interestedModule')}
-                  value={formData.interestedModule}
-                  onChange={handleChange}
-                  className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
-                >
-                  {modulesList.map(mod => (
-                    <option key={mod} value={mod}>{mod}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Row 4: Physical Retail Store Toggle & Business Type */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-              <div className="space-y-1.5">
-                <span id={`${uid}-hasPhysicalStore`} className="block text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                  Do you have a physical store? <span className="text-red-500">*</span>
-                </span>
-                <div role="group" aria-labelledby={`${uid}-hasPhysicalStore`} className="grid grid-cols-2 gap-2.5 h-11">
-                  <button
-                    type="button"
-                    aria-pressed={formData.hasPhysicalStore === 'yes'}
-                    onClick={() => setFormData(prev => ({ ...prev, hasPhysicalStore: 'yes' }))}
-                    className={`rounded-xl text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center gap-2 cursor-pointer ${
-                      formData.hasPhysicalStore === 'yes'
-                        ? 'bg-[#0A2F1D] text-[var(--color-accent)] border-[#0A2F1D] shadow-xs'
-                        : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
-                    }`}
-                  >
-                    <span className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${formData.hasPhysicalStore === 'yes' ? 'border-[var(--color-accent)] bg-[var(--color-accent)]' : 'border-gray-400'}`}>
-                      {formData.hasPhysicalStore === 'yes' && <span className="w-1.5 h-1.5 rounded-full bg-[#0A2F1D]" />}
-                    </span>
-                    <span>Yes</span>
-                  </button>
-                  <button
-                    type="button"
-                    aria-pressed={formData.hasPhysicalStore === 'no'}
-                    onClick={() => setFormData(prev => ({ ...prev, hasPhysicalStore: 'no' }))}
-                    className={`rounded-xl text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center gap-2 cursor-pointer ${
-                      formData.hasPhysicalStore === 'no'
-                        ? 'bg-[#0A2F1D] text-[var(--color-accent)] border-[#0A2F1D] shadow-xs'
-                        : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
-                    }`}
-                  >
-                    <span className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${formData.hasPhysicalStore === 'no' ? 'border-[var(--color-accent)] bg-[var(--color-accent)]' : 'border-gray-400'}`}>
-                      {formData.hasPhysicalStore === 'no' && <span className="w-1.5 h-1.5 rounded-full bg-[#0A2F1D]" />}
-                    </span>
-                    <span>No</span>
-                  </button>
-                </div>
-              </div>
-
-              <div className="space-y-1.5">
-                <label htmlFor={`${uid}-businessType`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                  Business Type <span className="text-red-500">*</span>
-                </label>
-                <select
-                  {...fieldProps('businessType')}
-                  value={formData.businessType}
-                  onChange={handleChange}
-                  className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
-                >
-                  {businessTypes.map(type => (
-                    <option key={type} value={type}>{type}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Row 5: City / Location */}
+            {/* Row 3: Selection of Modules */}
             <div className="space-y-1.5">
-              <label htmlFor={`${uid}-city`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                City / Location
-              </label>
-              <input
-                type="text"
-                {...fieldProps('city')}
-                  autoComplete="address-level2"
-                value={formData.city}
+              <div className="flex items-center justify-between">
+                <label htmlFor={`${uid}-interestedModule`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
+                  Select Module <span className="text-red-500">*</span>
+                </label>
+                {formData.interestedModule !== 'Complete Scaleezy Platform' && (
+                  <a
+                    href={MODULE_URLS[formData.interestedModule.toLowerCase()] || `https://${formData.interestedModule.toLowerCase()}.scaleezy.com/`}
+                    className="text-xs text-emerald-800 hover:underline font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open {formData.interestedModule} ↗
+                  </a>
+                )}
+              </div>
+              <select
+                {...fieldProps('interestedModule')}
+                value={formData.interestedModule}
                 onChange={handleChange}
-                placeholder="e.g. Mumbai, New York, London, Bangalore"
-                className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none transition-all"
-              />
+                className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
+              >
+                {modulesList.map(mod => (
+                  <option key={mod} value={mod}>{mod}</option>
+                ))}
+              </select>
             </div>
 
-            {/* Row 6: Specific Requirements Textarea */}
+            {/* Row 4: Notes */}
             <div className="space-y-1.5">
-              <label htmlFor={`${uid}-specificRequirements`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                Anything specific you'd like to see?
+              <label htmlFor={`${uid}-notes`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
+                Notes
               </label>
               <textarea
-                {...fieldProps('specificRequirements')}
-                value={formData.specificRequirements}
+                {...fieldProps('notes')}
+                value={formData.notes}
                 onChange={handleChange}
                 rows={3}
-                placeholder="e.g. Barcode POS, multi-branch stock transfers, automated WhatsApp VIP lookbooks, factory tech packs..."
+                placeholder="Any specific requirements, questions, or notes..."
                 className="w-full p-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none transition-all resize-none"
               />
             </div>

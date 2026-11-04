@@ -20,13 +20,13 @@ export default async function handler(req, res) {
       brandName = 'Not provided',
       email = 'Not provided',
       phone = 'Not provided',
-      businessType = 'Fashion Boutique',
       interestedModule = 'Complete Platform',
-      hasPhysicalStore = 'Not specified',
-      city = 'Not specified',
-      specificRequirements = 'None',
-      source = 'website'
+      notes = '',
+      specificRequirements = '',
+      source = 'request_access'
     } = req.body || {};
+
+    const userNotes = (notes || specificRequirements || '').trim();
 
     // Format phone for clean WhatsApp click-to-chat
     const cleanPhoneDigits = phone.replace(/[^0-9]/g, '');
@@ -97,29 +97,17 @@ export default async function handler(req, res) {
                     </span>
                   </td>
                 </tr>
-                <tr style="border-bottom: 1px solid #F1F5F9;">
-                  <td style="padding: 12px 0; color: #64748B; font-size: 14px;">Physical Store?</td>
-                  <td style="padding: 12px 0; color: #0F172A; font-size: 14px; font-weight: 600;">${hasPhysicalStore}</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #F1F5F9;">
-                  <td style="padding: 12px 0; color: #64748B; font-size: 14px;">Business Type</td>
-                  <td style="padding: 12px 0; color: #0F172A; font-size: 14px; font-weight: 500;">${businessType}</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #F1F5F9;">
-                  <td style="padding: 12px 0; color: #64748B; font-size: 14px;">City / Location</td>
-                  <td style="padding: 12px 0; color: #0F172A; font-size: 14px; font-weight: 500;">${city}</td>
-                </tr>
                 <tr>
                   <td style="padding: 12px 0; color: #64748B; font-size: 14px;">Submission Source</td>
                   <td style="padding: 12px 0; color: #64748B; font-size: 13px; font-mono font-weight: 500;">${source}</td>
                 </tr>
               </table>
 
-              <!-- Specific Requirements Block -->
-              ${specificRequirements && specificRequirements !== 'None' ? `
+              <!-- Notes Block -->
+              ${userNotes ? `
               <div style="margin-top: 24px; padding: 16px; background-color: #F8FAFC; border-radius: 10px; border-left: 4px solid #0A2F1D;">
                 <p style="margin: 0 0 6px 0; font-size: 12px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">Notes / Specific Requirements:</p>
-                <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #1E293B;">${specificRequirements}</p>
+                <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #1E293B;">${userNotes}</p>
               </div>
               ` : ''}
 

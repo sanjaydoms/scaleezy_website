@@ -28,24 +28,25 @@ function normalizeModuleSlug(modName = '') {
  * @param {Object} formData - Form field data
  * @param {string} source - 'book_a_demo' | 'request_access' | 'website'
  */
-export async function submitDemoRequest(formData, source = 'book_a_demo') {
+export async function submitDemoRequest(formData, source = 'request_access') {
   const selectedModule = formData.interestedModule || 'Complete Scaleezy Platform';
   const moduleSlug = normalizeModuleSlug(selectedModule);
-  const sourceTag = source === 'request_access' ? `request_access:${moduleSlug}` : moduleSlug;
+  const sourceTag = source === 'request_access' ? `request_access:${moduleSlug}` : (source || moduleSlug);
+  const userNotes = (formData.notes || formData.specificRequirements || '').trim();
 
   const payload = {
     name: formData.fullName || '',
     boutique: formData.brandName || '',
     email: formData.email || '',
     phone: `${formData.countryCode || '+91'} ${formData.phone || ''}`.trim(),
-    makes: formData.businessType || 'Fashion Boutique',
-    orders_per_month: formData.hasPhysicalStore === 'yes' ? 'Physical Store: Yes' : 'Physical Store: No',
-    people: formData.preferredLanguage || 'English',
-    problem: `Module: ${selectedModule} | Physical Store: ${formData.hasPhysicalStore === 'yes' ? 'Yes' : 'No'}`,
-    notes: formData.specificRequirements
-      ? `[Module: ${selectedModule}] ${formData.specificRequirements}`.trim()
+    makes: 'Fashion Boutique',
+    orders_per_month: 'Fast Access Request',
+    people: 'English',
+    problem: `Module: ${selectedModule}`,
+    notes: userNotes
+      ? `[Module: ${selectedModule}] ${userNotes}`.trim()
       : `[Module: ${selectedModule}]`,
-    address: formData.city || '',
+    address: '',
     status: 'pending',
     source: sourceTag,
     approved_by: '',
@@ -75,11 +76,9 @@ export async function submitDemoRequest(formData, source = 'book_a_demo') {
         brandName: formData.brandName,
         email: formData.email,
         phone: `${formData.countryCode || '+91'} ${formData.phone || ''}`.trim(),
-        businessType: formData.businessType || 'Fashion Boutique',
         interestedModule: selectedModule,
-        hasPhysicalStore: formData.hasPhysicalStore === 'yes' ? 'Yes' : 'No',
-        city: formData.city || 'Not specified',
-        specificRequirements: formData.specificRequirements || '',
+        notes: userNotes,
+        specificRequirements: userNotes,
         source: sourceTag
       })
     }).catch(err => {
