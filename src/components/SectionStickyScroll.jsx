@@ -10,8 +10,8 @@ const modularCards = [
     title: 'Design & Sourcing',
     tagline: 'Supply Chain Matrix',
     description: 'Connect directly with verified fabric mills, manage custom tech packs, and accelerate collection launches by 40%.',
-    image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80',
-    imageAlt: 'Textiles, fabric swatches and garment design materials',
+    image: '/card-design-sourcing.jpg',
+    imageAlt: 'Indian fashion designer sketching apparel collections and managing fabric swatches',
     link: '/modules'
   },
   {
@@ -20,8 +20,8 @@ const modularCards = [
     title: 'Production Tracking',
     tagline: 'Shop Floor Telemetry',
     description: 'Ensure safety and line milestone precision. Prevent delays with real-time shop floor telemetry and live cutting queue alerts.',
-    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80',
-    imageAlt: 'Garment manufacturing atelier, sewing craftsmanship and machinery',
+    image: '/card-production-tracking.jpg',
+    imageAlt: 'Scaleezy apparel production tracking dashboard on workshop floor',
     link: '/modules'
   },
   {
@@ -30,8 +30,8 @@ const modularCards = [
     title: 'Inventory & B2B',
     tagline: 'Omnichannel Commerce',
     description: 'Centralize multi-store stock, automate replenishment triggers, and run your wholesale B2B portal with zero dead stock.',
-    image: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80',
-    imageAlt: 'Luxury apparel boutique showroom and warehouse inventory',
+    image: '/card-inventory-b2b.jpg',
+    imageAlt: 'Boutique manager accessing multi-store inventory and B2B portal on tablet',
     link: '/modules'
   }
 ];
@@ -77,22 +77,11 @@ export default function SectionStickyScroll() {
                 alt={card.imageAlt}
                 loading="lazy"
                 decoding="async"
-                className="absolute inset-0 w-full h-full object-cover brightness-[0.72] group-hover:brightness-[0.88] group-hover:scale-105 transition-all duration-700 ease-out"
+                className="absolute inset-0 w-full h-full object-cover brightness-[0.82] group-hover:brightness-[0.95] group-hover:scale-105 transition-all duration-700 ease-out"
               />
 
               {/* Lighter Bottom Gradient for Crisp Text Readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/10 group-hover:from-black/70 group-hover:via-black/15 transition-colors duration-500 pointer-events-none" />
-
-              {/* Top Row: Module Number & Tagline */}
-              <div className="relative z-10 flex items-center gap-2.5">
-                <span className="text-xs font-mono font-bold tracking-widest text-[var(--color-accent)] uppercase">
-                  {card.number}
-                </span>
-                <span className="text-white/30 font-mono text-xs">/</span>
-                <span className="text-xs font-mono font-medium tracking-wider uppercase text-white/75 group-hover:text-white transition-colors">
-                  {card.tagline}
-                </span>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10 group-hover:from-black/80 group-hover:via-black/20 transition-colors duration-500 pointer-events-none" />
 
               {/* Bottom-Left Editorial Content Block (Aligned Across All 3 Columns) */}
               <div className="relative z-10 mt-auto min-h-[120px] sm:min-h-[130px] flex flex-col justify-start">

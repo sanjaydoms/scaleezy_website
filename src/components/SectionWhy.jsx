@@ -5,19 +5,19 @@ import TypewriterText from './TypewriterText';
 
 const features = [
   {
-    title: 'Hyper-personalisation',
-    desc: 'Demographics + pincode + price preference + buying patterns + try-on behaviour + festival trends.'
+    title: 'Hyper-Personalization',
+    desc: 'Demographics + pincode + price preference + buying patterns + try-on behavior + festive trends.'
   },
   {
-    title: 'Virtual Try-On',
-    desc: 'Build fit and sizing confidence while reducing physical trials.'
+    title: 'Virtual Try-On Studio',
+    desc: 'Build fit and sizing confidence while reducing physical trial room friction.'
   },
   {
     title: 'AI Commerce Intelligence',
     desc: 'Fast movers + low stock + dead-stock risk + demand forecasting.'
   },
   {
-    title: 'Unified Business Ecosystem',
+    title: 'Unified Commerce Ecosystem',
     desc: 'CRM + finance + inventory + try-on + marketing + analytics + logistics.'
   }
 ];

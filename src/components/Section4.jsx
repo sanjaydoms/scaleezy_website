@@ -13,7 +13,7 @@ const modules = [
     label: 'Inventory', 
     tagline: 'Stock Intelligence',
     desc: 'Predict demand, inward barcodes fast, and reduce dead stock across sizes and colors.', 
-    img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80' 
+    img: '/card-inventory-b2b.jpg' 
   },
   { 
     id: 'crm', 
@@ -24,7 +24,7 @@ const modules = [
     label: 'CRM', 
     tagline: 'Clienteling',
     desc: 'Remember every client preference, size, and wedding date.', 
-    img: 'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?w=800&q=80' 
+    img: '/crm-module.jpg' 
   },
   { 
     id: 'marketing', 
@@ -35,7 +35,7 @@ const modules = [
     label: 'Marketing', 
     tagline: 'Campaign Automation',
     desc: 'Reach the right buyers at the right time with segmented WhatsApp alerts.', 
-    img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80' 
+    img: '/marketing-hub.jpg' 
   },
   { 
     id: 'tryon2buy', 
@@ -46,7 +46,7 @@ const modules = [
     label: 'TRYON2BUY', 
     tagline: 'AI Virtual Try-On',
     desc: 'Let customers visualize apparel on realistic models before buying.', 
-    img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80' 
+    img: '/virtual-tryon.jpg' 
   },
   { 
     id: 'finance', 
@@ -57,7 +57,7 @@ const modules = [
     label: 'Finance', 
     tagline: 'Costing & Margins',
     desc: 'Track fabric costing, tailor piece-rates, and net margins in real-time.', 
-    img: 'https://images.unsplash.com/photo-1537832816519-689ad163238b?w=800&q=80' 
+    img: '/finance-dashboard.jpg' 
   },
   { 
     id: 'analytics', 
@@ -68,7 +68,7 @@ const modules = [
     label: 'Analytics', 
     tagline: 'Executive Insights',
     desc: 'Actionable data and Monday morning insights for business growth.', 
-    img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80' 
+    img: '/analytics-hub.jpg' 
   },
   { 
     id: 'logistics', 
@@ -79,7 +79,7 @@ const modules = [
     label: 'Logistics', 
     tagline: 'Courier Routing',
     desc: 'Fast dispatches, lowest shipping rates, and live WhatsApp tracking.', 
-    img: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&q=80' 
+    img: '/logistics-hub.jpg' 
   },
   { 
     id: 'boutique', 
@@ -90,7 +90,7 @@ const modules = [
     label: 'Boutique', 
     tagline: 'In-Store POS & Operations',
     desc: 'Fast in-store barcode billing, tailor alteration tracking, and offline counter checkout.', 
-    img: 'https://images.unsplash.com/photo-1556742111-a301076d9d18?w=1200&q=80' 
+    img: '/smart-pos.jpg' 
   }
 ];
 

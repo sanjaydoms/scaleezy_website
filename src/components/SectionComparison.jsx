@@ -28,7 +28,7 @@ export default function SectionComparison() {
           <span>← Swipe table horizontally to compare →</span>
         </div>
 
-        <div tabIndex={0} role="region" aria-label="Feature comparison table" className="overflow-x-auto bg-black/30 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 md:p-8 border border-white/15 shadow-2xl">
+        <div className="overflow-x-auto bg-black/30 backdrop-blur-md rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 md:p-8 border border-white/15 shadow-2xl">
           <table className="w-full min-w-[680px] text-left">
             <thead>
               <tr className="border-b border-white/20">
@@ -41,42 +41,42 @@ export default function SectionComparison() {
             </thead>
             <tbody className="divide-y divide-white/10 text-sm sm:text-base">
               <tr>
-                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">Apparel focus</td>
+                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">Apparel Focus</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-[var(--color-accent)] font-bold">✓ Native</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">Generic</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">Generic</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">None</td>
               </tr>
               <tr>
-                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">Native try-on</td>
+                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">Native Virtual Try-On</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-[var(--color-accent)] font-bold">✓ Built-in</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">App Required</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">None</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">None</td>
               </tr>
               <tr>
-                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">AI inventory</td>
+                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">AI Inventory Intelligence</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-[var(--color-accent)] font-bold">✓ Integrated</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">App Required</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">Manual</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">None</td>
               </tr>
               <tr>
-                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">Personalised marketing</td>
+                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">Personalized Marketing</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-[var(--color-accent)] font-bold">✓ Deep</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">Basic</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">None</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">Requires integration</td>
               </tr>
               <tr>
-                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">Unified finance</td>
+                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">Unified Finance & Margins</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-[var(--color-accent)] font-bold">✓ Native</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">External</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">Basic</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">None</td>
               </tr>
               <tr>
-                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">Zero-integration data</td>
+                <td className="py-4 sm:py-6 px-3 sm:px-4 font-semibold text-white">Single Data Ecosystem</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-[var(--color-accent)] font-bold">✓ One Ecosystem</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">Patchwork</td>
                 <td className="py-4 sm:py-6 px-3 sm:px-4 text-gray-300">Silos</td>

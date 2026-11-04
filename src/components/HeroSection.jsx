@@ -82,15 +82,17 @@ export default function HeroSection() {
           >
             <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-700 shrink-0" />
             <span className="font-medium text-gray-800">The Operating System for</span>
-            <span className="font-bold text-emerald-950 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 inline-block min-w-[140px] sm:min-w-[175px] text-center sm:text-left">
+            <span className="font-bold text-emerald-950 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 inline-block min-w-[145px] sm:min-w-[185px] text-center sm:text-left">
               <TypewriterText
                 words={[
-                  'Fashion Boutiques',
-                  'Saree & Ethnic Wear',
-                  'Bridal & Couture Ateliers',
-                  'D2C Apparel Brands',
-                  'Multi-Store Retailers',
-                  'Garment Manufacturers'
+                  'Fashion',
+                  'Saree Stores',
+                  'Ethnic Wear',
+                  'Bridal Boutiques',
+                  'Fashion Retailers',
+                  'Multi-Brand Stores',
+                  'D2C Fashion',
+                  'Wholesalers'
                 ]}
                 typingSpeed={65}
                 deletingSpeed={30}
@@ -105,7 +107,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mb-5 md:mb-6"
+            className="mb-5 md:mb-6 min-h-[140px] sm:min-h-[165px] md:min-h-[195px] lg:min-h-[225px] flex flex-col justify-start"
           >
             <TypingHeading
               line1="Total commerce,"
@@ -113,6 +115,7 @@ export default function HeroSection() {
               line2Prefix="Totally "
               line2Words={['different.', 'synchronized.', 'connected.', 'automated.']}
               line2Class="font-sans font-bold tracking-tighter block text-center text-emerald-700"
+              line2MinHeight="min-h-[1.2em]"
               wordClass="text-emerald-700"
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] tracking-tight leading-[1.08] text-center"
               typingSpeed={60}

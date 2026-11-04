@@ -25,7 +25,7 @@ export const MODULES_DATA = [
     badge: 'Module 01',
     heroHeadline: 'Never run out of bestsellers. Never sit on dead stock.',
     heroDescription: 'Real-time multi-location stock tracking, barcode intake, automated low-stock reorder triggers, and dead-stock alerts engineered specifically for apparel variants (sizes, fabrics, colors).',
-    img: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=1200&q=80',
+    img: '/card-inventory-b2b.jpg',
     stats: [
       { value: '35%', label: 'Reduction in dead stock' },
       { value: '100%', label: 'Real-time barcode accuracy' },
@@ -100,7 +100,7 @@ export const MODULES_DATA = [
     badge: 'Module 02',
     heroHeadline: "Remember every client's size, taste, and occasion.",
     heroDescription: 'Transform one-off boutique shoppers into lifelong VIP clients. Empower associates with 360-degree client profiles, past purchase history, fit preferences, and automated anniversary greetings.',
-    img: 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=1200&q=80',
+    img: '/crm-module.jpg',
     stats: [
       { value: '42%', label: 'Higher repeat purchase rate' },
       { value: '3.2x', label: 'VIP client engagement' },
@@ -175,7 +175,7 @@ export const MODULES_DATA = [
     badge: 'Module 03',
     heroHeadline: 'Lightning-fast retail checkout made for apparel stores.',
     heroDescription: 'The modern counter point-of-sale engineered for apparel boutiques. Handle custom tailoring alterations, split payments, barcode billing, and staff commissions in seconds.',
-    img: 'https://images.unsplash.com/photo-1556742111-a301076d9d18?w=1200&q=80',
+    img: '/smart-pos.jpg',
     stats: [
       { value: '15s', label: 'Average billing time' },
       { value: '100%', label: 'Offline-ready billing capability' },
@@ -250,7 +250,7 @@ export const MODULES_DATA = [
     badge: 'Module 04',
     heroHeadline: 'Let shoppers visualize apparel on realistic body models.',
     heroDescription: 'Transform customer fit hesitation into confident purchases. Patented AI lets customers preview sarees, kurtas, suits, and western wear instantly on diverse models or their own photo.',
-    img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&q=80',
+    img: '/virtual-tryon.jpg',
     stats: [
       { value: '+28%', label: 'Increase in purchase conversion' },
       { value: '-45%', label: 'Drop in apparel size returns' },
@@ -325,7 +325,7 @@ export const MODULES_DATA = [
     badge: 'Module 05',
     heroHeadline: 'Turn boutique inventory into automated high-converting campaigns.',
     heroDescription: 'Launch segmented WhatsApp broadcasts, festive collection drops, and automated VIP lookbooks in clicks. AI crafts apparel copy and selects the exact customer segment most likely to buy.',
-    img: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&q=80',
+    img: '/marketing-hub.jpg',
     stats: [
       { value: '4.8x', label: 'Average WhatsApp broadcast ROI' },
       { value: '65%', label: 'Open rate on personalized alerts' },
@@ -400,7 +400,7 @@ export const MODULES_DATA = [
     badge: 'Module 06',
     heroHeadline: 'Clear numbers you can act on every single Monday morning.',
     heroDescription: 'Stop drowning in messy spreadsheets. Get clear apparel metrics: sell-through rates, top-selling categories, dead stock velocity, store staff productivity, and profit margins.',
-    img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80',
+    img: '/analytics-hub.jpg',
     stats: [
       { value: '50+', label: 'Pre-built fashion retail metrics' },
       { value: 'Real-Time', label: 'Multi-store sales telemetry' },
@@ -475,7 +475,7 @@ export const MODULES_DATA = [
     badge: 'Module 07',
     heroHeadline: 'Know your true net margins after fabric, tailoring, and discounts.',
     heroDescription: 'Track fabric procurement costs, tailor job-work payables, promotional discounts, and net margins per collection. Eliminate hidden cost leaks and keep boutique cash flow crystal clear.',
-    img: 'https://images.unsplash.com/photo-1537832816519-689ad163238b?w=1200&q=80',
+    img: '/finance-dashboard.jpg',
     stats: [
       { value: '100%', label: 'Net margin visibility per SKU' },
       { value: 'Zero', label: 'Unreconciled cash discrepancies' },
@@ -550,7 +550,7 @@ export const MODULES_DATA = [
     badge: 'Module 08',
     heroHeadline: 'Ship orders faster with lowest courier rates and smart NDR tracking.',
     heroDescription: 'Integrated with leading courier aggregators and direct carriers. Automatically select the fastest, lowest-cost courier for every pincode, print bulk shipping labels, and slash RTO with automated address verification.',
-    img: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=1200&q=80',
+    img: '/logistics-hub.jpg',
     stats: [
       { value: '22%', label: 'Average shipping cost savings' },
       { value: '38%', label: 'Drop in Return-to-Origin (RTO)' },

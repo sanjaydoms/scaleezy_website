@@ -10,87 +10,122 @@ const solutions = [
   {
     id: 'saree',
     name: 'Saree Stores',
-    title: 'Intelligent commerce for saree stores.',
-    challenges: ['Large product ranges', 'Seasonal demand', 'Category complexity', 'High-value inventory'],
-    scaleezy: ['Category tracking', 'Inventory intelligence', 'CRM', 'Personalised marketing'],
-    img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80'
+    categoryTag: 'Traditional & Silk',
+    badge: 'High-Value SKU',
+    title: 'Intelligent inventory and billing for high-value saree commerce.',
+    desc: 'Effortlessly manage complex weaves, zari variants, matching blouses, and festive wedding rush with automated stock intake.',
+    highlights: ['Zari & Silk Matrix', 'Festive Rush Forecasting', 'Dead-Stock Tracking', 'Weaver Line Sync'],
+    img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=900&q=85',
+    link: '/book-a-demo'
   },
   {
     id: 'bridal',
     name: 'Bridal Boutiques',
-    title: 'Built for high-value bridal commerce.',
-    challenges: ['High-ticket products', 'Custom fittings', 'Long purchase cycles', 'Relationship-driven selling'],
-    scaleezy: ['CRM', 'Inventory', 'Try-On', 'Personalised follow-ups'],
-    img: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80'
+    categoryTag: 'High-Value Couture',
+    badge: 'Custom Fitting',
+    title: 'Built for high-ticket bridal wear and multi-stage fittings.',
+    desc: 'Empower brides to visualize custom lehengas with AI try-on, coordinate delivery dates, and automate follow-ups.',
+    highlights: ['AI Virtual Try-On', 'Fitting Milestones', 'Lehenga Customizer', 'Follow-up Automation'],
+    img: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=85',
+    link: '/book-a-demo'
   },
   {
     id: 'ethnic',
     name: 'Ethnic Wear',
-    title: 'Stay ready for every festive demand spike.',
-    desc: 'Easily manage multi-piece sets and instantly adapt to festive demand spikes with intelligent inventory tracking.',
-    img: 'https://images.unsplash.com/photo-1605763240000-7e93b172d754?w=800&q=80'
+    categoryTag: 'Festive & Occasion',
+    badge: 'Multi-Piece Sets',
+    title: 'Stay ready for every festive demand spike and wedding season.',
+    desc: 'Easily manage multi-piece kurti sets, dupattas, and seasonal surges with real-time stock and automated reordering.',
+    highlights: ['Multi-Piece SKUs', 'Festive Demand Surge', 'Smart Size Breakdown', 'Catalog Broadcast'],
+    img: 'https://images.unsplash.com/photo-1605763240000-7e93b172d754?w=900&q=85',
+    link: '/book-a-demo'
   },
   {
     id: 'retailers',
     name: 'Fashion Retailers',
-    title: 'Connect every store, customer and channel.',
-    focus: ['Omnichannel inventory', 'Real-time analytics', 'Automated marketing'],
-    img: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80'
+    categoryTag: 'Multi-Store Chains',
+    badge: 'Omnichannel POS',
+    title: 'Connect every physical store, warehouse, and online channel.',
+    desc: 'Synchronize multi-location inventory in real time, provide lightning-fast POS checkout, and unify customer loyalty points.',
+    highlights: ['Multi-Store POS', 'Central Inventory', 'Fast Barcode Billing', 'Loyalty & Points'],
+    img: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=900&q=85',
+    link: '/book-a-demo'
   },
   {
     id: 'multibrand',
     name: 'Multi-Brand Stores',
-    title: 'See which brands actually drive your business.',
-    focus: ['Brand-wise profitability', 'Vendor relationships', 'Inventory', 'Analytics'],
-    img: 'https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=800&q=80'
+    categoryTag: 'Vendor Consignment',
+    badge: 'Vendor Margins',
+    title: 'See which brands and designer racks actually drive your profit.',
+    desc: 'Track vendor settlements, consignment stock, brand-wise margins, and automated restocking without spreadsheet chaos.',
+    highlights: ['Brand Profitability', 'Consignment Ledgers', 'Automated Restocking', 'Vendor Telemetry'],
+    img: 'https://images.unsplash.com/photo-1574634534894-89d7576c8259?w=900&q=85',
+    link: '/book-a-demo'
   },
   {
     id: 'd2c',
-    name: 'D2C Fashion',
-    title: 'Own the customer relationship.',
-    focus: ['Customer data', 'Behaviour-based campaigns', 'Returns', 'Personalisation'],
-    img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80'
+    name: 'D2C Fashion Brands',
+    categoryTag: 'E-Commerce & Social',
+    badge: 'Customer LTV',
+    title: 'Own your customer relationships and scale drop collections.',
+    desc: 'Convert social traffic with behaviour-based campaigns, minimize return rates with AI sizing, and drive repeat purchases.',
+    highlights: ['WhatsApp Automation', 'Return Minimisation', 'Drop Launch Telemetry', 'AI Segment Targeting'],
+    img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=85',
+    link: '/book-a-demo'
   },
   {
     id: 'wholesalers',
-    name: 'Wholesalers',
-    title: 'Bring intelligence to wholesale apparel commerce.',
-    focus: ['Bulk orders', 'B2B CRM', 'Procurement planning'],
-    img: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80'
+    name: 'Apparel Wholesalers',
+    categoryTag: 'B2B Distribution',
+    badge: 'Bulk B2B Orders',
+    title: 'Bring intelligent order routing to wholesale apparel trade.',
+    desc: 'Manage bulk buyer catalogs, custom price tiers, mill cutting queues, credit terms, and multi-location dispatch seamlessly.',
+    highlights: ['B2B Buyer Portal', 'Price Tier Matrix', 'Production Telemetry', 'Credit & Ledgers'],
+    img: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=900&q=85',
+    link: '/book-a-demo'
+  },
+  {
+    id: 'boutiques',
+    name: 'Fashion Boutiques',
+    categoryTag: 'Haute Couture',
+    badge: 'Bespoke CRM',
+    title: 'Relationship-driven software built for high-end fashion boutiques.',
+    desc: 'High-ticket outfits, custom measurements, and loyal clientele. Track client history, styling preferences, and fittings.',
+    highlights: ['VIP Client Profiles', 'Measurement History', 'Custom Alterations', 'Exclusive Previews'],
+    img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=85',
+    link: '/book-a-demo'
   }
 ];
 
 export default function SolutionsPage() {
-  usePageMeta("Scaleezy Solutions — For Boutiques, Saree Stores & Apparel Brands", "Scaleezy workflows tailored to boutiques, saree and ethnic wear stores, bridal studios, D2C brands, multi-brand stores, wholesalers and manufacturers.");
+  usePageMeta("Solutions for Apparel & Boutiques — Scaleezy", "Discover Scaleezy solutions for saree stores, bridal studios, ethnic wear, multi-store retail and apparel brands.");
   return (
     <div className="min-h-screen bg-[var(--color-warm-white)] text-[var(--color-charcoal)] pt-20">
       
       {/* HERO */}
       <section className="relative py-16 sm:py-24 md:py-40 px-4 sm:px-6 flex flex-col justify-center text-center">
         <MotifCommerceThread className="absolute inset-0 w-full h-full opacity-10 text-[var(--color-primary)] z-0" path="M 100,0 C 70,20 60,80 0,90" />
-        <div className="max-w-5xl mx-auto relative z-10">
-          <p className="text-xs sm:text-sm font-bold tracking-widest text-[var(--color-primary)] uppercase mb-4 sm:mb-8">
-            05 — SOLUTIONS
-          </p>
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mb-6 sm:mb-8"
+            className="mb-6 sm:mb-8 max-w-5xl mx-auto flex flex-col justify-start"
           >
             <TypingHeading
               line1="One connected platform,"
-              line1Class="font-serif italic font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] text-[var(--color-primary)] block text-center mb-1"
+              line1Class="font-serif italic font-normal text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[5.25rem] text-[var(--color-primary)] block text-center mb-1"
               line2Prefix="Tailored for "
               line2Words={[
                 'Fashion Boutiques.',
                 'Bridal Studios.',
                 'Ethnic Stores.',
                 'D2C Brands.',
-                'Textile Wholesalers.'
+                'Wholesalers.'
               ]}
               line2Class="font-sans font-bold tracking-tight text-[var(--color-primary)] block text-center mt-1 sm:mt-2"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold leading-[1.06] tracking-tight text-center"
+              line2MinHeight="min-h-[1.2em]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[5.25rem] font-bold leading-[1.08] tracking-tight text-center"
               typingSpeed={60}
               deletingSpeed={30}
               pauseDuration={2800}
@@ -108,7 +143,6 @@ export default function SolutionsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 md:gap-16 items-center">
             <div>
-              <div className="text-xs sm:text-sm font-bold tracking-widest uppercase mb-3 sm:mb-4 text-[var(--color-accent)]">SOLUTION 01 — BOUTIQUES</div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight mb-4 sm:mb-6 text-balance">
                 <span className="font-serif italic font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl block mb-1 text-[var(--color-accent)]">
                   For relationship-driven commerce,
@@ -136,8 +170,8 @@ export default function SolutionsPage() {
               </Link>
             </div>
             
-            <div className="w-full aspect-[4/5] bg-white/10 overflow-hidden relative border border-white/20 p-2 rounded-3xl shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Boutique" loading="lazy" decoding="async" className="w-full h-full object-cover rounded-2xl" />
+            <div className="w-full aspect-[4/5] bg-white/10 overflow-hidden relative border border-white/20 p-2 rounded-2xl shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Boutique" loading="lazy" decoding="async" className="w-full h-full object-cover rounded-xl" />
               <div className="absolute inset-0 bg-black/10 mix-blend-multiply rounded-2xl pointer-events-none"></div>
             </div>
           </div>
@@ -147,70 +181,79 @@ export default function SolutionsPage() {
       {/* OTHER SOLUTIONS GRID */}
       <section className="py-14 sm:py-20 md:py-32 bg-[var(--color-soft-cream)] px-4 sm:px-6 border-t border-[var(--color-primary)]/10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <p className="text-xs sm:text-sm font-bold tracking-widest text-[var(--color-primary)] uppercase mb-3 sm:mb-4">
+              SPECIALIZED ARCHITECTURES
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[var(--color-charcoal)] leading-tight text-balance">
+              Tailored for every segment of modern apparel.
+            </h2>
+            <p className="text-base sm:text-lg text-gray-700 mt-4 leading-relaxed">
+              Explore purpose-built workflows engineered for saree stores, bridal ateliers, omnichannel retail chains, and wholesale trade.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
             {solutions.map((sol, index) => (
               <motion.div 
                 key={sol.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white border border-[var(--color-primary)]/10 shadow-xl overflow-hidden flex flex-col group rounded-3xl transform-gpu will-change-transform hover:shadow-2xl transition-all duration-300"
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ delay: (index % 4) * 0.1, duration: 0.5 }}
+                className="relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group flex flex-col justify-end min-h-[520px] sm:min-h-[580px] border border-black/10 hover:-translate-y-1.5"
               >
-                <div className="h-52 sm:h-64 overflow-hidden relative">
-                  <img src={sol.img} alt={sol.name} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent transition-colors duration-500"></div>
-                  <div className="absolute bottom-4 left-6 text-white font-bold tracking-widest uppercase text-xs sm:text-sm drop-shadow-md">
-                    {sol.name}
+                {/* Background Image with Gentle Zoom on Hover */}
+                <img 
+                  src={sol.img} 
+                  alt={sol.name} 
+                  loading="lazy" 
+                  decoding="async" 
+                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
+                />
+
+                {/* Deep Ambient Luxury Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/25 group-hover:via-black/55 transition-colors duration-500"></div>
+
+                {/* Bottom Content Area */}
+                <div className="relative z-10 p-6 sm:p-8 flex flex-col">
+                  {/* Header Row: Title & Scaleezy OS Pill */}
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <h3 className="text-3xl sm:text-4xl font-serif italic font-normal tracking-wide text-white leading-tight">
+                      {sol.name}
+                    </h3>
+                    <span className="backdrop-blur-md bg-black/40 border border-white/15 text-[var(--color-accent)] font-semibold text-xs px-3 py-1 rounded-full whitespace-nowrap mt-1">
+                      Scaleezy OS
+                    </span>
                   </div>
-                </div>
-                
-                <div className="p-5 sm:p-8 md:p-10 flex-1 flex flex-col">
-                  <h3 className="text-xl sm:text-2xl md:text-2xl font-bold text-[var(--color-primary)] mb-3 sm:mb-4 tracking-tight leading-snug text-balance">
-                    {sol.title}
-                  </h3>
-                  
-                  {sol.desc && (
-                    <p className="text-gray-700 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed font-normal">{sol.desc}</p>
-                  )}
 
-                  {sol.challenges && sol.scaleezy && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 mt-auto">
-                      <div>
-                        <h4 className="text-xs font-bold text-red-600 uppercase tracking-widest mb-3 sm:mb-4">Challenges</h4>
-                        <ul className="space-y-2 sm:space-y-3">
-                          {sol.challenges.map(c => (
-                            <li key={c} className="text-xs sm:text-sm text-gray-700 flex items-start gap-2">
-                              <span className="text-red-500 mt-0.5 font-bold">✕</span> {c}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-bold text-emerald-700 uppercase tracking-widest mb-3 sm:mb-4">Scaleezy</h4>
-                        <ul className="space-y-2 sm:space-y-3">
-                          {sol.scaleezy.map(s => (
-                            <li key={s} className="text-xs sm:text-sm text-gray-900 font-medium flex items-start gap-2">
-                              <span className="text-emerald-700 mt-0.5 font-bold">✓</span> {s}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  )}
+                  {/* Description */}
+                  <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-4 line-clamp-2">
+                    {sol.desc}
+                  </p>
 
-                  {sol.focus && (
-                    <div className="mt-auto">
-                      <h4 className="text-xs font-bold text-gray-600 uppercase tracking-widest mb-3 sm:mb-4">Core Focus</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {sol.focus.map(f => (
-                          <span key={f} className="px-3 py-1 bg-[var(--color-warm-white)] text-[var(--color-primary)] text-xs sm:text-sm font-semibold rounded-full border border-black/10 shadow-2xs">
-                            {f}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  {/* Frosted Feature Highlights Row */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {sol.highlights.map(h => (
+                      <span 
+                        key={h} 
+                        className="backdrop-blur-md bg-black/40 hover:bg-black/60 border border-white/15 text-white/95 text-xs font-medium px-3 py-1.5 rounded-full transition-colors flex items-center gap-1.5"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]"></span>
+                        {h}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Full-Width Action Button (matching reference) */}
+                  <Link 
+                    to={sol.link || "/book-a-demo"} 
+                    className="w-full py-3.5 sm:py-4 bg-white text-[var(--color-primary)] font-bold text-sm sm:text-base rounded-full shadow-lg hover:bg-[var(--color-accent)] hover:text-[var(--color-primary)] transition-all duration-300 text-center flex items-center justify-center gap-2 group/btn active:scale-98"
+                  >
+                    <span>Explore Boutiques</span>
+                    <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+                  </Link>
                 </div>
               </motion.div>
             ))}

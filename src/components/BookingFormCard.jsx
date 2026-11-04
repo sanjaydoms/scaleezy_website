@@ -1,4 +1,5 @@
-import React, { useState, useId } from 'react';
+import React, { useState, useEffect, useId } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Lock } from 'lucide-react';
 import { BrandPatternAtelier } from './BrandPattern';
@@ -13,6 +14,23 @@ export default function BookingFormCard({
   source = 'book_a_demo',
   className = ''
 }) {
+  const [searchParams] = useSearchParams();
+
+  const resolveModuleName = (param) => {
+    if (!param) return defaultModule || 'Complete Scaleezy Platform';
+    const clean = param.toString().toLowerCase().trim();
+    if (clean.includes('inventory')) return 'Inventory';
+    if (clean.includes('crm') || clean.includes('customer')) return 'CRM';
+    if (clean.includes('boutique') || clean.includes('pos') || clean.includes('billing')) return 'Boutique';
+    if (clean.includes('tryon') || clean.includes('try-on') || clean.includes('virtual')) return 'TRYON2BUY';
+    if (clean.includes('market')) return 'Marketing';
+    if (clean.includes('analytic')) return 'Analytics';
+    if (clean.includes('finance')) return 'Finance';
+    if (clean.includes('logistic')) return 'Logistics';
+    const match = modulesList.find(m => m.toLowerCase() === clean);
+    return match || defaultModule || 'Complete Scaleezy Platform';
+  };
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -20,7 +38,7 @@ export default function BookingFormCard({
     countryCode: '+91',
     phone: '',
     preferredLanguage: 'English',
-    interestedModule: defaultModule,
+    interestedModule: resolveModuleName(searchParams.get('module')),
     hasPhysicalStore: 'yes',
     businessType: 'Fashion Boutique',
     city: '',
@@ -28,6 +46,13 @@ export default function BookingFormCard({
     preferredTime: 'Afternoon (2:00 PM – 5:00 PM)',
     specificRequirements: ''
   });
+
+  useEffect(() => {
+    const param = searchParams.get('module');
+    if (param) {
+      setFormData(prev => ({ ...prev, interestedModule: resolveModuleName(param) }));
+    }
+  }, [searchParams]);
 
   const [touched, setTouched] = useState({});
   const [errors, setErrors] = useState({});

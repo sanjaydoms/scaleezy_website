@@ -61,7 +61,7 @@ Explore the full platform at [www.scaleezy.com](/).`
     title: 'Festive Season Inventory Planning for Saree Stores: A Practical Guide',
     category: 'Inventory Planning',
     date: 'Sep 28, 2024',
-    img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80',
+    img: '/assets/blog-saree-perfect.jpg',
     excerpt: 'Plan festive and wedding-season stock without overbuying. A step-by-step guide for saree stores and boutiques to forecast demand and reorder smart.',
     content: `For saree stores and ethnic wear boutiques, a few weeks decide the year. Diwali, wedding season, Sankranti, Dussehra and regional festivals create sharp demand spikes. Buy too little and you lose sales at the busiest time. Buy too much and you start the new year with a pile of unsold stock.
 
@@ -113,7 +113,7 @@ Planning your next festive season? [Book a demo](/book-a-demo) and see how forec
     title: 'Does Virtual Try-On Increase Sales? What Fashion Retailers Should Know',
     category: 'Virtual Try-On',
     date: 'Sep 15, 2024',
-    img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80',
+    img: '/virtual-tryon.jpg',
     excerpt: 'How virtual try-on reduces hesitation, speeds up stores and can lift conversions, and how boutiques can start without disrupting how they sell.',
     content: `Fashion has one stubborn problem: customers cannot be sure how something will look on them until they try it. In a store, that means long queues at the trial room. Online, it means hesitation, abandoned carts and returns.
 
@@ -160,7 +160,7 @@ Curious how it looks with your own catalog? [Book a demo](/book-a-demo).`
     title: 'How to Get Repeat Customers for Your Boutique: Follow-Up Ideas That Work',
     category: 'Customer Retention',
     date: 'Sep 02, 2024',
-    img: 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=800&q=80',
+    img: '/analytics-hub.jpg',
     excerpt: 'Turn one-time buyers into loyal clients. Simple follow-up ideas for boutiques, from anniversary reminders to festive offers based on past purchases.',
     content: `Winning a new customer costs time and money. A boutique that keeps its existing customers coming back grows faster and more steadily. Yet many boutiques treat every sale as the end of the story. The customer walks out, and the relationship goes quiet.
 
@@ -209,7 +209,7 @@ Ready to bring customers back? [Book a demo](/book-a-demo).`
     title: 'How to Choose Inventory Software for Your Clothing Store: A Buyer\'s Checklist',
     category: 'Technology',
     date: 'Aug 20, 2024',
-    img: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&q=80',
+    img: '/card-production-tracking.jpg',
     excerpt: 'Not all retail software fits fashion. Use this checklist to compare inventory software for clothing stores on sizes, SKUs, CRM, forecasting and more.',
     content: `Choosing software for a clothing store is harder than it looks. Generic retail tools handle a packet of biscuits and a pair of jeans in the same way, but fashion has sizes, colours, seasons, trends and customers who expect personal attention. The wrong software can slow you down instead of helping.
 
@@ -304,7 +304,7 @@ Want a smarter way to turn followers into customers? [Book a demo](/book-a-demo)
     title: 'WhatsApp Commerce for Fashion Sellers',
     category: 'Marketing',
     date: 'Sep 29, 2024',
-    img: '/assets/blog7.jpg',
+    img: '/assets/blog-whatsapp-commerce.jpg',
     excerpt: 'How fashion sellers can use WhatsApp for catalogs, follow-ups and orders without spamming customers. A practical guide for boutiques and D2C brands.',
     content: `In India, WhatsApp is where customers already spend their day. It is no surprise that many fashion sellers close sales there: sharing photos, answering fit questions and confirming orders in one conversation.
 
@@ -354,7 +354,7 @@ Want to see how follow-ups work? [Book a demo](/book-a-demo).`
     title: 'How to Reduce RTO in Fashion Ecommerce',
     category: 'Logistics',
     date: 'Sep 15, 2024',
-    img: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&q=80',
+    img: '/logistics-hub.jpg',
     excerpt: 'High RTO eats margins. Learn how pincode routing, order confirmation and smarter courier choices can reduce returns to origin in fashion ecommerce.',
     content: `RTO, or Return to Origin, happens when a shipment is sent out but comes back undelivered. For a fashion seller, it is a triple loss: you pay shipping both ways, the item is delayed or damaged, and the sale disappears.
 
@@ -402,7 +402,7 @@ Want fewer returns to origin? [Book a demo](/book-a-demo).`
     title: 'Scaleezy vs Shopify: Which Suits Apparel Sellers?',
     category: 'Technology',
     date: 'Sep 05, 2024',
-    img: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80',
+    img: '/card-inventory-b2b.jpg',
     excerpt: 'Compare Scaleezy and Shopify for apparel: built-in inventory, CRM, virtual try-on and logistics versus a general ecommerce platform with apps.',
     content: `Shopify is one of the best-known ecommerce platforms, and for good reason. It is flexible, has a huge app ecosystem and makes launching an online store straightforward. Scaleezy takes a different approach: it is an operating system built specifically for apparel commerce.
 
@@ -454,7 +454,7 @@ Want to compare it with your current setup? [Book a demo](/book-a-demo).`
     title: 'AI in Fashion Retail: Practical Uses Today',
     category: 'Technology',
     date: 'Aug 25, 2024',
-    img: '/assets/blog10.jpg',
+    img: '/assets/blog-ai-retail.jpg',
     excerpt: 'From demand forecasting to personalised campaigns and virtual try-on, see where AI genuinely helps fashion retailers and where to start.',
     content: `AI is a buzzword, but in fashion retail it solves real, everyday problems: buying the wrong stock, sending the wrong offers and losing customers who never come back. Here is where it genuinely helps, and where to begin.
 
@@ -500,7 +500,7 @@ Curious where AI could help your business first? [Book a demo](/book-a-demo).`
     title: 'Diwali Marketing Ideas for Clothing Stores: 10 Ways to Win',
     category: 'Marketing',
     date: 'Oct 06, 2024',
-    img: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80',
+    img: '/assets/blog-diwali-marketing.jpg',
     excerpt: '10 Diwali marketing ideas for clothing stores and boutiques: early previews, targeted offers, WhatsApp follow-ups and inventory-aware promotions.',
     content: `Diwali is one of the biggest selling periods of the year for clothing stores, sarees, ethnic wear and boutiques. Customers are ready to spend, but they are also comparing, waiting for offers and visiting more than one shop. Stores that plan early usually win more of that spending.
 
@@ -553,7 +553,7 @@ Planning your festive campaigns? [Book a demo](/book-a-demo).`
     title: 'Inventory Turnover Ratio for Fashion Retail',
     category: 'Inventory',
     date: 'Oct 01, 2024',
-    img: 'https://images.unsplash.com/photo-1537832816519-689ad163238b?w=800&q=80',
+    img: '/finance-dashboard.jpg',
     excerpt: 'What inventory turnover means for clothing stores, how to calculate it, what a healthy number looks like and practical ways to improve it.',
     content: `If you want one number that shows whether your stock is working for you, inventory turnover is a strong candidate. It tells you how many times you sell and replace your inventory in a given period. For a clothing store, where trends fade and seasons change, it is especially useful.
 
@@ -601,7 +601,7 @@ Want to see your stock health at a glance? [Book a demo](/book-a-demo).`
     title: 'Loyalty Program Ideas for Clothing Stores',
     category: 'Customer Retention',
     date: 'Sep 25, 2024',
-    img: 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=800&q=80',
+    img: '/smart-pos.jpg',
     excerpt: 'Simple loyalty program ideas for boutiques and clothing stores that raise repeat purchases and customer lifetime value without hurting margins.',
     content: `A loyalty program should make customers feel recognised, not just give away discounts. The best ones are simple, easy to explain and tied to how people really shop for clothes.
 
@@ -702,7 +702,7 @@ Want cleaner product data without the typing? [Book a demo](/book-a-demo).`
     title: 'Boutique Management Software: What to Look For',
     category: 'Technology',
     date: 'Sep 10, 2024',
-    img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80',
+    img: '/card-design-sourcing.jpg',
     excerpt: 'Choosing boutique management software? Here is what matters: stock, customers, billing, try-on and marketing, plus questions to ask before you buy.',
     content: `A boutique is different from a regular shop. You may sell fewer pieces at higher prices, take custom orders, handle fittings and depend heavily on repeat customers. Plain billing software was never designed for that.
 
@@ -747,334 +747,5 @@ Check for support in your time zone, help with setup and onboarding, and an unde
 Scaleezy is an operating system for apparel commerce, built for boutiques, saree stores and fashion retailers. Inventory, CRM, marketing, virtual try-on, finance, analytics and logistics work together on one data layer. See how at [www.scaleezy.com](https://www.scaleezy.com/).
 
 Comparing boutique software? [Book a demo](/book-a-demo) and see it with your own collection.`
-  },
-  // Articles carried over from the previous site (URLs kept for SEO)
-  {
-    id: 16,
-    slug: "how-to-sync-boutique-and-shopify-inventory-real-time",
-    title: "How to Sync Boutique and Shopify Inventory in Real-Time",
-    category: "Inventory",
-    date: "Jul 19, 2026",
-    img: "/24c65a40-3db2-4974-bcdc-8df2fa3a00c9.jpg",
-    excerpt: "Explore how fashion retailers can eliminate double-sales and inventory discrepancies by connecting physical boutique and online Shopify stock seamlessly.",
-    content: `### The Problem: Disconnected Shopify and Store Inventory
-
-Apparel retailers running both physical boutiques and Shopify stores face a constant battle: stock discrepancies. A size Medium designer dress is sold in the boutique, but because the online catalog takes hours to sync, an online customer orders the same dress minutes later. The result? A cancelled order, a disappointed shopper, and wasted operational overhead.
-
-### Why Traditional Integrations Fail Fashion Brands
-
-Most basic plugins sync stock at intervals (every 30 to 60 minutes) rather than instantaneously. Furthermore, they struggle with apparel variants (size, color, fit, fabric), leading to database mismatches and partial catalog syncing.
-
-### The Solution: Scaleezy Unified Stock Engine
-
-Scaleezy solves this by maintaining a single, live database. Instead of "integrating" two separate databases, Scaleezy acts as the single source of truth. Every sale, return, or transfer in the boutique or on Shopify instantly updates the master ledger. By unifying operations under Scaleezy, retailers achieve 100% stock accuracy, eliminating double-selling and manual reconciliation.`
-  },
-  {
-    id: 17,
-    slug: "why-apparel-variant-sku-tracking-is-complicated",
-    title: "Why Apparel Variant SKU Tracking is Complicated (and How to Fix It)",
-    category: "Technology",
-    date: "Jul 18, 2026",
-    img: "/Products.png",
-    excerpt: "An in-depth look at why traditional ERPs struggle with fashion sizes, colors, and variant curves, and how modern systems simplify variant-level management.",
-    content: `### The SKU Explosion Problem
-
-In standard retail, a product has one barcode. In apparel, a single style can have 20+ variations across sizes, colorways, fits, and lengths. Traditional inventory tools force you to create 20 separate static products, stripping away the relational context that links them together.
-
-### Why It Matters for Your Boutique
-
-When variants are flattened into individual lines, buying teams cannot see variant curves. You cannot easily analyze whether "Olive Green" in "Size L" is your best seller, or if "Pastel Pink" is building up as dead stock.
-
-### The Scaleezy Matrix Model
-
-Scaleezy models products as multi-dimensional matrices. Instead of managing 20 SKUs, you manage one style with a native variant matrix. You can track, buy, and report on size-color combinations in a single screen, saving hours of data entry and revealing true sell-through patterns.`
-  },
-  {
-    id: 18,
-    slug: "how-retail-associates-do-clienteling-natively",
-    title: "How Retail Associates Can Perform Clienteling Natively",
-    category: "Clienteling",
-    date: "Jul 17, 2026",
-    img: "/c61df21a-036a-4df4-9717-af0e2d86b046.jpg",
-    excerpt: "Learn how to empower boutique associates with historical customer preferences, purchase records, and fit notes directly at the clienteling desk.",
-    content: `### The Loss of Personal Relationship in Scale
-
-Shoppers choose premium boutiques for the relationship. They expect the associate to remember their preferences, previous fittings, and style profiles. However, when this information resides only in the associate's personal memory or WhatsApp chats, the boutique fails to scale the experience.
-
-### Native CRM at the Point of Sale
-
-Clienteling shouldn't be an afterthought. By utilizing Scaleezy's built-in customer profiles, associates see a customer's purchase history, fit preferences, and style notes the moment they search their name. If a client is looking for a matching set, the associate knows exactly what colors they bought last season, creating a tailored, high-converting retail experience.`
-  },
-  {
-    id: 19,
-    slug: "what-is-best-way-to-handle-dead-stock-fashion-retail",
-    title: "What is the Best Way to Handle Dead Stock in Fashion Retail?",
-    category: "Operations",
-    date: "Jul 16, 2026",
-    img: "/7ebc5968-eef2-4818-ad01-414da6d717e2.jpg",
-    excerpt: "Stop relying on store-wide clearance sales. Learn how targeted, variants-driven insights help you move slow apparel stock profitably.",
-    content: `### The Cost of Dead Stock
-
-Unsold inventory sits on shelves, eating up cash flow and warehouse space. Most boutique owners respond to slow-moving inventory by hosting store-wide clearance sales, which hurts brand equity and dilutes profit margins.
-
-### Granular Velocity Cues
-
-Scaleezy resolves this by flagging slow-movers at the variant level. If a specific colorway or size curve isn't moving in Boutique A, but is highly sought after in Boutique B, Scaleezy prompts an inventory transfer rather than a markdown. For remaining items, you can generate personalized campaigns targeting customers who previously showed interest, protecting your margins.`
-  },
-  {
-    id: 20,
-    slug: "how-to-optimize-clothing-supply-chains-multiple-stores",
-    title: "How to Optimize Clothing Supply Chains for Multiple Physical Stores",
-    category: "Logistics",
-    date: "Jul 15, 2026",
-    img: "/46587070-87ff-48d9-9e5f-96cddc34ac0b.jpg",
-    excerpt: "A comprehensive guide on managing stock allocation, local replenishment, and boutique transfers across multi-location fashion brands.",
-    content: `### The Multi-Location Allocation Dilemma
-
-Allocating stock across multiple locations is a complex balancing act. Sending too much inventory to one boutique leaves another out of stock, causing lost sales. Without centralized data, transfers between stores become administrative nightmares.
-
-### Automated Replenishment and Transfers
-
-Scaleezy's logistics system tracks regional sales velocities. It alerts you when Boutique A's stock level drops below safety thresholds, suggesting direct shipments from the central warehouse. It also automates transfer documentation, allowing store managers to send and receive inventory with simple barcode scans, streamlining your entire supply chain.`
-  },
-  {
-    id: 21,
-    slug: "how-to-scale-apparel-brand-without-adding-ten-tools",
-    title: "How to Scale an Apparel Brand Without Adding 10 Disconnected Tools",
-    category: "Operations",
-    date: "Jul 14, 2026",
-    img: "/040c1ae5-eee1-4eb1-80da-16278e880f31.jpg",
-    excerpt: "Avoid software bloat. Read how building a unified systems architecture from day one enables seamless fashion operations at scale.",
-    content: `### The Trap of Retail Software Bloat
-
-As fashion brands grow, they often buy separate tools for POS, online inventory, clienteling, email marketing, logistics, and financials. Before long, team members are spending half their days manually syncing data, exporting spreadsheets, and troubleshooting integrations.
-
-### Unifying on Scaleezy
-
-Scaleezy eliminates software bloat by replacing these individual tools with a single workspace. With inventory, customer relationships, marketing, and logistics running on a shared ledger, you can scale your order volume and boutique footprint without increasing administrative staff.`
-  },
-  {
-    id: 22,
-    slug: "can-ai-virtual-try-on-increase-conversion-rates-ethnic-wear",
-    title: "Can AI Virtual Try-On Increase Conversion Rates for Ethnic Wear?",
-    category: "Marketing",
-    date: "Jul 13, 2026",
-    img: "/Try-on_studo.png",
-    excerpt: "Analyze how interactive AI fitting rooms reduce conversion hesitation and sizing returns in variant-rich bridal and ethnic wear markets.",
-    content: `### The Fitting Hesitation in Ethnic Wear
-
-Ethnic wear and bridal pieces are high-ticket purchases with intricate drapes and details. Online shoppers often hesitate because they cannot visualize how a garment will fit their body, leading to empty shopping carts and high return rates.
-
-### Scaleezy Try-On Studio
-
-Scaleezy's built-in Try-On Studio lets shoppers upload a photo and see themselves in your garments in seconds. By rendering realistic drapes, patterns, and fits, Scaleezy increases customer purchase confidence. Metrics show virtual try-on tools increase checkout conversions by up to 2.4× and slash sizing-related returns.`
-  },
-  {
-    id: 23,
-    slug: "how-to-integrate-bridal-fittings-and-purchase-history",
-    title: "How to Integrate Bridal Fittings and Customer Purchase History",
-    category: "Clienteling",
-    date: "Jul 12, 2026",
-    img: "/5a350a3c-6121-467e-b724-ece80e27ac03.jpg",
-    excerpt: "Discover how bridal and couture salons can capture fitting notes, style preferences, and fabric selections inside a shared customer CRM profile.",
-    content: `### The Fragmented Bridal Fitting Timeline
-
-A bridal fitting timeline spans months and multiple store visits. When fabric preferences, measurement edits, and family notes are recorded in paper notebooks or separate personal files, the chance of styling mistakes increases, damaging the premium experience.
-
-### Centralizing Couture Journeys
-
-Scaleezy offers customized bridal profiles that store fittings, photos, measurements, and fabric selections in one timeline. Any consultant who opens the profile instantly understands the bride's styling direction, previous appointments, and purchased accessories, guaranteeing a flawless salon experience.`
-  },
-  {
-    id: 24,
-    slug: "why-general-erp-systems-fail-for-fashion-apparel-brands",
-    title: "Why General ERP Systems Fail for Fashion Apparel Brands",
-    category: "Technology",
-    date: "Jul 11, 2026",
-    img: "/67b453b8-fd20-4d85-adb2-7254c089a986.jpg",
-    excerpt: "General enterprise resource tools ignore variant curves, collections, and seasonal lifecycles. Understand why fashion needs specialized systems.",
-    content: `### The Limitations of Generic ERPs
-
-Generic ERP systems treat products like simple boxes on a shelf. They fail to understand seasonal collection drops, variant curves, and boutique styling clienteling, forcing apparel brands into tedious workarounds.
-
-### Scaleezy: Tailored for Fashion
-
-Scaleezy was built specifically for fashion. Our platform understands variant grids, pre-orders, collection launches, and fitting-room workflows natively, giving you the tools to manage your label without force-fitting generic databases.`
-  },
-  {
-    id: 25,
-    slug: "best-practices-for-multi-location-inventory-reconciliation",
-    title: "Best Practices for Multi-Location Inventory Reconciliation",
-    category: "Inventory",
-    date: "Jul 10, 2026",
-    img: "/4ea5a527-da78-44a0-95d4-4f982e60b2fe.jpg",
-    excerpt: "Keep stock accurate across retail storefronts, online warehouses, and pop-up locations with simple audit workflows.",
-    content: `### The Nightmare of Store Stock Audits
-
-Reconciling stock across multiple boutiques and warehouse locations is often a manual, error-prone task that results in lost productivity and persistent data discrepancies.
-
-### Simplified Audit Workflows
-
-Scaleezy streamlines audits with native mobile barcode scanning. Store associates can scan inventory directly from their mobile devices, while the system compares live stock levels and highlights missing pieces automatically. This turns inventory audits from an annual nightmare into a routine, stress-free task.`
-  },
-  {
-    id: 26,
-    slug: "how-to-personalize-marketing-campaigns-for-high-ticket-shoppers",
-    title: "How to Personalize Marketing Campaigns for High-Ticket Shoppers",
-    category: "Marketing",
-    date: "Jul 09, 2026",
-    img: "/CRM.png",
-    excerpt: "Ditch the generic newsletters. Learn how customer preference and purchase timelines allow you to segment and target high-value buyers.",
-    content: `### The Pitfalls of Generic Email Blasts
-
-High-value shoppers ignore generic newsletters. To capture their attention, you must speak directly to their style preferences, fit, and previous purchases.
-
-### Smart Segment Targeting
-
-Scaleezy's unified CRM connects purchase histories with email marketing templates. You can easily segment clients who purchased size Medium dresses in Olive Green last season, sending them early access to a new, matching outerwear collection. This personalized approach drives high click-through rates and repeat purchases.`
-  },
-  {
-    id: 27,
-    slug: "the-impact-of-connected-inventory-on-customer-satisfaction",
-    title: "The Impact of Connected Inventory on Customer Satisfaction",
-    category: "Operations",
-    date: "Jul 08, 2026",
-    img: "/c61df21a-036a-4df4-9717-af0e2d86b046.jpg",
-    excerpt: "Stockouts and mismatched pricing kill retail relationships. Discover how a unified ledger builds trust at checkout.",
-    content: `### How Stock Outages Damage Customer Loyalty
-
-Mismatched pricing, out-of-stock sizes, and order cancellations destroy customer relationships. Trust is built when details are accurate, fast, and consistent across both store and online channels.
-
-### Accuracy at Every Point
-
-With Scaleezy, customer profiles, order channels, and stock levels are fully unified. Store associates can check, reserve, and sell items located at any warehouse instantly, saving the sale and showing shoppers that your service is as premium as your designs.`
-  },
-  {
-    id: 28,
-    slug: "reducing-logistics-overhead-in-direct-to-consumer-fashion",
-    title: "Reducing Logistics Overhead in Direct-to-Consumer Fashion",
-    category: "Logistics",
-    date: "Jul 07, 2026",
-    img: "/46587070-87ff-48d9-9e5f-96cddc34ac0b.jpg",
-    excerpt: "Streamline shipping labels, order routing, and distribution costs with connected stock profiles.",
-    content: `### The Growing Costs of DTC Shipping
-
-Shipping costs and operational friction in DTC logistics eat away at apparel margins. Without automated routing, fulfillment centers waste time figuring out where and how to ship packages.
-
-### Optimized Order Routing
-
-Scaleezy automatically routes orders to the warehouse or boutique closest to the customer's shipping address. Our integrated logistics dashboard prints shipping labels, registers tracking numbers, and updates the customer, reducing shipping times and delivery costs.`
-  },
-  {
-    id: 29,
-    slug: "how-to-choose-a-modern-pos-system-for-boutique-clothing-stores",
-    title: "How to Choose a Modern POS System for Boutique Clothing Stores",
-    category: "Technology",
-    date: "Jul 06, 2026",
-    img: "/ab535969-817b-4993-8338-e2f262fbd8c8.jpg",
-    excerpt: "A checklist for apparel founders evaluating point-of-sale systems that handle customer profiles and variants natively.",
-    content: `### Traditional POS Systems are Blind to Fashion
-
-Traditional cash registers and basic POS systems cannot track customer fits, style profiles, or variant grids natively, forcing associates to toggle between multiple applications during checkout.
-
-### The Scaleezy Native Checkout Experience
-
-Scaleezy POS is designed for fashion retailers. It brings customer CRM profiles, variants, promotional campaigns, and store transfers into a single, intuitive interface, keeping checkout fast and informative.`
-  },
-  {
-    id: 30,
-    slug: "scaling-variant-rich-fashion-collections-guide-for-founders",
-    title: "Scaling Variant-Rich Fashion Collections: Guide for Founders",
-    category: "Operations",
-    date: "Jul 05, 2026",
-    img: "/040c1ae5-eee1-4eb1-80da-16278e880f31.jpg",
-    excerpt: "How to manage extensive design catalogs across colors, sizes, and fabrics without getting lost in database administration.",
-    content: `### The Database Complexity of Multi-Variant Ranges
-
-Launching a collection with multiple fabrics, colors, and sizes creates a massive volume of SKUs. Without a dedicated system, founders spend their days managing spreadsheets instead of focusing on creative designs.
-
-### Scaleezy Style Lifecycle Management
-
-Scaleezy lets you create styles and colorways once, generating your size matrix automatically. It keeps catalogs structured, allowing you to focus on launching and growing your brand.`
-  },
-  {
-    id: 31,
-    slug: "unifying-crm-and-billing-in-boutique-clothing-operations",
-    title: "Unifying CRM and Billing in Boutique Clothing Operations",
-    category: "Clienteling",
-    date: "Jul 04, 2026",
-    img: "/CRM.png",
-    excerpt: "Discover why connecting purchase records, fitting appointments, and transaction details increases customer lifetime value.",
-    content: `### The Disconnect Between Sales and CRM
-
-When CRM notes, fitting appointments, and invoices are kept in separate systems, your sales team loses the context needed to provide a truly personalized service.
-
-### A Single Customer View
-
-Scaleezy brings transactions, fit profiles, wishlist items, and fitting timelines into a single view, empowering your staff to clientel effectively and build customer loyalty.`
-  },
-  {
-    id: 32,
-    slug: "how-real-time-analytics-drives-apparel-stock-replenishment",
-    title: "How Real-Time Analytics Drives Apparel Stock Replenishment",
-    category: "Inventory",
-    date: "Jul 03, 2026",
-    img: "/24c65a40-3db2-4974-bcdc-8df2fa3a00c9.jpg",
-    excerpt: "Stop guessing your purchase orders. Learn how live velocity data calculates what sizes and colorways to reorder.",
-    content: `### Guesswork in Buying Leads to Overstock
-
-Buying clothing based on gut feel leads to mismatched sizes and stockouts. Ordering too many slow-moving sizes or too few best-sellers eats away at your cash flow.
-
-### Data-Driven Replenishment
-
-Scaleezy analyzes sales velocity, size curves, and geographic demand in real time, calculating replenishment targets and generating purchase drafts automatically to optimize your inventory.`
-  },
-  {
-    id: 33,
-    slug: "why-fashion-brands-lose-revenue-to-disconnected-store-operations",
-    title: "Why Fashion Brands Lose Revenue to Disconnected Store Operations",
-    category: "Operations",
-    date: "Jul 02, 2026",
-    img: "/67b453b8-fd20-4d85-adb2-7254c089a986.jpg",
-    excerpt: "Identify the leaks in your retail operations: from missing variant stock to forgotten customer fittings.",
-    content: `### Silent Leaks in Apparel Retail
-
-Disconnected operations leak revenue through inventory errors, forgotten fittings, missed follow-ups, and inefficient shipping routing.
-
-### Fixing the Leaks with Scaleezy
-
-Scaleezy plugs these leaks by bringing inventory, CRM, and logistics onto a single platform, optimizing every workflow to protect your margins.`
-  },
-  {
-    id: 34,
-    slug: "designing-a-seamless-omni-channel-customer-profile-in-apparel",
-    title: "Designing a Seamless Omni-Channel Customer Profile in Apparel",
-    category: "Clienteling",
-    date: "Jul 01, 2026",
-    img: "/c61df21a-036a-4df4-9717-af0e2d86b046.jpg",
-    excerpt: "How to merge Shopify purchase records, boutique fitting notes, and loyalty profiles under a single identity.",
-    content: `### The Split Customer Identity Problem
-
-When online customers are treated as separate profiles from physical store shoppers, you lose the cohesive view needed to provide a seamless customer experience.
-
-### The Scaleezy Unified Customer Ledger
-
-Scaleezy merges retail POS accounts, Shopify profiles, and fitting records under a single identifier, offering a complete timeline of your relationship with each customer.`
-  },
-  {
-    id: 35,
-    slug: "how-to-transition-your-fashion-label-from-wholesale-to-dtc",
-    title: "How to Transition Your Fashion Label from Wholesale to DTC",
-    category: "Operations",
-    date: "Jun 30, 2026",
-    img: "/ca58058f-dd88-4dc3-acef-ab4d5651d156.jpg",
-    excerpt: "Ready to build direct customer relationships? Read our playbook on managing inventory, pricing, and clienteling during DTC transitions.",
-    content: `### The Risks of Transitioning to DTC
-
-Moving from bulk wholesale shipments to individual DTC orders introduces logistics complexity and requires a dedicated customer clienteling system.
-
-### Your DTC Operating System
-
-Scaleezy helps wholesale brands shift to DTC by providing tools for single-item order fulfillment, direct customer communication, and multi-location inventory allocation.`
   }
 ];

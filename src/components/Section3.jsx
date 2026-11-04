@@ -196,11 +196,8 @@ export default function Section3() {
                   transition={{ duration: 0.7, delay: i * 0.12 }}
                   className={`relative flex flex-col justify-between rounded-[32px] sm:rounded-[36px] p-6 sm:p-7 md:p-8 shadow-[0_20px_45px_-10px_rgba(0,0,0,0.35)] transition-all duration-500 ease-out cursor-pointer group transform-gpu will-change-transform ${problem.bgColor} ${problem.textColor} ${problem.rotation} ${problem.translateY} hover:rotate-0 hover:-translate-y-6 hover:scale-105 hover:z-30 hover:shadow-[0_30px_70px_-15px_rgba(0,0,0,0.5),0_0_35px_rgba(184,212,50,0.2)]`}
                 >
-                  {/* Top Number & Category */}
+                  {/* Card Title */}
                   <div className="text-center">
-                    <span className="text-xs sm:text-sm font-mono font-bold tracking-widest opacity-75 uppercase block mb-2">
-                      {problem.number}
-                    </span>
                     <h3 className="text-xl sm:text-2xl font-bold tracking-tight leading-snug px-1">
                       {problem.title}
                     </h3>

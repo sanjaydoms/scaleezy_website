@@ -18,7 +18,7 @@ const modules = [
     subtitle: 'Stock Intelligence & Demand Forecasting',
     desc: 'Know what is selling, what is stuck, and what to reorder across apparel sizes, fabrics, and colors.',
     capabilities: ['Real-time stock monitoring', 'Fast-moving detection', 'Dead-stock tracking', 'AI forecasting', 'Procurement recommendations', 'Stock intake', 'SKU intelligence'],
-    img: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80',
+    img: '/card-inventory-b2b.jpg',
     bg: 'bg-[var(--color-charcoal)]',
     text: 'text-white'
   },
@@ -32,7 +32,7 @@ const modules = [
     subtitle: 'Clienteling & VIP Profiles',
     desc: 'Remember every client’s sizes, preferences, anniversary dates, and past purchases on a single screen.',
     capabilities: ['Purchase history', 'Lifecycle', 'Behaviour', 'Preferences', 'Follow-ups', 'Abandoned try-ons', 'Segments'],
-    img: 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=800&q=80',
+    img: '/crm-module.jpg',
     bg: 'bg-[var(--color-primary)]',
     text: 'text-white'
   },
@@ -47,7 +47,7 @@ const modules = [
     desc: 'Lightning-fast barcode checkout with custom tailor measurements, advance deposits, and offline billing mode.',
     capabilities: ['Fast checkout', 'Barcode scanning', 'Inventory sync', 'Customer profiles at checkout', 'Multi-store support', 'Alteration slips'],
     comingSoon: ['AI-powered upselling', 'Mobile POS integration', 'Advanced loyalty point tracking'],
-    img: 'https://images.unsplash.com/photo-1556742111-a301076d9d18?w=800&q=80',
+    img: '/smart-pos.jpg',
     bg: 'bg-[#082216]',
     text: 'text-white'
   },
@@ -61,7 +61,7 @@ const modules = [
     subtitle: 'AI Virtual Try-On Studio',
     desc: 'Let customers visualize apparel realistically on diverse body models or their own photo before buying.',
     capabilities: ['Try-on rendering', 'Model/consumer visualisation', 'Product previews', 'Try-on analytics', 'Conversion tracking', 'In-store kiosk mode'],
-    img: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80',
+    img: '/virtual-tryon.jpg',
     bg: 'bg-[var(--color-warm-white)]',
     text: 'text-[var(--color-primary)]'
   },
@@ -75,7 +75,7 @@ const modules = [
     subtitle: 'Automated WhatsApp & Campaigns',
     desc: 'Automate segmented WhatsApp collection drops, festive alerts, and in-store QR code lead capture.',
     capabilities: ['Campaign creation', 'CRM targeting', 'AI social content', 'Website builder', 'QR generator', 'WhatsApp broadcasts'],
-    img: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80',
+    img: '/marketing-hub.jpg',
     bg: 'bg-[var(--color-soft-cream)]',
     text: 'text-[var(--color-charcoal)]'
   },
@@ -89,7 +89,7 @@ const modules = [
     subtitle: 'Merchandising & Sales Dashboard',
     desc: 'Combine data from every Scaleezy module into clear, actionable numbers you can review every Monday morning.',
     capabilities: ['Sell-through rates', 'Top category velocity', 'Staff billing performance', 'Dead-stock aging', 'WhatsApp daily closing report'],
-    img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80',
+    img: '/analytics-hub.jpg',
     bg: 'bg-white',
     text: 'text-[var(--color-charcoal)]'
   },
@@ -103,7 +103,7 @@ const modules = [
     subtitle: 'Costing, Margins & Cash Flow',
     desc: 'Track raw fabric costs, tailor piece-rates, counter discounts, and net margins per collection.',
     capabilities: ['Revenue', 'Net margins', 'Pending payments', 'Alerts', 'Tailor ledger', 'GST-compliant exports'],
-    img: 'https://images.unsplash.com/photo-1537832816519-689ad163238b?w=800&q=80',
+    img: '/finance-dashboard.jpg',
     bg: 'bg-[var(--color-primary)]',
     text: 'text-white'
   },
@@ -118,7 +118,7 @@ const modules = [
     desc: 'Auto-select lowest-cost couriers, print bulk thermal labels, and reduce COD returns with WhatsApp verification.',
     capabilities: ['Multiple carriers', 'Smart selection', 'Pincode routing', 'Efficiency analytics', 'WhatsApp tracking links'],
     comingSoon: ['AI courier selection', 'RTO prediction', 'Carrier scoring', 'Regional delivery insights'],
-    img: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&q=80',
+    img: '/logistics-hub.jpg',
     bg: 'bg-[#DEDED9]',
     text: 'text-[var(--color-primary)]'
   }

@@ -68,7 +68,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mb-6 sm:mb-8 max-w-5xl mx-auto"
+            className="mb-6 sm:mb-8 max-w-5xl mx-auto min-h-[150px] sm:min-h-[185px] md:min-h-[225px] lg:min-h-[265px] xl:min-h-[295px] flex flex-col justify-start"
           >
             <TypingHeading
               line1="Apparel commerce"

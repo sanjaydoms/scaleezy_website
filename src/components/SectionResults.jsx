@@ -28,15 +28,15 @@ export default function SectionResults() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 md:gap-16 text-center md:text-left border-b border-white/20 pb-10 sm:pb-14 md:pb-16 mb-10 sm:mb-14 md:mb-16">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[var(--color-accent)] mb-2 sm:mb-3">30%</div>
-            <div className="text-sm sm:text-base md:text-lg font-medium tracking-normal text-white/95">Reduce dead stock</div>
+            <div className="text-sm sm:text-base md:text-lg font-medium tracking-normal text-white/95">Reduction in dead stock</div>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
             <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[var(--color-accent)] mb-2 sm:mb-3">40%</div>
-            <div className="text-sm sm:text-base md:text-lg font-medium tracking-normal text-white/95">Improve repeat purchases</div>
+            <div className="text-sm sm:text-base md:text-lg font-medium tracking-normal text-white/95">Higher repeat purchases</div>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
             <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[var(--color-accent)] mb-2 sm:mb-3">50%</div>
-            <div className="text-sm sm:text-base md:text-lg font-medium tracking-normal text-white/95">Cut manual operations</div>
+            <div className="text-sm sm:text-base md:text-lg font-medium tracking-normal text-white/95">Reduction in manual tasks</div>
           </motion.div>
         </div>
         <motion.div 

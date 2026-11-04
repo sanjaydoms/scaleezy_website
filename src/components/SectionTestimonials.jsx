@@ -6,67 +6,67 @@ import { BrandPatternMonogram, BrandWatermark } from './BrandPattern';
 const testimonials = [
   {
     author: "ANANYA SHARMA",
-    role: "Founder, The Silk Route Boutique",
-    quote: "Scaleezy transformed our inventory operations completely. Our dead stock dropped by 30% in just two quarters, and the clienteling tools turn first-time shoppers into lifelong VIP clients.",
+    role: "Founder & Head Designer, Vanya Heritage Silks (Bengaluru)",
+    quote: "Before Scaleezy, festival rush meant endless handwritten chits and stockouts on our best-selling Banarasi sarees. Now, my entire boutique runs right from my phone. We cut dead stock by 32% in our very first wedding season.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&q=80",
+    avatar: "/indian-testimonial-1.jpg",
     bgTint: "bg-[#e5dcd3]"
   },
   {
-    author: "VIKRAM SINGH",
-    role: "Operations Head, Loom & Weave",
-    quote: "The omnichannel sync is flawless. We manage our Shopify store and physical boutique from one dashboard. It literally saves us 20 hours a week in manual entry.",
+    author: "VIKRAMADITYA SINGHANIA",
+    role: "Managing Director, Singhania Weaves (Hyderabad)",
+    quote: "Managing inventory across Banjara Hills and Jubilee Hills used to take 2 hours of reconciliations every night. With Scaleezy, our multi-store stock and online store sync instantly. My staff never has to say 'let me check in the back warehouse'.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80",
+    avatar: "/indian-testimonial-2.jpg",
     bgTint: "bg-[#d8e2dc]"
   },
   {
-    author: "PRIYA PATEL",
-    role: "CEO, Urban Threads Atelier",
-    quote: "Finally, an ERP that actually understands the apparel industry. The size matrices and barcode generation tools are a lifesaver for our wholesale operations.",
+    author: "KUNAL SUNDARAM",
+    role: "Co-Founder & Director, Aavaran Luxury Pret (Chennai)",
+    quote: "The bespoke clienteling and custom measurements tool is an absolute lifesaver. When a client arrives for a fitting, our styling team already has their measurements, preferred handloom weaves, and WhatsApp chat history right in front of them.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=80",
+    avatar: "/indian-testimonial-3.jpg",
     bgTint: "bg-[#e2ece9]"
   },
   {
-    author: "TIMOTHÉE D'ORIGNY",
-    role: "Creative Director, Maison Nouvelle",
-    quote: "The digital tech packs and fabric sourcing matrix allowed our team to accelerate seasonal sample development by 40%. The craftsmanship fidelity is unmatched.",
+    author: "RAJESH KULKARNI",
+    role: "Director of Operations, Kulkarni Textiles & B2B (Surat)",
+    quote: "We supply lehenga fabrics and unstitched suits to over 120 boutique retailers across India. Scaleezy's wholesale portal and automated barcode generator saved my team at least 25 hours of manual invoicing every single week.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80",
+    avatar: "/indian-testimonial-4.jpg",
     bgTint: "bg-[#e6ccb2]"
   },
   {
-    author: "ELENA RODRIGUEZ",
-    role: "E-Commerce Director, Moda Bella",
-    quote: "Scaleezy's virtual try-on integration boosted our online conversion rates by 42%. Customers feel much more confident buying premium apparel online now.",
+    author: "ADITI SEN",
+    role: "Co-Founder, Bengal Weavers D2C (Kolkata)",
+    quote: "Scaleezy connected our master weavers' line queue directly to our e-commerce dispatch. We know the exact production stage of every Jamdani lot without having to call the workshop floor ten times a day.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80",
-    bgTint: "bg-[#ede0d4]"
+    avatar: "/indian-testimonial-8.jpg",
+    bgTint: "bg-[#ddb892]"
   },
   {
-    author: "MARCUS CHEN",
-    role: "CMO, Thread & Co.",
-    quote: "The personalized marketing flows generated through Scaleezy have doubled our repeat customer rate. It sends the right lookbook to the right client automatically.",
+    author: "ROHAN MITTAL",
+    role: "Founder & CEO, Mittal & Co. Ethnic Wear (Jaipur)",
+    quote: "Finally an operating system built specifically for the Indian apparel market. It handles size matrices, color lots, unstitched sets, and automated WhatsApp festive campaigns that genuinely bring old customers back into the store.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&q=80",
+    avatar: "/indian-testimonial-6.jpg",
     bgTint: "bg-[#d6ccc2]"
   },
   {
-    author: "SOPHIE LAURENT",
-    role: "Merchandising Lead, Atelier Parisienne",
-    quote: "We eliminated inventory discrepancies between our flagship boutiques and wholesale department store allocations. It feels like magic.",
+    author: "KAVITA REDDY",
+    role: "Head of Retail, Taraaya Luxury Pret (Hyderabad)",
+    quote: "Our billing lines used to back up completely on Dhanteras and festive weekends. Scaleezy's Smart POS cut checkout time to seconds, printed barcode tags effortlessly, and automatically added loyalty points to the customer's phone.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80",
+    avatar: "/indian-testimonial-7.jpg",
     bgTint: "bg-[#f5ebe0]"
   },
   {
-    author: "AMARA JOHNSON",
-    role: "Head of Retail, Savannah & Oak",
-    quote: "Our store staff loves the VIP client dossier. When regular clients walk in, we immediately know their sizing history and preferred fabric cuts.",
+    author: "MEERA NAMBIAR",
+    role: "Creative Director, Kasavu & Loom Atelier (Kochi)",
+    quote: "Virtual try-on completely changed how our NRI brides and diaspora clients shop with us from the US and Dubai. They can visualize handloom drapes in real-time before ordering custom work, and our return rates dropped to almost zero.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500&q=80",
-    bgTint: "bg-[#ddb892]"
+    avatar: "/indian-testimonial-5.jpg",
+    bgTint: "bg-[#ede0d4]"
   }
 ];
 
@@ -98,44 +98,11 @@ export default function SectionTestimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center">
         
         {/* ============================================================== */}
-        {/* TOP QUOTE & AUTHOR BLOCK (Exact Reference Layout)               */}
+        {/* HEADER & TESTIMONIAL QUOTE BLOCK                               */}
         {/* ============================================================== */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16 md:mb-20 min-h-[170px] sm:min-h-[200px] flex flex-col items-center justify-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeIdx}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="space-y-2.5 sm:space-y-3"
-            >
-              {/* Author Name */}
-              <h4 className="font-bold tracking-widest text-xs sm:text-sm md:text-base text-[var(--color-charcoal)] uppercase">
-                {current.author}
-              </h4>
-
-              {/* Role / Title */}
-              <p className="text-xs sm:text-sm text-gray-600 font-medium">
-                {current.role}
-              </p>
-
-              {/* Star Rating */}
-              <div className="flex justify-center gap-1 text-amber-500 pt-0.5 pb-0.5">
-                {[...Array(current.rating)].map((_, i) => (
-                  <Star key={i} size={15} fill="currentColor" />
-                ))}
-              </div>
-
-              {/* Quote */}
-              <p className="text-sm sm:text-base md:text-lg text-[var(--color-charcoal)] leading-relaxed font-normal italic text-balance max-w-2xl px-2 sm:px-4">
-                &ldquo;{current.quote}&rdquo;
-              </p>
-            </motion.div>
-          </AnimatePresence>
-
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 md:mb-20 flex flex-col items-center justify-center">
           {/* Main Prominent Headline */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-[var(--color-charcoal)] mt-6 sm:mt-8 md:mt-12 text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-[var(--color-charcoal)] mb-8 sm:mb-10 md:mb-12 text-balance">
             <span className="font-serif italic font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl block mb-1 text-[var(--color-primary)]">
               Trusted by apparel founders,
             </span>
@@ -143,6 +110,42 @@ export default function SectionTestimonials() {
               What founders say about Scaleezy.
             </span>
           </h2>
+
+          {/* Dynamic Quote & Author Block */}
+          <div className="min-h-[160px] sm:min-h-[180px] flex flex-col items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIdx}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="space-y-2.5 sm:space-y-3"
+              >
+                {/* Author Name */}
+                <h4 className="font-bold tracking-widest text-xs sm:text-sm md:text-base text-[var(--color-charcoal)] uppercase">
+                  {current.author}
+                </h4>
+
+                {/* Role / Title */}
+                <p className="text-xs sm:text-sm text-gray-600 font-medium">
+                  {current.role}
+                </p>
+
+                {/* Star Rating */}
+                <div className="flex justify-center gap-1 text-amber-500 pt-0.5 pb-0.5">
+                  {[...Array(current.rating)].map((_, i) => (
+                    <Star key={i} size={15} fill="currentColor" />
+                  ))}
+                </div>
+
+                {/* Quote */}
+                <p className="text-sm sm:text-base md:text-lg text-[var(--color-charcoal)] leading-relaxed font-normal italic text-balance max-w-2xl px-2 sm:px-4">
+                  &ldquo;{current.quote}&rdquo;
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* ============================================================== */}

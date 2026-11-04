@@ -127,7 +127,7 @@ export default function SectionJourney() {
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-[var(--color-accent)] font-semibold tracking-wider uppercase">
                   <Package className="w-3.5 h-3.5" />
-                  Milestone 01 • Sourcing
+                  Sourcing
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
@@ -316,7 +316,7 @@ export default function SectionJourney() {
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-emerald-400 font-semibold tracking-wider uppercase">
                   <Zap className="w-3.5 h-3.5" />
-                  Milestone 02 • Distribution
+                  Distribution
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
@@ -364,7 +364,7 @@ export default function SectionJourney() {
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-[var(--color-accent)] font-semibold tracking-wider uppercase">
                   <UserCheck className="w-3.5 h-3.5" />
-                  Milestone 03 • Conversion
+                  Conversion
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">

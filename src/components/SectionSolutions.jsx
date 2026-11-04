@@ -216,7 +216,7 @@ export default function SectionSolutions() {
                   mass: 0.8
                 }}
                 onClick={() => setActiveIdx(idx)}
-                className={`absolute w-[240px] sm:w-[290px] md:w-[330px] h-[380px] sm:h-[440px] md:h-[480px] rounded-[28px] sm:rounded-[32px] p-5 sm:p-7 md:p-8 flex flex-col justify-between items-center text-center cursor-pointer shadow-[0_22px_60px_-15px_rgba(0,0,0,0.12)] border ${item.borderTint} bg-gradient-to-b ${item.gradient} backdrop-blur-md transition-shadow hover:shadow-[0_28px_70px_-15px_rgba(0,0,0,0.2)]`}
+                className={`absolute w-[250px] sm:w-[290px] md:w-[330px] h-[390px] sm:h-[440px] md:h-[480px] rounded-[28px] sm:rounded-[32px] p-5 sm:p-7 md:p-8 flex flex-col justify-between items-center text-center cursor-pointer shadow-[0_22px_60px_-15px_rgba(0,0,0,0.12)] border ${item.borderTint} bg-gradient-to-b ${item.gradient} backdrop-blur-md transition-shadow hover:shadow-[0_28px_70px_-15px_rgba(0,0,0,0.2)]`}
                 style={{
                   pointerEvents: isVisible ? 'auto' : 'none',
                   transformOrigin: "bottom center"
@@ -248,9 +248,10 @@ export default function SectionSolutions() {
                     <Link 
                       to="/solutions"
                       onClick={(e) => e.stopPropagation()}
-                      className={`inline-block bg-white text-[var(--color-charcoal)] px-7 sm:px-8 py-3 rounded-full font-bold text-xs tracking-widest uppercase shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-white/80 transition-all duration-300 hover:scale-105 active:scale-95 ${item.pillColor}`}
+                      className={`inline-flex items-center justify-center gap-1.5 whitespace-nowrap bg-white text-[var(--color-charcoal)] px-5 sm:px-8 py-3 rounded-full font-bold text-[11px] sm:text-xs tracking-wider uppercase shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-white/80 transition-all duration-300 hover:scale-105 active:scale-95 ${item.pillColor}`}
                     >
-                      EXPLORE SOLUTION →
+                      <span>EXPLORE SOLUTION</span>
+                      <span>→</span>
                     </Link>
                   ) : (
                     <button 
@@ -258,7 +259,7 @@ export default function SectionSolutions() {
                         e.stopPropagation();
                         setActiveIdx(idx);
                       }}
-                      className={`bg-white text-[var(--color-charcoal)] px-7 sm:px-8 py-3 rounded-full font-bold text-xs tracking-widest uppercase shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-white/80 transition-all duration-300 hover:scale-105 active:scale-95 ${item.pillColor}`}
+                      className={`inline-flex items-center justify-center whitespace-nowrap bg-white text-[var(--color-charcoal)] px-5 sm:px-8 py-3 rounded-full font-bold text-[11px] sm:text-xs tracking-wider uppercase shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-white/80 transition-all duration-300 hover:scale-105 active:scale-95 ${item.pillColor}`}
                     >
                       READ MORE
                     </button>
@@ -291,22 +292,6 @@ export default function SectionSolutions() {
             >
               <ChevronRight size={20} className="group-hover:translate-x-0.5 transition-transform" />
             </button>
-          </div>
-
-          {/* Minimal Dots Indicator */}
-          <div className="flex items-center gap-2">
-            {solutions.map((s, idx) => (
-              <button
-                key={s.id}
-                onClick={() => setActiveIdx(idx)}
-                aria-label={`Jump to ${s.name}`}
-                className={`transition-all duration-300 rounded-full cursor-pointer ${
-                  activeIdx === idx 
-                    ? 'w-8 h-2 bg-[var(--color-primary)]' 
-                    : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
           </div>
 
         </div>
