@@ -2,11 +2,14 @@ import React, { useState, useId } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Lock } from 'lucide-react';
 import { BrandPatternAtelier } from './BrandPattern';
+import { MODULE_URLS } from '../data/modulesData';
+import { submitDemoRequest } from '../lib/supabase';
 
 export default function BookingFormCard({
   title = 'Book a Demo',
   subtitle = 'Fill in the form below to book a tailored walkthrough session',
   showHeader = true,
+  defaultModule = 'Complete Scaleezy Platform',
   className = ''
 }) {
   const [formData, setFormData] = useState({
@@ -16,7 +19,7 @@ export default function BookingFormCard({
     countryCode: '+91',
     phone: '',
     preferredLanguage: 'English',
-    interestedModule: 'Complete Scaleezy Platform',
+    interestedModule: defaultModule,
     hasPhysicalStore: 'yes',
     businessType: 'Fashion Boutique',
     city: '',
@@ -56,13 +59,14 @@ export default function BookingFormCard({
 
   const modulesList = [
     'Complete Scaleezy Platform',
-    'Inventory & Stock Management',
-    'Omnichannel POS & Billing',
-    'Design & Sourcing (Tech Packs)',
-    'Production & Batch Tracking',
-    'AI Virtual Try-On Studio',
-    'B2B Wholesale Portal',
-    'Margin & Sales Analytics'
+    'Inventory',
+    'CRM',
+    'Boutique',
+    'TRYON2BUY',
+    'Marketing',
+    'Analytics',
+    'Finance',
+    'Logistics'
   ];
 
   const businessTypes = [
@@ -138,15 +142,7 @@ export default function BookingFormCard({
     setErrors({});
 
     try {
-      // Never report success unless the request actually reached the lead endpoint
-      const apiEndpoint = import.meta.env?.VITE_ACCESS_REQUEST_API;
-      if (!apiEndpoint) throw new Error('VITE_ACCESS_REQUEST_API is not set');
-      const res = await fetch(apiEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      if (!res.ok) throw new Error(`Request failed with status ${res.status}`);
+      await submitDemoRequest(formData);
       setIsSubmitted(true);
     } catch (err) {
       console.error('Demo request not sent:', err);
@@ -164,7 +160,7 @@ export default function BookingFormCard({
       countryCode: '+91',
       phone: '',
       preferredLanguage: 'English',
-      interestedModule: 'Complete Scaleezy Platform',
+      interestedModule: defaultModule,
       hasPhysicalStore: 'yes',
       businessType: 'Fashion Boutique',
       city: '',
@@ -390,9 +386,21 @@ export default function BookingFormCard({
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor={`${uid}-interestedModule`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
-                  I'm Interested In <span className="text-red-500">*</span>
-                </label>
+                <div className="flex items-center justify-between">
+                  <label htmlFor={`${uid}-interestedModule`} className="text-xs font-semibold text-[#14263D] uppercase tracking-wider">
+                    I'm Interested In <span className="text-red-500">*</span>
+                  </label>
+                  {formData.interestedModule !== 'Complete Scaleezy Platform' && (
+                    <a
+                      href={MODULE_URLS[formData.interestedModule.toLowerCase()] || `https://${formData.interestedModule.toLowerCase()}.scaleezy.com/`}
+                      className="text-xs text-emerald-800 hover:underline font-medium"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Open {formData.interestedModule} ↗
+                    </a>
+                  )}
+                </div>
                 <select
                   {...fieldProps('interestedModule')}
                   value={formData.interestedModule}
@@ -412,30 +420,36 @@ export default function BookingFormCard({
                 <span id={`${uid}-hasPhysicalStore`} className="block text-xs font-semibold text-[#14263D] uppercase tracking-wider">
                   Do you have a physical store? <span className="text-red-500">*</span>
                 </span>
-                <div role="group" aria-labelledby={`${uid}-hasPhysicalStore`} className="grid grid-cols-2 gap-2 h-11">
+                <div role="group" aria-labelledby={`${uid}-hasPhysicalStore`} className="grid grid-cols-2 gap-2.5 h-11">
                   <button
                     type="button"
                     aria-pressed={formData.hasPhysicalStore === 'yes'}
                     onClick={() => setFormData(prev => ({ ...prev, hasPhysicalStore: 'yes' }))}
-                    className={`rounded-xl text-xs sm:text-sm font-semibold transition-all border cursor-pointer ${
+                    className={`rounded-xl text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center gap-2 cursor-pointer ${
                       formData.hasPhysicalStore === 'yes'
-                        ? 'bg-[#0A2F1D] text-[var(--color-accent)] border-[#0A2F1D] shadow-sm'
+                        ? 'bg-[#0A2F1D] text-[var(--color-accent)] border-[#0A2F1D] shadow-xs'
                         : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
                     }`}
                   >
-                    Yes
+                    <span className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${formData.hasPhysicalStore === 'yes' ? 'border-[var(--color-accent)] bg-[var(--color-accent)]' : 'border-gray-400'}`}>
+                      {formData.hasPhysicalStore === 'yes' && <span className="w-1.5 h-1.5 rounded-full bg-[#0A2F1D]" />}
+                    </span>
+                    <span>Yes</span>
                   </button>
                   <button
                     type="button"
                     aria-pressed={formData.hasPhysicalStore === 'no'}
                     onClick={() => setFormData(prev => ({ ...prev, hasPhysicalStore: 'no' }))}
-                    className={`rounded-xl text-xs sm:text-sm font-semibold transition-all border cursor-pointer ${
+                    className={`rounded-xl text-xs sm:text-sm font-semibold transition-all border flex items-center justify-center gap-2 cursor-pointer ${
                       formData.hasPhysicalStore === 'no'
-                        ? 'bg-[#0A2F1D] text-[var(--color-accent)] border-[#0A2F1D] shadow-sm'
+                        ? 'bg-[#0A2F1D] text-[var(--color-accent)] border-[#0A2F1D] shadow-xs'
                         : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
                     }`}
                   >
-                    No (Online Only)
+                    <span className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${formData.hasPhysicalStore === 'no' ? 'border-[var(--color-accent)] bg-[var(--color-accent)]' : 'border-gray-400'}`}>
+                      {formData.hasPhysicalStore === 'no' && <span className="w-1.5 h-1.5 rounded-full bg-[#0A2F1D]" />}
+                    </span>
+                    <span>No</span>
                   </button>
                 </div>
               </div>

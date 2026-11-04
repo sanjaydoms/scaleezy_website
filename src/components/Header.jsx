@@ -88,7 +88,13 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-3">
+          <Link 
+            to="/login" 
+            className="text-sm font-semibold text-[var(--color-primary)] hover:text-black py-2 px-4 rounded-full border border-black/15 hover:border-black/30 hover:bg-black/5 transition-all"
+          >
+            Log in
+          </Link>
           <Link to="/book-a-demo" className="bg-[var(--color-primary)] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-black transition-all shadow-md hover:shadow-lg hover:scale-102 active:scale-98">
             Book a Demo
           </Link>
@@ -145,7 +151,14 @@ export default function Header() {
               })}
             </nav>
 
-            <div className="pt-6 pb-4">
+            <div className="pt-6 pb-4 flex flex-col gap-3">
+              <Link
+                to="/login"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full block bg-white text-[var(--color-primary)] border border-black/15 text-center py-3.5 rounded-full text-base font-semibold shadow-xs active:scale-98 transition-all hover:bg-black/5"
+              >
+                Log in
+              </Link>
               <Link
                 to="/book-a-demo"
                 onClick={() => setIsMobileMenuOpen(false)}

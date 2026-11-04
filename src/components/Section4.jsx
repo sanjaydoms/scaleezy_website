@@ -1,70 +1,95 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 import { BrandPatternWeave, BrandWatermark } from './BrandPattern';
 
 const modules = [
   { 
     id: 'inventory', 
+    slug: 'inventory',
+    externalUrl: 'https://inventory.scaleezy.com/',
     colSpan: 'col-span-1 sm:col-span-2 lg:col-span-5', 
     rowSpan: 'lg:row-span-2', 
-    label: 'Inventory Intelligence', 
-    desc: 'Predict demand and reduce dead stock.', 
+    label: 'Inventory', 
+    tagline: 'Stock Intelligence',
+    desc: 'Predict demand, inward barcodes fast, and reduce dead stock across sizes and colors.', 
     img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80' 
   },
   { 
     id: 'crm', 
+    slug: 'crm',
+    externalUrl: 'https://crm.scaleezy.com/',
     colSpan: 'col-span-1 sm:col-span-1 lg:col-span-3', 
     rowSpan: 'lg:row-span-1', 
     label: 'CRM', 
-    desc: 'Remember every client preference.', 
+    tagline: 'Clienteling',
+    desc: 'Remember every client preference, size, and wedding date.', 
     img: 'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?w=800&q=80' 
   },
   { 
     id: 'marketing', 
+    slug: 'marketing',
+    externalUrl: 'https://marketing.scaleezy.com/',
     colSpan: 'col-span-1 sm:col-span-1 lg:col-span-4', 
     rowSpan: 'lg:row-span-1', 
-    label: 'Marketing Hub', 
-    desc: 'Reach the right buyers at the right time.', 
+    label: 'Marketing', 
+    tagline: 'Campaign Automation',
+    desc: 'Reach the right buyers at the right time with segmented WhatsApp alerts.', 
     img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80' 
   },
   { 
-    id: 'tryon', 
+    id: 'tryon2buy', 
+    slug: 'tryon2buy',
+    externalUrl: 'https://www.tryon2buy.com/',
     colSpan: 'col-span-1 sm:col-span-1 lg:col-span-4', 
     rowSpan: 'lg:row-span-2', 
-    label: 'Virtual Try-On', 
-    desc: 'Let customers visualize before buying.', 
+    label: 'TRYON2BUY', 
+    tagline: 'AI Virtual Try-On',
+    desc: 'Let customers visualize apparel on realistic models before buying.', 
     img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80' 
   },
   { 
     id: 'finance', 
+    slug: 'finance',
+    externalUrl: 'https://finance.scaleezy.com/',
     colSpan: 'col-span-1 sm:col-span-1 lg:col-span-3', 
     rowSpan: 'lg:row-span-1', 
-    label: 'Finance Dashboard', 
-    desc: 'Track margins in real-time.', 
+    label: 'Finance', 
+    tagline: 'Costing & Margins',
+    desc: 'Track fabric costing, tailor piece-rates, and net margins in real-time.', 
     img: 'https://images.unsplash.com/photo-1537832816519-689ad163238b?w=800&q=80' 
   },
   { 
     id: 'analytics', 
+    slug: 'analytics',
+    externalUrl: 'https://analytics.scaleezy.com/',
     colSpan: 'col-span-1 sm:col-span-2 lg:col-span-5', 
     rowSpan: 'lg:row-span-1', 
-    label: 'Analytics Hub', 
-    desc: 'Actionable data for growth.', 
+    label: 'Analytics', 
+    tagline: 'Executive Insights',
+    desc: 'Actionable data and Monday morning insights for business growth.', 
     img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80' 
   },
   { 
     id: 'logistics', 
+    slug: 'logistics',
+    externalUrl: 'https://logistics.scaleezy.com/',
     colSpan: 'col-span-1 sm:col-span-1 lg:col-span-3', 
     rowSpan: 'lg:row-span-1', 
-    label: 'Logistics Hub', 
-    desc: 'Fast dispatches and courier SLAs.', 
+    label: 'Logistics', 
+    tagline: 'Courier Routing',
+    desc: 'Fast dispatches, lowest shipping rates, and live WhatsApp tracking.', 
     img: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&q=80' 
   },
   { 
-    id: 'pos', 
+    id: 'boutique', 
+    slug: 'boutique',
+    externalUrl: 'https://boutique.scaleezy.com/',
     colSpan: 'col-span-1 sm:col-span-2 lg:col-span-12', 
     rowSpan: 'lg:row-span-1', 
-    label: 'Smart POS', 
-    desc: 'Seamless in-store billing and checkout.', 
+    label: 'Boutique', 
+    tagline: 'In-Store POS & Operations',
+    desc: 'Fast in-store barcode billing, tailor alteration tracking, and offline counter checkout.', 
     img: 'https://images.unsplash.com/photo-1556742111-a301076d9d18?w=1200&q=80' 
   }
 ];
@@ -88,7 +113,7 @@ export default function Section4() {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            Everything you need to run your apparel business, beautifully integrated into a single ecosystem.
+            Everything you need to run your apparel business. Click any module below to open it in a new tab.
           </p>
         </div>
 
@@ -100,35 +125,49 @@ export default function Section4() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`relative rounded-3xl overflow-hidden group bg-white/5 border border-white/15 hover:border-[var(--color-accent)]/60 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] flex flex-col justify-end p-6 sm:p-8 min-h-[220px] transition-all duration-500 transform-gpu will-change-transform ${mod.colSpan} ${mod.rowSpan}`}
+              className={`relative rounded-3xl overflow-hidden group bg-white/5 border border-white/15 hover:border-[var(--color-accent)]/80 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] transition-all duration-500 transform-gpu will-change-transform ${mod.colSpan} ${mod.rowSpan}`}
             >
-              {mod.img && (
-                <>
-                  <img 
-                    src={mod.img} 
-                    alt={mod.label} 
-                    loading="lazy" 
-                    decoding="async" 
-                    className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:scale-105 transition-transform duration-700 group-hover:opacity-75" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/20 group-hover:via-black/40 transition-colors duration-500"></div>
-                </>
-              )}
-              {!mod.img && (
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/40 to-transparent"></div>
-              )}
-              
-              <div className="relative z-10">
-                <div className="w-10 h-10 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] flex items-center justify-center mb-3 sm:mb-4 font-bold text-sm shadow-md group-hover:scale-110 transition-transform duration-300">
-                  {i + 1}
+              <a 
+                href={mod.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open ${mod.label} module (opens in a new tab)`}
+                className="absolute inset-0 z-20 flex flex-col justify-end p-6 sm:p-8 cursor-pointer"
+              >
+                {mod.img && (
+                  <>
+                    <img 
+                      src={mod.img} 
+                      alt={mod.label} 
+                      loading="lazy" 
+                      decoding="async" 
+                      className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:scale-105 transition-transform duration-700 group-hover:opacity-75" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/20 group-hover:via-black/40 transition-colors duration-500 pointer-events-none"></div>
+                  </>
+                )}
+                {!mod.img && (
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/40 to-transparent pointer-events-none"></div>
+                )}
+                
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
+                    <div className="w-10 h-10 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] flex items-center justify-center font-bold text-sm shadow-md group-hover:scale-110 transition-transform duration-300">
+                      0{i + 1}
+                    </div>
+                    <span className="text-xs uppercase tracking-widest font-semibold text-[var(--color-accent)] opacity-85 group-hover:opacity-100 transition-opacity flex items-center gap-1 bg-black/40 px-3 py-1 rounded-full backdrop-blur-xs">
+                      <span>Open App</span>
+                      <ArrowUpRight size={14} />
+                    </span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-1.5 sm:mb-2 tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors duration-300 flex items-center gap-2">
+                    <span>{mod.label}</span>
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-200 font-normal leading-relaxed line-clamp-2">
+                    {mod.desc}
+                  </p>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-1.5 sm:mb-2 tracking-tight text-white group-hover:text-[var(--color-accent)] transition-colors duration-300">
-                  {mod.label}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-200 font-normal leading-relaxed">
-                  {mod.desc}
-                </p>
-              </div>
+              </a>
             </motion.div>
           ))}
         </div>

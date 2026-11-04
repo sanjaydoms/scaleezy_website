@@ -8,6 +8,8 @@ import ScrollToTop from './components/ScrollToTop';
 const About = lazy(() => import('./components/About'));
 const HowItWorks = lazy(() => import('./components/HowItWorks'));
 const ModulesPage = lazy(() => import('./components/ModulesPage'));
+const ModuleDetailPage = lazy(() => import('./components/ModuleDetailPage'));
+const LoginPage = lazy(() => import('./components/LoginPage'));
 const SolutionsPage = lazy(() => import('./components/SolutionsPage'));
 const DemoPage = lazy(() => import('./components/DemoPage'));
 const BlogsPage = lazy(() => import('./components/BlogsPage'));
@@ -27,15 +29,30 @@ function App() {
             <Route path="/about-scaleezy" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/modules" element={<ModulesPage />} />
+            <Route path="/modules/:slug" element={<ModuleDetailPage />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/solutions" element={<SolutionsPage />} />
             <Route path="/blogs" element={<BlogsPage />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/book-a-demo" element={<DemoPage />} />
             <Route path="/request-access" element={<DemoPage />} />
 
+            {/* Direct convenience shortcuts for modules */}
+            <Route path="/inventory" element={<Navigate to="/modules/inventory" replace />} />
+            <Route path="/crm" element={<Navigate to="/modules/crm" replace />} />
+            <Route path="/boutique" element={<Navigate to="/modules/boutique" replace />} />
+            <Route path="/tryon2buy" element={<Navigate to="/modules/tryon2buy" replace />} />
+            <Route path="/tryon" element={<Navigate to="/modules/tryon2buy" replace />} />
+            <Route path="/pos" element={<Navigate to="/modules/boutique" replace />} />
+            <Route path="/marketing" element={<Navigate to="/modules/marketing" replace />} />
+            <Route path="/analytics" element={<Navigate to="/modules/analytics" replace />} />
+            <Route path="/finance" element={<Navigate to="/modules/finance" replace />} />
+            <Route path="/logistics" element={<Navigate to="/modules/logistics" replace />} />
+
             {/* Legacy URLs from the previous site (301s also live in vercel.json) */}
             <Route path="/about" element={<Navigate to="/about-scaleezy" replace />} />
             <Route path="/blog" element={<Navigate to="/blogs" replace />} />
+            <Route path="/platform/:moduleId" element={<ModuleDetailPage />} />
             <Route path="/platform/*" element={<Navigate to="/modules" replace />} />
             <Route path="/industries" element={<Navigate to="/solutions" replace />} />
             <Route path="/stories" element={<Navigate to="/" replace />} />
