@@ -31,7 +31,8 @@ function normalizeModuleSlug(modName = '') {
 export async function submitDemoRequest(formData, source = 'request_access') {
   const selectedModule = formData.interestedModule || 'Complete Scaleezy Platform';
   const moduleSlug = normalizeModuleSlug(selectedModule);
-  const sourceTag = source === 'request_access' ? `request_access:${moduleSlug}` : (source || moduleSlug);
+  // Source column in tenants_demorequest is VARCHAR(20); moduleSlug is 3-17 chars (e.g. 'inventory', 'crm', 'complete-platform')
+  const sourceTag = (moduleSlug || 'request_access').slice(0, 20);
   const userNotes = (formData.notes || formData.specificRequirements || '').trim();
 
   const payload = {
@@ -40,7 +41,7 @@ export async function submitDemoRequest(formData, source = 'request_access') {
     email: formData.email || '',
     phone: `${formData.countryCode || '+91'} ${formData.phone || ''}`.trim(),
     makes: 'Fashion Boutique',
-    orders_per_month: 'Fast Access Request',
+    orders_per_month: 'Access Request',
     people: 'English',
     problem: `Module: ${selectedModule}`,
     notes: userNotes
