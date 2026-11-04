@@ -41,6 +41,8 @@ function App() {
             <Route path="/demo" element={<Navigate to="/request-access" replace />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
+            <Route path="/cookie-policy" element={<Navigate to="/privacy-policy" replace />} />
+            <Route path="/cookies" element={<Navigate to="/privacy-policy" replace />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/terms" element={<Navigate to="/terms-and-conditions" replace />} />
             <Route path="/terms-of-service" element={<Navigate to="/terms-and-conditions" replace />} />

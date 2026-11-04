@@ -182,3 +182,4 @@ Scaleezy's cumulative liability under any claim arising out of these Terms shall
     </div>
   );
 }
+

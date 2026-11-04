@@ -9,7 +9,8 @@ import {
   FileText, 
   UserCheck, 
   Mail, 
-  ArrowLeft 
+  ArrowLeft,
+  Cookie
 } from 'lucide-react';
 import { BrandPatternAtelier } from './BrandPattern';
 import Footer from './Footer';
@@ -80,8 +81,19 @@ We will NEVER sell, lease, or monetize your customer records, catalog assets, or
 Each sub-processor is bound by strict confidentiality and data protection agreements.`
     },
     {
+      id: "cookies-and-tracking",
+      title: "6. Cookies & Local Storage Technologies",
+      icon: <Cookie className="w-5 h-5 text-[var(--color-accent)]" />,
+      content: `Scaleezy uses minimal first-party cookies and modern browser storage technologies (such as localStorage and IndexedDB) strictly to deliver secure, reliable software services:
+
+• Strictly Necessary Cookies: Essential for user authentication, maintaining secure active sessions, protecting against Cross-Site Request Forgery (CSRF), and verifying tenant workspace routing.
+• Operational & Offline Cache: Local browser storage is utilized to remember cashier preferences, keep offline counter billing operational during network drops, and cache frequently used SKU lookups for sub-second checkout speeds.
+• Zero Third-Party Advertising Trackers: We DO NOT deploy third-party advertising cookies, cross-site tracking pixels (such as data brokers or ad networks), or sell your behavioral data.
+• User Control: You can adjust your browser settings to refuse or delete cookies. Note that disabling essential session cookies may prevent you from logging into your Scaleezy tenant dashboard.`
+    },
+    {
       id: "retention-and-rights",
-      title: "6. Data Retention & Your Rights",
+      title: "7. Data Retention & Your Rights",
       icon: <ShieldCheck className="w-5 h-5 text-[var(--color-accent)]" />,
       content: `You maintain ownership of your store and customer data at all times:
 
@@ -91,13 +103,13 @@ Each sub-processor is bound by strict confidentiality and data protection agreem
     },
     {
       id: "compliance",
-      title: "7. Regulatory Compliance & DPDP Act",
+      title: "8. Regulatory Compliance & DPDP Act",
       icon: <FileText className="w-5 h-5 text-[var(--color-accent)]" />,
       content: `Scaleezy adheres to the Digital Personal Data Protection (DPDP) Act, 2023 of India, along with globally recognized data privacy standards. We process all personal information lawfully, transparently, and solely for specified commercial purposes with explicit user consent.`
     },
     {
       id: "contact-us",
-      title: "8. Contact Us",
+      title: "9. Contact Us",
       icon: <Mail className="w-5 h-5 text-[var(--color-accent)]" />,
       content: `If you have questions regarding this Privacy Policy, wish to exercise your data rights, or have security inquiries, please contact our Privacy & Security Officer:
 
@@ -190,3 +202,4 @@ Each sub-processor is bound by strict confidentiality and data protection agreem
     </div>
   );
 }
+
