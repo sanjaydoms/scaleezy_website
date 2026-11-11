@@ -77,6 +77,8 @@ export default function TypingHeading({
   }, [displayedWord, phase, wordIndex, line2Words, typingSpeed, deletingSpeed, pauseDuration, pauseEmptyDuration, loop, reduceMotion]);
 
   const alignClass = align === 'left' ? 'text-left' : align === 'right' ? 'text-right' : 'text-center';
+  // Wrapped lines inside the flex container must follow the same alignment as the text
+  const justifyClass = align === 'left' ? 'justify-start' : align === 'right' ? 'justify-end' : 'justify-center';
   const isTypingOrDeleting = phase === 'typing' || phase === 'deleting';
 
   // Ensure prefix trailing whitespace is never collapsed in HTML
@@ -111,7 +113,7 @@ export default function TypingHeading({
               </span>
             </span>
           ) : (
-            <span className="inline-flex items-baseline justify-center flex-wrap">
+            <span className={`inline-flex items-baseline ${justifyClass} flex-wrap`}>
               {cleanPrefix && <span>{cleanPrefix}&nbsp;</span>}
               <span className="inline-flex items-baseline">
                 <span className={wordClass}>{displayedWord || '\u00A0'}</span>
