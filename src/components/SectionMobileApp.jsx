@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Package, ShoppingCart, Users, BarChart2 } from 'lucide-react';
 import { BrandPatternAtelier } from './BrandPattern';
@@ -111,8 +112,8 @@ export default function SectionMobileApp() {
               className="flex flex-wrap items-center gap-4 sm:gap-5 mb-12 sm:mb-14"
             >
               {/* Primary CTA: Download on the App Store */}
-              <a
-                href="#request-access"
+              <Link
+                to="/request-access"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3.5 bg-[#182D21] hover:bg-[#0F1F16] text-white px-6 py-3.5 rounded-[14px] min-w-[190px] sm:min-w-[215px] transition-all duration-300 shadow-[0_12px_28px_-8px_rgba(24,45,33,0.4)] hover:-translate-y-0.5 active:translate-y-0"
               >
                 <AppleLogo className="w-7 h-7 text-white shrink-0" />
@@ -124,11 +125,11 @@ export default function SectionMobileApp() {
                     App Store
                   </span>
                 </div>
-              </a>
+              </Link>
 
               {/* Secondary CTA: GET IT ON Google Play */}
-              <a
-                href="#request-access"
+              <Link
+                to="/request-access"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3.5 bg-[#050706] hover:bg-[#181C1A] text-white px-6 py-3.5 rounded-[14px] min-w-[190px] sm:min-w-[215px] transition-all duration-300 shadow-[0_12px_28px_-8px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 active:translate-y-0"
               >
                 <GooglePlayColorLogo className="w-6 h-6 shrink-0" />
@@ -140,7 +141,7 @@ export default function SectionMobileApp() {
                     Google Play
                   </span>
                 </div>
-              </a>
+              </Link>
             </motion.div>
 
             {/* 4 Circular Feature Icon Pillars */}
