@@ -1,6 +1,6 @@
 // Supabase Client & Database Service for Scaleezy Website
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://otpmvnqblcwjsrmvqcxx.supabase.co';
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'sb_publishable_xuFESrQzs_HTIOqjD96Fpw_-CbxVw6c';
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://zoqqmsrlpsrwvoqocgyy.supabase.co';
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'sb_publishable_MIAzJUL3zEY8aV-Lqddjaw_W2TEe32c';
 
 const defaultHeaders = {
   'apikey': SUPABASE_KEY,
