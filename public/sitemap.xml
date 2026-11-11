@@ -77,7 +77,13 @@
   </url>
   <url>
     <loc>https://scaleezy.com/modules/boutique</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/modules/pos</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -100,8 +106,8 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://scaleezy.com/modules/finance</loc>
-    <lastmod>2026-11-04</lastmod>
+    <loc>https://scaleezy.com/modules/billing-desk</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>

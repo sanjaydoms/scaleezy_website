@@ -19,9 +19,10 @@ import { MotifCommerceThread } from './BackgroundMotifs';
 const SLUG_ALIASES = {
   'tryon': 'tryon2buy',
   'virtual-try-on': 'tryon2buy',
-  'pos': 'boutique',
-  'billing': 'boutique',
-  'smart-pos': 'boutique',
+  'smart-pos': 'pos',
+  'billing': 'billing-desk',
+  'billing-desk': 'billing-desk',
+  'finance': 'billing-desk',
   'stock': 'inventory'
 };
 
@@ -62,7 +63,7 @@ export default function ModuleDetailPage() {
             <span className="text-[var(--color-primary)] font-semibold">{moduleData.name}</span>
           </div>
 
-          {/* Quick Pill Switcher for All 8 Modules */}
+          {/* Quick Pill Switcher for All 9 Modules */}
           <div className="flex items-center gap-1.5 shrink-0">
             {MODULES_DATA.map((m) => {
               const isActive = m.slug === moduleData.slug;
@@ -331,7 +332,7 @@ export default function ModuleDetailPage() {
 
           <div className="mt-8 pt-8 border-t border-white/15 flex flex-wrap items-center justify-between gap-4">
             <span className="text-xs sm:text-sm text-white/70">
-              Want to see all 8 modules side-by-side?
+              Want to see all 9 modules side-by-side?
             </span>
             <Link
               to="/modules"

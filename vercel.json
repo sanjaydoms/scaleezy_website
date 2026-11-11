@@ -17,7 +17,7 @@
     },
     {
       "source": "/platform/:moduleId",
-      "destination": "/modules",
+      "destination": "/modules/:moduleId",
       "permanent": true
     },
     {

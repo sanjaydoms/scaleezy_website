@@ -45,23 +45,38 @@ const modules = [
     name: 'Boutique',
     isLive: true,
     externalUrl: 'https://boutique.scaleezy.com/',
-    title: 'Scaleezy Boutique (POS)',
-    subtitle: 'Counter POS & Alterations',
-    desc: 'Lightning-fast barcode checkout with custom tailor measurements, advance deposits, and offline billing mode.',
-    capabilities: ['Fast checkout', 'Barcode scanning', 'Inventory sync', 'Customer profiles at checkout', 'Multi-store support', 'Alteration slips'],
-    comingSoon: ['AI-powered upselling', 'Mobile POS integration', 'Advanced loyalty point tracking'],
-    img: '/smart-pos.jpg',
+    title: 'Scaleezy Boutique',
+    subtitle: 'Bespoke Tailoring & Custom Orders',
+    desc: 'Capture measurements, run custom orders through trials and alterations, and track tailor job-work end to end.',
+    capabilities: ['Measurement books', 'Custom order pipeline', 'Trial fitting scheduler', 'Tailor job-work', 'Advance deposits', 'WhatsApp order updates'],
+    img: '/assets/hero_boutique.jpg',
     bg: 'bg-[#082216]',
     text: 'text-white'
   },
   {
     num: '04',
+    id: 'pos',
+    slug: 'pos',
+    name: 'POS',
+    isLive: false,
+    externalUrl: null,
+    title: 'Scaleezy POS',
+    subtitle: 'Counter Checkout & Billing',
+    desc: 'Lightning-fast barcode checkout with split payments, staff commissions, and offline billing mode.',
+    capabilities: ['Fast checkout', 'Barcode scanning', 'Inventory sync', 'Customer profiles at checkout', 'Multi-store support', 'Offline billing'],
+    comingSoon: ['AI-powered upselling', 'Mobile POS integration', 'Advanced loyalty point tracking'],
+    img: '/smart-pos.jpg',
+    bg: 'bg-[var(--color-charcoal)]',
+    text: 'text-white'
+  },
+  {
+    num: '05',
     id: 'tryon2buy',
     slug: 'tryon2buy',
-    name: 'TRYON2BUY',
+    name: 'Tryon2buy',
     isLive: true,
     externalUrl: 'https://www.tryon2buy.com/',
-    title: 'Scaleezy TRYON2BUY',
+    title: 'Tryon2buy by Scaleezy',
     subtitle: 'AI Virtual Try-On Studio',
     desc: 'Let customers visualize apparel realistically on diverse body models or their own photo before buying.',
     capabilities: ['Try-on rendering', 'Model/consumer visualisation', 'Product previews', 'Try-on analytics', 'Conversion tracking', 'In-store kiosk mode'],
@@ -70,7 +85,7 @@ const modules = [
     text: 'text-[var(--color-primary)]'
   },
   {
-    num: '05',
+    num: '06',
     id: 'marketing',
     slug: 'marketing',
     name: 'Marketing',
@@ -85,7 +100,7 @@ const modules = [
     text: 'text-[var(--color-charcoal)]'
   },
   {
-    num: '06',
+    num: '07',
     id: 'analytics',
     slug: 'analytics',
     name: 'Analytics',
@@ -100,22 +115,22 @@ const modules = [
     text: 'text-[var(--color-charcoal)]'
   },
   {
-    num: '07',
-    id: 'finance',
-    slug: 'finance',
-    name: 'Finance',
+    num: '08',
+    id: 'billing-desk',
+    slug: 'billing-desk',
+    name: 'Billing Desk',
     isLive: false,
     externalUrl: null,
-    title: 'Scaleezy Finance',
-    subtitle: 'Costing, Margins & Cash Flow',
-    desc: 'Track raw fabric costs, tailor piece-rates, counter discounts, and net margins per collection.',
-    capabilities: ['Revenue', 'Net margins', 'Pending payments', 'Alerts', 'Tailor ledger', 'GST-compliant exports'],
+    title: 'Scaleezy Billing Desk',
+    subtitle: 'Quotations, Proformas & GST Invoices',
+    desc: 'Raise quotations, convert them to proformas and GST tax invoices, and track every document to paid.',
+    capabilities: ['Quotation builder', 'Proforma conversion', 'GST tax invoices', 'CGST/SGST/IGST breakup', 'Branded PDFs', 'Payment tracking'],
     img: '/finance-dashboard.jpg',
     bg: 'bg-[var(--color-primary)]',
     text: 'text-white'
   },
   {
-    num: '08',
+    num: '09',
     id: 'logistics',
     slug: 'logistics',
     name: 'Logistics',
@@ -133,7 +148,7 @@ const modules = [
 ];
 
 export default function ModulesPage() {
-  usePageMeta("Scaleezy Modules — Inventory, CRM, Boutique, TRYON2BUY & More", "Explore the Scaleezy modules for apparel businesses: Inventory, CRM, Boutique POS, TRYON2BUY virtual try-on, Marketing, Analytics, Finance, and Logistics.");
+  usePageMeta("Scaleezy Modules — Inventory, CRM, Boutique, POS & More", "Explore the Scaleezy modules for apparel businesses: Inventory, CRM, Boutique, POS, Tryon2buy virtual try-on, Marketing, Analytics, Billing Desk, and Logistics.");
   
   return (
     <div className="min-h-screen bg-[var(--color-warm-white)] text-[var(--color-charcoal)] pt-20">
@@ -148,7 +163,7 @@ export default function ModulesPage() {
             className="mb-6 sm:mb-8"
           >
             <TypingHeading
-              line1={<><span className="font-serif italic text-[1.22em] leading-none inline-block">8</span> Core modules,</>}
+              line1={<><span className="font-serif italic text-[1.22em] leading-none inline-block">9</span> Core modules,</>}
               line1Class="font-serif italic font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl block text-center mb-1 text-[var(--color-primary)]"
               line2Prefix="1 Unified "
               line2Words={[
@@ -164,7 +179,7 @@ export default function ModulesPage() {
               typingSpeed={60}
               deletingSpeed={30}
               pauseDuration={2800}
-              seoText="8 Core modules, 1 Unified Apparel Platform."
+              seoText="9 Core modules, 1 Unified Apparel Platform."
             />
           </motion.div>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10">
@@ -362,21 +377,21 @@ export default function ModulesPage() {
                 <span>Inventory informs</span>
                 <span className="opacity-60 group-hover:opacity-100">→</span>
               </div>
-              <div className="text-lg sm:text-xl font-bold tracking-tight">Boutique POS</div>
+              <div className="text-lg sm:text-xl font-bold tracking-tight">POS</div>
             </Link>
             <Link to="/modules/tryon2buy" className="px-4 py-6 sm:px-5 sm:py-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-xl hover:border-white/30 hover:bg-white/10 transition-all flex flex-col items-center justify-center group">
               <div className="text-[var(--color-accent)] font-mono font-bold mb-2 uppercase text-xs tracking-widest flex items-center gap-1">
-                <span>TRYON2BUY informs</span>
+                <span>Tryon2buy informs</span>
                 <span className="opacity-60 group-hover:opacity-100">→</span>
               </div>
               <div className="text-lg sm:text-xl font-bold tracking-tight">Recommendations</div>
             </Link>
-            <Link to="/modules/finance" className="px-4 py-6 sm:px-5 sm:py-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-xl hover:border-white/30 hover:bg-white/10 transition-all flex flex-col items-center justify-center group">
+            <Link to="/modules/billing-desk" className="px-4 py-6 sm:px-5 sm:py-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-xl hover:border-white/30 hover:bg-white/10 transition-all flex flex-col items-center justify-center group">
               <div className="text-[var(--color-accent)] font-mono font-bold mb-2 uppercase text-xs tracking-widest flex items-center gap-1">
-                <span>Finance informs</span>
+                <span>Billing Desk informs</span>
                 <span className="opacity-60 group-hover:opacity-100">→</span>
               </div>
-              <div className="text-lg sm:text-xl font-bold tracking-tight">Procurement</div>
+              <div className="text-lg sm:text-xl font-bold tracking-tight">Analytics</div>
             </Link>
           </div>
         </div>

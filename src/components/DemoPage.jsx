@@ -30,7 +30,7 @@ export default function DemoPage() {
       {/* ============================================================== */}
       {/* 01 - HERO SECTION: Clean Atmospheric Header (No Overlap)        */}
       {/* ============================================================== */}
-      <section className="relative pt-28 sm:pt-36 md:pt-40 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 bg-gradient-to-b from-[#06180E] via-[#0A2F1D] to-[#0A2619] text-white overflow-hidden text-center">
+      <section className="relative pt-28 sm:pt-36 md:pt-40 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 bg-gradient-to-b from-[#06180E] via-[#1C421D] to-[#0A2619] text-white overflow-hidden text-center">
         
         {/* Background Visual Effects */}
         <BrandPatternAtelier mode="dark" opacity={0.08} size={360} />

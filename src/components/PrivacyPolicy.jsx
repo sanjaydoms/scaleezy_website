@@ -123,7 +123,7 @@ Each sub-processor is bound by strict confidentiality and data protection agreem
     <div className="min-h-screen bg-[var(--color-warm-white)] text-[var(--color-charcoal)] selection:bg-[var(--color-accent)] selection:text-[var(--color-primary)]">
       
       {/* Hero Header */}
-      <section className="relative pt-28 sm:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 bg-gradient-to-b from-[#06180E] via-[#0A2F1D] to-[#0A2619] text-white overflow-hidden text-center">
+      <section className="relative pt-28 sm:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 bg-gradient-to-b from-[#06180E] via-[#1C421D] to-[#0A2619] text-white overflow-hidden text-center">
         <BrandPatternAtelier mode="dark" opacity={0.08} size={360} />
         
         <div className="max-w-4xl mx-auto relative z-10">

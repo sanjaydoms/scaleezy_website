@@ -1,5 +1,5 @@
 // Scaleezy Modules - Single Source of Truth
-// Standardized simple names: Inventory, CRM, Boutique, TRYON2BUY, Marketing, Analytics, Finance, Logistics
+// Standardized simple names: Inventory, CRM, Boutique, POS, Tryon2buy, Marketing, Analytics, Billing Desk, Logistics
 
 export const MODULE_URLS = {
   inventory: 'https://inventory.scaleezy.com/',
@@ -7,10 +7,10 @@ export const MODULE_URLS = {
   boutique: 'https://boutique.scaleezy.com/',
   tryon2buy: 'https://www.tryon2buy.com/',
   tryon: 'https://www.tryon2buy.com/',
-  pos: 'https://boutique.scaleezy.com/',
+  pos: null, // Coming Soon
   marketing: 'https://marketing.scaleezy.com/',
   analytics: null, // Coming Soon
-  finance: null, // Coming Soon
+  'billing-desk': null, // Coming Soon
   logistics: null // Coming Soon
 };
 
@@ -76,8 +76,8 @@ export const MODULES_DATA = [
       ]
     },
     synergy: [
-      { module: 'Boutique (POS)', text: 'Instant stock deduction at checkout counter.' },
-      { module: 'TRYON2BUY', text: 'Customers only try on items currently in stock.' },
+      { module: 'POS', text: 'Instant stock deduction at checkout counter.' },
+      { module: 'Tryon2buy', text: 'Customers only try on items currently in stock.' },
       { module: 'Marketing', text: 'Auto-promotes fast-moving and overstocked items.' }
     ],
     faqs: [
@@ -153,8 +153,8 @@ export const MODULES_DATA = [
     },
     synergy: [
       { module: 'Marketing', text: 'Feeds high-intent segments into automated campaigns.' },
-      { module: 'Boutique (POS)', text: 'Pulls VIP purchase history right to the billing counter.' },
-      { module: 'TRYON2BUY', text: 'Logs virtual try-on preferences to the customer dossier.' }
+      { module: 'POS', text: 'Pulls VIP purchase history right to the billing counter.' },
+      { module: 'Tryon2buy', text: 'Logs virtual try-on preferences to the customer dossier.' }
     ],
     faqs: [
       {
@@ -174,10 +174,86 @@ export const MODULES_DATA = [
     fullName: 'Scaleezy Boutique',
     externalUrl: 'https://boutique.scaleezy.com/',
     isLive: true,
-    tagline: 'In-Store Billing, Counter POS & Retail Operations',
+    tagline: 'Bespoke Tailoring & Boutique Order Management',
     badge: 'Module 03',
+    heroHeadline: 'Run your tailoring boutique from first measurement to final fitting.',
+    heroDescription: 'Purpose-built for bespoke tailoring boutiques. Capture measurements, manage custom orders, schedule trial fittings, track job-work with master tailors, and keep clients updated on WhatsApp.',
+    img: '/assets/hero_boutique.jpg',
+    stats: [
+      { value: '100%', label: 'Order-to-delivery visibility' },
+      { value: 'Zero', label: 'Lost measurement slips' },
+      { value: 'Live', label: 'WhatsApp order status updates' }
+    ],
+    simpleFeatures: [
+      {
+        title: 'Digital Measurement Books',
+        desc: 'Record body measurements, fit preferences, and style notes per client — reused automatically on every repeat order.'
+      },
+      {
+        title: 'Custom Order Pipeline',
+        desc: 'Track every bespoke order through cutting, stitching, embellishment, trial, alteration, and delivery stages.'
+      },
+      {
+        title: 'Trial & Fitting Scheduler',
+        desc: 'Book trial fittings, send automated WhatsApp reminders, and log alteration notes straight onto the order.'
+      },
+      {
+        title: 'Master Tailor Job-Work',
+        desc: 'Assign cutting and stitching jobs to in-house or external tailors and track piece rates and due dates.'
+      },
+      {
+        title: 'Advance & Balance Tracking',
+        desc: 'Collect booking advances on bridal and designer orders and settle the balance at delivery with a clean ledger.'
+      },
+      {
+        title: 'Multi-Boutique Operations',
+        desc: 'Run multiple boutique branches with separate order books, staff roles, and consolidated owner reporting.'
+      }
+    ],
+    capabilities: [
+      'Client measurement profiles',
+      'Bespoke order stage tracking',
+      'Trial fitting scheduling',
+      'Tailor job-work assignment',
+      'Advance deposit ledgers',
+      'WhatsApp status notifications',
+      'Multi-branch boutique management'
+    ],
+    workflow: {
+      title: 'How Scaleezy Boutique Runs a Bespoke Order',
+      steps: [
+        { step: '01', title: 'Measure & Book the Order', desc: 'Capture measurements, fabric choice, design references, and the booking advance.' },
+        { step: '02', title: 'Track Stitching & Trials', desc: 'Follow the garment through tailoring stages and schedule trial fittings with reminders.' },
+        { step: '03', title: 'Deliver & Settle', desc: 'Log final alterations, collect the balance, and notify the client on WhatsApp.' }
+      ]
+    },
+    synergy: [
+      { module: 'Inventory', text: 'Reserves fabric and trims against each custom order.' },
+      { module: 'CRM', text: 'Builds the client\'s size and style history with every order.' },
+      { module: 'Billing Desk', text: 'Raises quotations and GST invoices for bespoke orders.' }
+    ],
+    faqs: [
+      {
+        q: 'Can Scaleezy Boutique handle bridal orders with multiple trial fittings?',
+        a: 'Yes. Each order supports multiple scheduled trials, alteration notes per fitting, and a delivery deadline with automatic reminders.'
+      },
+      {
+        q: 'Can we take partial advance payments for bridal lehengas and suits?',
+        a: 'Yes. You can collect a deposit advance, schedule alteration fittings, and collect the balance on pickup.'
+      }
+    ]
+  },
+  {
+    id: 'pos',
+    slug: 'pos',
+    name: 'POS',
+    fullName: 'Scaleezy POS',
+    externalUrl: null,
+    isLive: false,
+    tagline: 'In-Store Billing & Counter Checkout',
+    badge: 'Module 04',
     heroHeadline: 'Lightning-fast retail checkout made for apparel stores.',
-    heroDescription: 'The modern counter point-of-sale engineered for apparel boutiques. Handle custom tailoring alterations, split payments, barcode billing, and staff commissions in seconds.',
+    heroDescription: 'The modern counter point-of-sale engineered for apparel retail. Handle barcode billing, split payments, offline sales, and staff commissions in seconds.',
     img: '/smart-pos.jpg',
     stats: [
       { value: '15s', label: 'Average billing time' },
@@ -190,10 +266,6 @@ export const MODULES_DATA = [
         desc: 'Scan garments and ring up sales in seconds with thermal receipt printing or instant paperless WhatsApp e-bills.'
       },
       {
-        title: 'Alteration & Measurement Slip',
-        desc: 'Record custom tailor measurements, sleeve alterations, hem adjustments, and target delivery dates directly on the invoice.'
-      },
-      {
         title: 'Flexible Split Payments',
         desc: 'Seamlessly accept partial cash, UPI, card, store credit, and customer advance deposits on custom designer orders.'
       },
@@ -203,55 +275,59 @@ export const MODULES_DATA = [
       },
       {
         title: 'Sales Stylist Commissions',
-        desc: 'Attribute sales to individual boutique stylists to track sales incentives and commission targets with zero disputes.'
+        desc: 'Attribute sales to individual store stylists to track sales incentives and commission targets with zero disputes.'
       },
       {
         title: 'Multi-Register & Multi-Store',
-        desc: 'Run multiple billing registers in flagship stores, temporary exhibition pop-ups, and secondary boutique branches.'
+        desc: 'Run multiple billing registers in flagship stores, temporary exhibition pop-ups, and secondary branches.'
+      },
+      {
+        title: 'Staff PIN Security',
+        desc: 'Every till session and staff login is PIN-protected, so each sale is attributed to the right person.'
       }
     ],
     capabilities: [
       'Lightning-fast barcode checkout',
       'WhatsApp paperless digital receipts',
-      'Custom alteration tracking',
       'Split payment & advance booking',
       'Offline-first billing reliability',
       'Sales associate commission tracking',
+      'Multi-register till management',
       'GST-compliant tax invoicing'
     ],
     workflow: {
-      title: 'How Scaleezy Boutique Powers Checkout',
+      title: 'How Scaleezy POS Powers Checkout',
       steps: [
         { step: '01', title: 'Barcode Scan or SKU Lookup', desc: 'Scan clothing tags with any handheld scanner or phone camera.' },
-        { step: '02', title: 'Customer Lookup & Alterations', desc: 'Apply loyalty points, record fitting adjustments, and set pickup reminders.' },
+        { step: '02', title: 'Customer Lookup & Loyalty', desc: 'Apply loyalty points, record fitting adjustments, and set pickup reminders.' },
         { step: '03', title: 'Instant Payment & WhatsApp Bill', desc: 'Accept payment via UPI/Card and immediately dispatch a branded WhatsApp receipt.' }
       ]
     },
     synergy: [
       { module: 'Inventory', text: 'Instantly deducts stock and prevents overselling.' },
       { module: 'CRM', text: 'Enriches client profile with purchase and size history.' },
-      { module: 'Finance', text: 'Logs daily cash register totals and net margin splits.' }
+      { module: 'Billing Desk', text: 'Feeds counter sales into GST invoicing and daily totals.' }
     ],
     faqs: [
       {
-        q: 'Can Scaleezy Boutique POS print on standard thermal printers?',
+        q: 'Can Scaleezy POS print on standard thermal printers?',
         a: 'Yes, it supports all standard 2-inch and 3-inch USB/Bluetooth thermal receipt printers, as well as A4/A5 laser printers.'
       },
       {
-        q: 'Can we take partial advance payments for bridal lehengas and suits?',
-        a: 'Yes. You can collect a deposit advance, schedule alteration fittings, and collect the balance on pickup.'
+        q: 'Does the counter keep billing if the internet drops?',
+        a: 'Yes. Offline billing mode keeps the register running and syncs sales automatically once the connection returns.'
       }
     ]
   },
   {
     id: 'tryon2buy',
     slug: 'tryon2buy',
-    name: 'TRYON2BUY',
-    fullName: 'Scaleezy TRYON2BUY',
+    name: 'Tryon2buy',
+    fullName: 'Tryon2buy by Scaleezy',
     externalUrl: 'https://www.tryon2buy.com/',
     isLive: true,
     tagline: 'AI Virtual Try-On Studio for Fashion & Apparel',
-    badge: 'Module 04',
+    badge: 'Module 05',
     heroHeadline: 'Let shoppers visualize apparel on realistic body models.',
     heroDescription: 'Transform customer fit hesitation into confident purchases. Patented AI lets customers preview sarees, kurtas, suits, and western wear instantly on diverse models or their own photo.',
     img: '/virtual-tryon.jpg',
@@ -296,7 +372,7 @@ export const MODULES_DATA = [
       'Abandoned try-on conversion tracking'
     ],
     workflow: {
-      title: 'How TRYON2BUY Boosts Fashion Sales',
+      title: 'How Tryon2buy Boosts Fashion Sales',
       steps: [
         { step: '01', title: 'Upload Garment Flat Lay', desc: 'Take a clear flat lay or mannequin photo of your clothing item.' },
         { step: '02', title: 'AI Fabric & Fit Mapping', desc: 'Our engine detects seams, fabric texture, drape stiffness, and embroidery patterns.' },
@@ -310,11 +386,11 @@ export const MODULES_DATA = [
     ],
     faqs: [
       {
-        q: 'Does TRYON2BUY work for ethnic wear like sarees and lehengas?',
-        a: 'Yes! TRYON2BUY is specially optimized for complex Indian ethnic wear, sarees with pallu draping, heavy bridal lehengas, and anarkalis.'
+        q: 'Does Tryon2buy work for ethnic wear like sarees and lehengas?',
+        a: 'Yes! Tryon2buy is specially optimized for complex Indian ethnic wear, sarees with pallu draping, heavy bridal lehengas, and anarkalis.'
       },
       {
-        q: 'Can we install TRYON2BUY in our physical store?',
+        q: 'Can we install Tryon2buy in our physical store?',
         a: 'Yes, we provide an In-Store Kiosk Mode for iPads or touchscreen displays in your boutique showroom.'
       }
     ]
@@ -327,7 +403,7 @@ export const MODULES_DATA = [
     externalUrl: 'https://marketing.scaleezy.com/',
     isLive: true,
     tagline: 'AI-Driven Marketing & Automated Campaigns',
-    badge: 'Module 05',
+    badge: 'Module 06',
     heroHeadline: 'Turn boutique inventory into automated high-converting campaigns.',
     heroDescription: 'Launch segmented WhatsApp broadcasts, festive collection drops, and automated VIP lookbooks in clicks. AI crafts apparel copy and selects the exact customer segment most likely to buy.',
     img: '/marketing-hub.jpg',
@@ -403,7 +479,7 @@ export const MODULES_DATA = [
     externalUrl: null,
     isLive: false,
     tagline: 'Merchandising Insights & Executive Dashboard',
-    badge: 'Module 06',
+    badge: 'Module 07',
     heroHeadline: 'Clear numbers you can act on every single Monday morning.',
     heroDescription: 'Stop drowning in messy spreadsheets. Get clear apparel metrics: sell-through rates, top-selling categories, dead stock velocity, store staff productivity, and profit margins.',
     img: '/analytics-hub.jpg',
@@ -456,9 +532,9 @@ export const MODULES_DATA = [
       ]
     },
     synergy: [
-      { module: 'Boutique (POS)', text: 'Aggregates in-store register receipts in real time.' },
+      { module: 'POS', text: 'Aggregates in-store register receipts in real time.' },
       { module: 'Inventory', text: 'Identifies slow-moving SKUs before they age.' },
-      { module: 'Finance', text: 'Provides top-line revenue feeds to margin calculators.' }
+      { module: 'Billing Desk', text: 'Provides billed revenue feeds to executive reports.' }
     ],
     faqs: [
       {
@@ -472,78 +548,78 @@ export const MODULES_DATA = [
     ]
   },
   {
-    id: 'finance',
-    slug: 'finance',
-    name: 'Finance',
-    fullName: 'Scaleezy Finance',
+    id: 'billing-desk',
+    slug: 'billing-desk',
+    name: 'Billing Desk',
+    fullName: 'Scaleezy Billing Desk',
     externalUrl: null,
     isLive: false,
-    tagline: 'Fashion Costing, Margins & Financial Health',
-    badge: 'Module 07',
-    heroHeadline: 'Know your true net margins after fabric, tailoring, and discounts.',
-    heroDescription: 'Track fabric procurement costs, tailor job-work payables, promotional discounts, and net margins per collection. Eliminate hidden cost leaks and keep boutique cash flow crystal clear.',
+    tagline: 'Quotations, Proformas & GST Tax Invoices',
+    badge: 'Module 08',
+    heroHeadline: 'From quotation to GST tax invoice in minutes, not evenings.',
+    heroDescription: 'Create branded quotations, convert them to proforma invoices and GST tax invoices in one click, and track every document from draft to paid — with paise-accurate totals your accountant will trust.',
     img: '/finance-dashboard.jpg',
     stats: [
-      { value: '100%', label: 'Net margin visibility per SKU' },
-      { value: 'Zero', label: 'Unreconciled cash discrepancies' },
-      { value: 'GST-Ready', label: 'One-click tax export' }
+      { value: '1-Click', label: 'Quotation to tax invoice conversion' },
+      { value: '100%', label: 'Paise-accurate GST totals' },
+      { value: 'PDF', label: 'Branded documents ready to send' }
     ],
     simpleFeatures: [
       {
-        title: 'True Garment Costing (BOM)',
-        desc: 'Calculate the total cost of each piece including fabric, lining, trims, buttons, embroidery, and master tailor labor.'
+        title: 'Quotation Builder',
+        desc: 'Draft line-item quotations with rates, quantities, discounts, and taxes in minutes, ready to send to any buyer.'
       },
       {
-        title: 'Real-Time Net Margin Calculation',
-        desc: 'See exactly what you earn after accounting for counter discounts, payment gateway fees, and packaging expenses.'
+        title: 'One-Click Proforma Conversion',
+        desc: 'Convert an approved quotation into a proforma invoice without retyping a single line item.'
       },
       {
-        title: 'Tailor & Job-Worker Ledger',
-        desc: 'Manage tailor advances, per-piece stitching charges, and outstanding balances with clear digital ledgers.'
+        title: 'GST Tax Invoices',
+        desc: 'Raise compliant tax invoices with automatic CGST/SGST or IGST breakup based on the place of supply.'
       },
       {
-        title: 'Cash Drawer Closing & Petty Cash',
-        desc: 'Reconcile daily counter cash, UPI collections, and card payments at the end of each shift with zero shortages.'
+        title: 'Branded PDF Export',
+        desc: 'Every quotation, proforma, and invoice exports as a polished PDF carrying your brand identity.'
       },
       {
-        title: 'Vendor Payables & Purchase Aging',
-        desc: 'Track outstanding balances owed to textile weavers, fabric wholesalers, and accessory suppliers.'
+        title: 'Document Status Tracking',
+        desc: 'Track every document through draft, sent, paid, and cancelled so nothing slips through unbilled.'
       },
       {
-        title: 'GST-Compliant Tax Reports',
-        desc: 'Export clean GSTR-1 and GSTR-3B compliant transaction spreadsheets formatted for your chartered accountant.'
+        title: 'Multi-Brand Billing',
+        desc: 'Bill from multiple brands or business entities, each with its own letterhead, GSTIN, and numbering series.'
       }
     ],
     capabilities: [
-      'Garment bill of materials (BOM)',
-      'True net margin tracking',
-      'Tailor job-work ledger',
-      'Daily counter cash reconciliation',
-      'Vendor payables management',
-      'GST & tax ready exports',
-      'Multi-branch expense tracking'
+      'Line-item quotation drafting',
+      'Quotation to proforma conversion',
+      'GST tax invoice generation',
+      'CGST/SGST/IGST auto-breakup',
+      'Branded PDF documents',
+      'Paid / sent / cancelled tracking',
+      'Multi-brand entity billing'
     ],
     workflow: {
-      title: 'Financial Clarity from Fabric to Checkout',
+      title: 'From Enquiry to Paid Invoice in 3 Steps',
       steps: [
-        { step: '01', title: 'Record Inward Costs', desc: 'Enter fabric cost, embellishment labor, and packaging for each batch.' },
-        { step: '02', title: 'Track Real-Time Sales & Discounts', desc: 'Every billing transaction automatically calculates net margin after tax and discounts.' },
-        { step: '03', title: 'One-Click CA Export', desc: 'Download monthly purchase and sales ledgers ready for tax filing.' }
+        { step: '01', title: 'Build the Quotation', desc: 'Add line items, rates, and taxes, then send the branded PDF to your buyer.' },
+        { step: '02', title: 'Convert on Approval', desc: 'Turn the quotation into a proforma or GST tax invoice with one click.' },
+        { step: '03', title: 'Send & Track Payment', desc: 'Dispatch the invoice and mark documents sent, paid, or cancelled as money moves.' }
       ]
     },
     synergy: [
-      { module: 'Boutique (POS)', text: 'Pulls counter transactions and registers cash drawer closing.' },
-      { module: 'Inventory', text: 'Calculates total asset value of in-stock merchandise.' },
-      { module: 'Analytics', text: 'Feeds profit margins into executive reports.' }
+      { module: 'POS', text: 'Counter sales flow into GST invoicing and daily totals.' },
+      { module: 'Boutique', text: 'Raises quotations and invoices for bespoke tailoring orders.' },
+      { module: 'Analytics', text: 'Feeds billed revenue into executive reports.' }
     ],
     faqs: [
       {
-        q: 'Can Scaleezy Finance export reports compatible with Tally?',
-        a: 'Yes, sales, purchases, and vendor entries can be exported to Excel/CSV formats directly compatible with Tally and Zoho Books.'
+        q: 'Does Billing Desk handle CGST/SGST versus IGST automatically?',
+        a: 'Yes. Based on the place of supply, the correct CGST/SGST or IGST breakup is applied automatically with paise-accurate rounding.'
       },
       {
-        q: 'Can we track tailor piece-rate payments?',
-        a: 'Yes, you can assign piece rates for stitching, alterations, and handwork, and track completed jobs by master tailor.'
+        q: 'Can we bill from more than one brand or entity?',
+        a: 'Yes. Each brand keeps its own letterhead, GSTIN, and invoice numbering series inside one Billing Desk.'
       }
     ]
   },
@@ -555,7 +631,7 @@ export const MODULES_DATA = [
     externalUrl: null,
     isLive: false,
     tagline: 'Multi-Carrier Dispatch & Smart Courier Routing',
-    badge: 'Module 08',
+    badge: 'Module 09',
     heroHeadline: 'Ship orders faster with lowest courier rates and smart NDR tracking.',
     heroDescription: 'Integrated with leading courier aggregators and direct carriers. Automatically select the fastest, lowest-cost courier for every pincode, print bulk shipping labels, and slash RTO with automated address verification.',
     img: '/logistics-hub.jpg',
@@ -629,10 +705,11 @@ export const SIMPLE_MODULE_NAMES = [
   'Inventory',
   'CRM',
   'Boutique',
-  'TRYON2BUY',
+  'POS',
+  'Tryon2buy',
   'Marketing',
   'Analytics',
-  'Finance',
+  'Billing Desk',
   'Logistics'
 ];
 

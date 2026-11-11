@@ -53,10 +53,12 @@ function App() {
             <Route path="/boutique" element={<Navigate to="/modules/boutique" replace />} />
             <Route path="/tryon2buy" element={<Navigate to="/modules/tryon2buy" replace />} />
             <Route path="/tryon" element={<Navigate to="/modules/tryon2buy" replace />} />
-            <Route path="/pos" element={<Navigate to="/modules/boutique" replace />} />
+            <Route path="/pos" element={<Navigate to="/modules/pos" replace />} />
             <Route path="/marketing" element={<Navigate to="/modules/marketing" replace />} />
             <Route path="/analytics" element={<Navigate to="/modules/analytics" replace />} />
-            <Route path="/finance" element={<Navigate to="/modules/finance" replace />} />
+            <Route path="/billing-desk" element={<Navigate to="/modules/billing-desk" replace />} />
+            <Route path="/billing" element={<Navigate to="/modules/billing-desk" replace />} />
+            <Route path="/finance" element={<Navigate to="/modules/billing-desk" replace />} />
             <Route path="/logistics" element={<Navigate to="/modules/logistics" replace />} />
 
             {/* Legacy URLs from the previous site (301s also live in vercel.json) */}

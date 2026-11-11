@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: 'Unified Commerce Ecosystem',
-    desc: 'CRM + finance + inventory + try-on + marketing + analytics + logistics.'
+    desc: 'CRM + billing + inventory + try-on + marketing + analytics + logistics.'
   }
 ];
 

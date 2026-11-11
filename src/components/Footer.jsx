@@ -53,7 +53,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#0A2F1D] text-white relative overflow-hidden pt-12 sm:pt-16 md:pt-20 pb-0">
+    <footer className="bg-[#1C421D] text-white relative overflow-hidden pt-12 sm:pt-16 md:pt-20 pb-0">
       {/* Landing Page Tailoring Background Pattern at 10% Opacity */}
       <BrandPatternAtelier mode="dark" opacity={0.10} size={420} />
 
@@ -131,7 +131,7 @@ export default function Footer() {
                 <span className="text-xs text-white/50 group-hover:text-white">↗</span>
               </a>
               <a href="https://www.tryon2buy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
-                <span>TRYON2BUY</span>
+                <span>Tryon2buy</span>
                 <span className="text-xs text-white/50 group-hover:text-white">↗</span>
               </a>
               <a href="https://marketing.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
@@ -142,7 +142,7 @@ export default function Footer() {
                 <span>CRM</span>
                 <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-amber-400 text-black leading-none">Soon</span>
               </Link>
-              <Link to="/modules" className="text-[var(--color-accent)] hover:underline transition-colors text-sm font-semibold pt-1">All 8 Modules →</Link>
+              <Link to="/modules" className="text-[var(--color-accent)] hover:underline transition-colors text-sm font-semibold pt-1">All 9 Modules →</Link>
             </nav>
           </div>
 

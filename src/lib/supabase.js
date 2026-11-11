@@ -9,19 +9,6 @@ const defaultHeaders = {
   'Prefer': 'return=minimal'
 };
 
-function normalizeModuleSlug(modName = '') {
-  const clean = (modName || '').toLowerCase().trim();
-  if (clean.includes('inventory')) return 'inventory';
-  if (clean.includes('crm') || clean.includes('customer')) return 'crm';
-  if (clean.includes('boutique') || clean.includes('pos') || clean.includes('billing')) return 'boutique';
-  if (clean.includes('tryon') || clean.includes('try-on') || clean.includes('virtual')) return 'tryon2buy';
-  if (clean.includes('market')) return 'marketing';
-  if (clean.includes('analytic')) return 'analytics';
-  if (clean.includes('finance')) return 'finance';
-  if (clean.includes('logistic')) return 'logistics';
-  return 'all_modules';
-}
-
 /**
  * Submits a demo booking request or access request to tenants_demorequest table
  * Differentiates module in source and notes so dedicated superadmins can filter by module
@@ -30,9 +17,9 @@ function normalizeModuleSlug(modName = '') {
  */
 export async function submitDemoRequest(formData, source = 'request_access') {
   const selectedModule = formData.interestedModule || 'Complete Scaleezy Platform';
-  const moduleSlug = normalizeModuleSlug(selectedModule);
-  // Source column in tenants_demorequest is VARCHAR(20); moduleSlug is 3-17 chars (e.g. 'inventory', 'crm', 'complete-platform')
-  const sourceTag = (moduleSlug || 'request_access').slice(0, 20);
+  // Source column in tenants_demorequest is VARCHAR(20); records where the lead came from
+  // (book_a_demo | request_access | website). The module lives in problem/notes.
+  const sourceTag = (source || 'request_access').slice(0, 20);
   const userNotes = (formData.notes || formData.specificRequirements || '').trim();
 
   const payload = {

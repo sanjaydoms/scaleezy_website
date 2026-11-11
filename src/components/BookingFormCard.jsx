@@ -11,10 +11,11 @@ const MODULES_LIST = [
   'Inventory',
   'CRM',
   'Boutique',
-  'TRYON2BUY',
+  'POS',
+  'Tryon2buy',
   'Marketing',
   'Analytics',
-  'Finance',
+  'Billing Desk',
   'Logistics'
 ];
 
@@ -33,11 +34,12 @@ export default function BookingFormCard({
     const clean = param.toString().toLowerCase().trim();
     if (clean.includes('inventory')) return 'Inventory';
     if (clean.includes('crm') || clean.includes('customer')) return 'CRM';
-    if (clean.includes('boutique') || clean.includes('pos') || clean.includes('billing')) return 'Boutique';
-    if (clean.includes('tryon') || clean.includes('try-on') || clean.includes('virtual')) return 'TRYON2BUY';
+    if (clean.includes('pos')) return 'POS';
+    if (clean.includes('boutique')) return 'Boutique';
+    if (clean.includes('billing') || clean.includes('finance')) return 'Billing Desk';
+    if (clean.includes('tryon') || clean.includes('try-on') || clean.includes('virtual')) return 'Tryon2buy';
     if (clean.includes('market')) return 'Marketing';
     if (clean.includes('analytic')) return 'Analytics';
-    if (clean.includes('finance')) return 'Finance';
     if (clean.includes('logistic')) return 'Logistics';
     const match = MODULES_LIST.find(m => m.toLowerCase() === clean);
     return match || defaultModule || 'Complete Scaleezy Platform';
@@ -172,7 +174,7 @@ export default function BookingFormCard({
       
       {/* Dark Card Header */}
       {showHeader && (
-        <div className="bg-[#0A2F1D] text-white p-7 sm:p-9 text-center relative overflow-hidden">
+        <div className="bg-[#1C421D] text-white p-7 sm:p-9 text-center relative overflow-hidden">
           <BrandPatternAtelier mode="dark" opacity={0.06} size={280} />
           
           <div className="relative z-10">
@@ -276,7 +278,7 @@ export default function BookingFormCard({
                   className={`w-full h-11 px-3.5 text-sm rounded-xl border bg-white transition-all outline-none ${
                     touched.brandName && errors.brandName
                       ? 'border-red-500 focus:ring-2 focus:ring-red-100'
-                      : 'border-gray-200 focus:border-[#0A2F1D] focus:ring-2 focus:ring-[#0A2F1D]/10'
+                      : 'border-gray-200 focus:border-[#1C421D] focus:ring-2 focus:ring-[#1C421D]/10'
                   }`}
                 />
                 {touched.brandName && errors.brandName && (
@@ -299,7 +301,7 @@ export default function BookingFormCard({
                   className={`w-full h-11 px-3.5 text-sm rounded-xl border bg-white transition-all outline-none ${
                     touched.fullName && errors.fullName
                       ? 'border-red-500 focus:ring-2 focus:ring-red-100'
-                      : 'border-gray-200 focus:border-[#0A2F1D] focus:ring-2 focus:ring-[#0A2F1D]/10'
+                      : 'border-gray-200 focus:border-[#1C421D] focus:ring-2 focus:ring-[#1C421D]/10'
                   }`}
                 />
                 {touched.fullName && errors.fullName && (
@@ -325,7 +327,7 @@ export default function BookingFormCard({
                   className={`w-full h-11 px-3.5 text-sm rounded-xl border bg-white transition-all outline-none ${
                     touched.email && errors.email
                       ? 'border-red-500 focus:ring-2 focus:ring-red-100'
-                      : 'border-gray-200 focus:border-[#0A2F1D] focus:ring-2 focus:ring-[#0A2F1D]/10'
+                      : 'border-gray-200 focus:border-[#1C421D] focus:ring-2 focus:ring-[#1C421D]/10'
                   }`}
                 />
                 {touched.email && errors.email && (
@@ -344,7 +346,7 @@ export default function BookingFormCard({
                     autoComplete="tel-country-code"
                     value={formData.countryCode}
                     onChange={handleChange}
-                    className="h-11 px-2.5 text-xs font-semibold rounded-xl border border-gray-200 bg-gray-50 focus:border-[#0A2F1D] outline-none cursor-pointer shrink-0"
+                    className="h-11 px-2.5 text-xs font-semibold rounded-xl border border-gray-200 bg-gray-50 focus:border-[#1C421D] outline-none cursor-pointer shrink-0"
                   >
                     {countryCodes.map(c => (
                       <option key={c.label} value={c.code}>{c.label}</option>
@@ -361,7 +363,7 @@ export default function BookingFormCard({
                     className={`w-full h-11 px-3.5 text-sm rounded-xl border bg-white transition-all outline-none ${
                       touched.phone && errors.phone
                         ? 'border-red-500 focus:ring-2 focus:ring-red-100'
-                        : 'border-gray-200 focus:border-[#0A2F1D] focus:ring-2 focus:ring-[#0A2F1D]/10'
+                        : 'border-gray-200 focus:border-[#1C421D] focus:ring-2 focus:ring-[#1C421D]/10'
                     }`}
                   />
                 </div>
@@ -392,7 +394,7 @@ export default function BookingFormCard({
                 {...fieldProps('interestedModule')}
                 value={formData.interestedModule}
                 onChange={handleChange}
-                className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none cursor-pointer"
+                className="w-full h-11 px-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#1C421D] outline-none cursor-pointer"
               >
                 {modulesList.map(mod => (
                   <option key={mod} value={mod}>{mod}</option>
@@ -411,7 +413,7 @@ export default function BookingFormCard({
                 onChange={handleChange}
                 rows={3}
                 placeholder="Any specific requirements, questions, or notes..."
-                className="w-full p-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#0A2F1D] outline-none transition-all resize-none"
+                className="w-full p-3.5 text-sm rounded-xl border border-gray-200 bg-white focus:border-[#1C421D] outline-none transition-all resize-none"
               />
             </div>
 
@@ -420,7 +422,7 @@ export default function BookingFormCard({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full h-13 rounded-full bg-gradient-to-r from-[#0A2F1D] to-[#12422b] text-[var(--color-accent)] font-bold text-base hover:shadow-xl hover:scale-101 active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 shadow-md"
+                className="w-full h-13 rounded-full bg-gradient-to-r from-[#1C421D] to-[#12422b] text-[var(--color-accent)] font-bold text-base hover:shadow-xl hover:scale-101 active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 shadow-md"
               >
                 {isSubmitting ? (
                   <>

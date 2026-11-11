@@ -29,7 +29,7 @@ export default function TermsAndConditions() {
       icon: <FileText className="w-5 h-5 text-[var(--color-accent)]" />,
       content: `These Terms and Conditions ("Terms") constitute a legally binding agreement between DOMS Global / Scaleezy ("Scaleezy," "Company," "we," or "us") and the business entity, boutique owner, or individual ("Customer," "you," or "Tenant") accessing or using our software-as-a-service (SaaS) platform, APIs, and websites.
 
-By accessing scaleezy.com, creating a workspace, or using any Scaleezy module (Inventory, Boutique POS, CRM, TRYON2BUY, Marketing, Analytics, Finance, Logistics), you agree to be bound by these Terms.`
+By accessing scaleezy.com, creating a workspace, or using any Scaleezy module (Inventory, Boutique, POS, CRM, Tryon2buy, Marketing, Analytics, Billing Desk, Logistics), you agree to be bound by these Terms.`
     },
     {
       id: "platform-license",
@@ -103,7 +103,7 @@ Scaleezy's cumulative liability under any claim arising out of these Terms shall
     <div className="min-h-screen bg-[var(--color-warm-white)] text-[var(--color-charcoal)] selection:bg-[var(--color-accent)] selection:text-[var(--color-primary)]">
       
       {/* Hero Header */}
-      <section className="relative pt-28 sm:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 bg-gradient-to-b from-[#06180E] via-[#0A2F1D] to-[#0A2619] text-white overflow-hidden text-center">
+      <section className="relative pt-28 sm:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 bg-gradient-to-b from-[#06180E] via-[#1C421D] to-[#0A2619] text-white overflow-hidden text-center">
         <BrandPatternAtelier mode="dark" opacity={0.08} size={360} />
         
         <div className="max-w-4xl mx-auto relative z-10">

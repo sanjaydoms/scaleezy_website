@@ -30,7 +30,7 @@ import Footer from './Footer';
 import usePageMeta from './usePageMeta';
 
 export default function About() {
-  usePageMeta("About Scaleezy — One Connected System for Apparel Commerce", "Why we built Scaleezy: inventory, CRM, try-on, marketing, finance, analytics and logistics working as one system for fashion businesses.");
+  usePageMeta("About Scaleezy — One Connected System for Apparel Commerce", "Why we built Scaleezy: inventory, CRM, try-on, marketing, billing, analytics and logistics working as one system for fashion businesses.");
   return (
     <div className="min-h-screen bg-[var(--color-warm-white)] text-[var(--color-charcoal)] overflow-x-hidden selection:bg-[var(--color-accent)] selection:text-[var(--color-primary)]">
       
@@ -97,7 +97,7 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-normal px-2"
           >
-            Today's apparel businesses manage products, customers, marketing, finance and fulfilment across disconnected workflows. Scaleezy brings those functions together through one connected apparel commerce ecosystem.
+            Today's apparel businesses manage products, customers, marketing, billing and fulfilment across disconnected workflows. Scaleezy brings those functions together through one connected apparel commerce ecosystem.
           </motion.p>
         </div>
 
@@ -523,11 +523,11 @@ export default function About() {
               </div>
 
               <div className="relative z-10 border-t border-white/20 pt-4">
-                <div className="text-gray-300 font-bold mb-1 uppercase text-xs tracking-widest">Finance</div>
+                <div className="text-gray-300 font-bold mb-1 uppercase text-xs tracking-widest">Billing Desk</div>
                 <div className="text-[var(--color-accent)] text-2xl font-bold mb-1 group-hover:translate-x-1.5 transition-transform inline-block">→</div>
-                <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">Procurement</div>
+                <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">Analytics</div>
                 <div className="text-xs text-gray-200 mt-2 font-normal leading-relaxed">
-                  Calculate true gross margins and prevent capital being locked in slow inventory cycles.
+                  Billed revenue from quotations and GST invoices feeds straight into executive reports.
                 </div>
               </div>
             </motion.div>
@@ -760,7 +760,7 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative rounded-3xl sm:rounded-[36px] overflow-hidden p-8 sm:p-14 md:p-20 bg-gradient-to-br from-[var(--color-primary)] via-[#0e3b25] to-[#0A2F1D] text-white shadow-2xl border border-[var(--color-primary)]/20"
+            className="relative rounded-3xl sm:rounded-[36px] overflow-hidden p-8 sm:p-14 md:p-20 bg-gradient-to-br from-[var(--color-primary)] via-[#0e3b25] to-[#1C421D] text-white shadow-2xl border border-[var(--color-primary)]/20"
           >
             <BrandPatternAtelier mode="dark" opacity={0.08} size={320} />
             <BrandWatermark className="-right-24 -bottom-24 text-[var(--color-accent)]" opacity={0.04} size={500} />

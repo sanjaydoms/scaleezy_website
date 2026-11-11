@@ -1,44 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Lock, Mail, Eye, EyeOff, ShieldCheck } from 'lucide-react';
-import usePageMeta from './usePageMeta';
+import { ArrowRight, ArrowUpRight, ShieldCheck, Clock } from 'lucide-react';
 import { BrandPatternAtelier } from './BrandPattern';
+import usePageMeta from './usePageMeta';
+
+// Each Scaleezy product has its own workspace login. This page routes owners and
+// staff to the right app instead of collecting credentials the website cannot verify.
+const WORKSPACES = [
+  {
+    name: 'Inventory',
+    desc: 'Stock, barcodes & purchase orders',
+    url: 'https://inventory.scaleezy.com/'
+  },
+  {
+    name: 'Boutique',
+    desc: 'Bespoke orders, measurements & fittings',
+    url: 'https://boutique.scaleezy.com/'
+  },
+  {
+    name: 'Marketing',
+    desc: 'WhatsApp campaigns & automations',
+    url: 'https://marketing.scaleezy.com/'
+  },
+  {
+    name: 'Tryon2buy',
+    desc: 'AI virtual try-on studio',
+    url: 'https://www.tryon2buy.com/'
+  }
+];
+
+const COMING_SOON = ['POS', 'CRM', 'Analytics', 'Billing Desk', 'Logistics'];
 
 export default function LoginPage() {
-  usePageMeta("Sign In to Scaleezy — Fashion Retail Operating System", "Log in to your Scaleezy boutique workspace to manage inventory, CRM, POS billing, and virtual try-ons.");
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(true);
-  const [showPassword, setShowPassword] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setErrorMessage('');
-
-    if (!email.trim() || !password.trim()) {
-      setErrorMessage('Please enter both your work email and password.');
-      return;
-    }
-
-    setIsSubmitting(true);
-    // Simulate authentication check / demo handling
-    setTimeout(() => {
-      setIsSubmitting(false);
-      // For demonstration in preview mode, show friendly notification or redirect
-      setErrorMessage('Scaleezy multi-tenant workspaces are accessed via your custom domain (e.g. yourbrand.scaleezy.com). If you are a new store, please request platform access.');
-    }, 900);
-  };
+  usePageMeta(
+    'Sign In to Scaleezy — Fashion Retail Operating System',
+    'Open your Scaleezy workspace: Inventory, Boutique, Marketing or Tryon2buy. New store? Request platform access.'
+  );
 
   return (
     <div className="min-h-screen bg-[var(--color-warm-white)] text-[var(--color-charcoal)] flex flex-col justify-between pt-24 pb-12 px-4 sm:px-6 relative overflow-hidden">
       <BrandPatternAtelier opacity={0.08} size={380} />
 
       <div className="max-w-md w-full mx-auto relative z-10 my-auto">
-        
+
         {/* Top Header */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-block mb-6">
@@ -51,116 +56,51 @@ export default function LoginPage() {
             />
           </Link>
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--color-primary)] mb-2">
-            Sign in to your workspace
+            Open your workspace
           </h1>
           <p className="text-sm text-gray-700">
-            Enter your credentials to access your store's dashboard
+            Sign in happens inside your Scaleezy product. Pick yours below.
           </p>
         </div>
 
-        {/* Card Form */}
+        {/* Workspace launcher */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="bg-white p-7 sm:p-9 rounded-3xl border border-black/10 shadow-xl"
+          className="bg-white p-5 sm:p-7 rounded-3xl border border-black/10 shadow-xl"
         >
-          {errorMessage && (
-            <div role="alert" className="mb-5 p-3.5 bg-amber-50 border border-amber-200 text-amber-900 rounded-xl text-xs sm:text-sm leading-relaxed">
-              {errorMessage}
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} noValidate className="space-y-4">
-            
-            <div className="space-y-1.5">
-              <label htmlFor="login-email" className="block text-xs font-semibold uppercase tracking-wider text-gray-700">
-                Work Email
-              </label>
-              <div className="relative">
-                <input
-                  id="login-email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@yourboutique.com"
-                  className="w-full h-12 pl-10 pr-4 text-sm bg-white border border-black/20 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/15 outline-none transition-all"
-                />
-                <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-black/40" />
-              </div>
-            </div>
-
-            <div className="space-y-1.5">
-              <div className="flex items-center justify-between">
-                <label htmlFor="login-password" className="block text-xs font-semibold uppercase tracking-wider text-gray-700">
-                  Password
-                </label>
+          <ul className="space-y-3">
+            {WORKSPACES.map((ws) => (
+              <li key={ws.name}>
                 <a
-                  href="#forgot"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setErrorMessage('Please contact your store administrator or email support@scaleezy.com to reset your workspace password.');
-                  }}
-                  className="text-xs text-emerald-800 hover:underline font-medium"
+                  href={ws.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between gap-3 p-4 rounded-2xl border border-black/10 hover:border-[var(--color-primary)]/40 hover:bg-emerald-50/50 transition-colors"
                 >
-                  Forgot password?
+                  <span>
+                    <span className="block text-sm font-semibold text-[var(--color-primary)]">
+                      {ws.name === 'Tryon2buy' ? 'Tryon2buy' : `Scaleezy ${ws.name}`}
+                    </span>
+                    <span className="block text-xs text-gray-600 mt-0.5">{ws.desc}</span>
+                  </span>
+                  <ArrowUpRight
+                    size={18}
+                    className="shrink-0 text-black/30 group-hover:text-[var(--color-primary)] transition-colors"
+                  />
                 </a>
-              </div>
-              <div className="relative">
-                <input
-                  id="login-password"
-                  type={showPassword ? 'text' : 'password'}
-                  autoComplete="current-password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••••••"
-                  className="w-full h-12 pl-10 pr-10 text-sm bg-white border border-black/20 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)]/15 outline-none transition-all"
-                />
-                <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-black/40" />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-black/40 hover:text-black"
-                  aria-label={showPassword ? 'Hide password' : 'Show password'}
-                >
-                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
-                </button>
-              </div>
-            </div>
+              </li>
+            ))}
+          </ul>
 
-            <div className="flex items-center justify-between pt-1">
-              <label className="flex items-center gap-2 cursor-pointer text-xs sm:text-sm text-gray-700">
-                <input
-                  type="checkbox"
-                  checked={rememberMe}
-                  onChange={(e) => setRememberMe(e.target.checked)}
-                  className="w-4 h-4 rounded border-gray-300 text-[var(--color-primary)] focus:ring-[var(--color-primary)]"
-                />
-                <span>Remember this device</span>
-              </label>
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="btn btn-dark w-full justify-center mt-2 disabled:opacity-70"
-            >
-              {isSubmitting ? (
-                <>
-                  <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  <span>Signing in...</span>
-                </>
-              ) : (
-                <>
-                  <span>Sign In</span>
-                  <ArrowRight size={16} />
-                </>
-              )}
-            </button>
-          </form>
+          <div className="mt-5 flex items-start gap-2 text-xs text-gray-600 bg-[var(--color-soft-cream)] rounded-xl p-3.5">
+            <Clock size={14} className="shrink-0 mt-0.5 text-gray-500" />
+            <span>
+              {COMING_SOON.join(', ')} workspaces are rolling out soon. Multi-tenant stores sign
+              in on their own domain (e.g. yourbrand.scaleezy.com).
+            </span>
+          </div>
 
           {/* New to Scaleezy banner */}
           <div className="mt-6 pt-6 border-t border-gray-100 text-center">
