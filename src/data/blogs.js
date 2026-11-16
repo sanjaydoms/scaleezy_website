@@ -1,4 +1,49 @@
-export const blogs = [
+import { decisionPosts } from './posts/decision';
+import { considerationPosts } from './posts/consideration';
+import { awarenessPostsA } from './posts/awareness-a';
+import { awarenessPostsB } from './posts/awareness-b';
+
+// Funnel stages drive which CTA, lead magnet and "next step" a post shows.
+export const FUNNEL_STAGES = {
+  awareness: { label: 'Learn', next: 'consideration', order: 0 },
+  consideration: { label: 'Compare', next: 'decision', order: 1 },
+  decision: { label: 'Decide', next: null, order: 2 }
+};
+
+// Module slug used for /request-access?module=... so the lead form pre-selects the right product.
+const CATEGORY_MODULE = {
+  'Inventory Intelligence': 'inventory',
+  'Inventory Planning': 'inventory',
+  'Inventory': 'inventory',
+  'Virtual Try-On': 'tryon',
+  'Customer Retention': 'crm',
+  'Marketing': 'marketing',
+  'Logistics': 'logistics',
+  'Product Management': 'inventory',
+  'Billing & POS': 'billing',
+  'Finance': 'billing',
+  'Analytics': 'analytics',
+  'Growth': 'boutique',
+  'Operations': 'pos',
+  'Technology': 'platform'
+};
+
+// Older posts predate the SEO/AEO fields; give them sensible defaults so every post renders the same way.
+function withDefaults(post) {
+  return {
+    funnelStage: 'awareness',
+    module: CATEGORY_MODULE[post.category] || 'platform',
+    dateModified: post.date,
+    keywords: [],
+    faqs: [],
+    takeaways: null,
+    quickAnswer: null,
+    leadMagnet: null,
+    ...post
+  };
+}
+
+const legacyBlogs = [
   {
     id: 1,
     slug: 'how-to-reduce-dead-stock-in-clothing-store',
@@ -749,3 +794,21 @@ Scaleezy is an operating system for apparel commerce, built for boutiques, saree
 Comparing boutique software? [Request access](/request-access) and see it with your own collection.`
   }
 ];
+
+const newPosts = [...decisionPosts, ...considerationPosts, ...awarenessPostsA, ...awarenessPostsB]
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+// Newest first. The listing page features blogs[0].
+export const blogs = [...newPosts, ...legacyBlogs].map(withDefaults);
+
+export const getPostBySlug = (slug) => blogs.find(b => b.slug === slug);
+
+// Posts one funnel stage further along, same module first, used for the "next step" strip.
+export function getNextStepPosts(post, limit = 2) {
+  const nextStage = FUNNEL_STAGES[post.funnelStage]?.next;
+  if (!nextStage) return [];
+  const candidates = blogs.filter(b => b.id !== post.id && b.funnelStage === nextStage);
+  const sameModule = candidates.filter(b => b.module === post.module);
+  const others = candidates.filter(b => b.module !== post.module);
+  return [...sameModule, ...others].slice(0, limit);
+}

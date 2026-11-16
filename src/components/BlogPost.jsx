@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -16,7 +16,10 @@ import {
   BookOpen, 
   TrendingUp,
   MessageCircle,
-  Building2
+  Building2,
+  HelpCircle,
+  ArrowRight,
+  Zap
 } from 'lucide-react';
 
 function LinkedInIcon({ size = 15 }) {
@@ -36,9 +39,45 @@ function TwitterIcon({ size = 15 }) {
     </svg>
   );
 }
-import { blogs } from '../data/blogs';
+import { blogs, FUNNEL_STAGES, getNextStepPosts } from '../data/blogs';
 import Footer from './Footer';
 import usePageMeta from './usePageMeta';
+import BlogLeadMagnet from './BlogLeadMagnet';
+
+const SITE_URL = 'https://scaleezy.com';
+
+// The end-of-article and sidebar CTAs change with how close the reader is to buying.
+const STAGE_CTA = {
+  awareness: {
+    eyebrow: 'Next step',
+    title: 'See how this works inside Scaleezy.',
+    body: 'A 20-minute walkthrough using your own products and categories. No card, no commitment.',
+    button: 'Book a walkthrough',
+    side: 'Curious how this looks in practice?',
+    sideBody: 'We will show you the module behind this article with your own stock.'
+  },
+  consideration: {
+    eyebrow: 'Compare with your setup',
+    title: 'Bring your shortlist. We will show you where Scaleezy fits.',
+    body: 'Inventory, billing, CRM, try-on and logistics on one data layer, built for apparel. Judge it against your current tools.',
+    button: 'Request access',
+    side: 'Comparing options?',
+    sideBody: 'Test Scaleezy with 50 of your own products before you decide.'
+  },
+  decision: {
+    eyebrow: 'Start free',
+    title: 'Start your 14-day free trial.',
+    body: 'Set up with your own stock in a day. Single boutique plans from ₹2,499 a month. Onboarding included, cancel any time.',
+    button: 'Start free trial',
+    side: 'Ready to switch?',
+    sideBody: '14 days free, onboarding included, your data stays yours.'
+  }
+};
+
+const parseDate = (d) => {
+  const t = new Date(d);
+  return Number.isNaN(t.getTime()) ? null : t.toISOString();
+};
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -46,8 +85,27 @@ export default function BlogPost() {
 
   usePageMeta(
     post ? `${post.title} — Scaleezy` : "Article — Scaleezy",
-    post?.excerpt || "Practical guides on inventory, customer retention, marketing and operations for boutiques and apparel brands."
+    post?.excerpt || "Practical guides on inventory, customer retention, marketing and operations for boutiques and apparel brands.",
+    post ? {
+      keywords: post.keywords,
+      image: post.img,
+      type: 'article',
+      publishedTime: parseDate(post.date),
+      modifiedTime: parseDate(post.dateModified || post.date)
+    } : {}
   );
+
+  const stage = FUNNEL_STAGES[post?.funnelStage] ? post.funnelStage : 'awareness';
+  const cta = STAGE_CTA[stage];
+  const requestHref = post?.module && post.module !== 'platform' ? `/request-access?module=${post.module}` : '/request-access';
+
+  // Articles can place `{{lead-magnet}}` on its own line; the inline lead magnet renders there.
+  const [contentBefore, contentAfter] = useMemo(() => {
+    const parts = (post?.content || '').split('{{lead-magnet}}');
+    return [parts[0], parts.slice(1).join('\n')];
+  }, [post?.content]);
+
+  const nextStepPosts = useMemo(() => (post ? getNextStepPosts(post, 2) : []), [post]);
 
   const [scrollProgress, setScrollProgress] = useState(0);
   const [copied, setCopied] = useState(false);
@@ -72,6 +130,7 @@ export default function BlogPost() {
     const items = [];
     const lines = post.content.split('\n');
     lines.forEach((line) => {
+      if (line.trim() === '{{lead-magnet}}') return;
       const match = line.match(/^(#{2,3})\s+(.+)$/);
       if (match) {
         const level = match[1].length;
@@ -82,6 +141,16 @@ export default function BlogPost() {
     });
     return items;
   }, [post?.content]);
+
+  // Key takeaways: authored per post, or derived from the first three section headings for older posts.
+  const takeaways = useMemo(() => {
+    if (post?.takeaways?.length) return post.takeaways;
+    return headings
+      .filter(h => !/how scaleezy/i.test(h.text))
+      .slice(0, 3)
+      .map(h => h.text.replace(/^(?:step\s*)?\d+[\s.:)-]*/i, '').trim())
+      .filter(Boolean);
+  }, [post?.takeaways, headings]);
 
   // Track active heading on scroll
   useEffect(() => {
@@ -176,26 +245,62 @@ export default function BlogPost() {
     );
   }
 
+  const pageUrl = `${SITE_URL}/blog/${post.slug}`;
+  const absImage = post.img.startsWith('http') ? post.img : `${SITE_URL}${post.img}`;
+  const wordCount = post.content.trim().split(/\s+/).length;
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
     "headline": post.title,
     "description": post.excerpt,
-    "image": [post.img],
-    "datePublished": new Date(post.date).toISOString(),
+    "image": [absImage],
+    "datePublished": parseDate(post.date),
+    "dateModified": parseDate(post.dateModified || post.date),
+    "wordCount": wordCount,
+    "articleSection": post.category,
+    "keywords": (post.keywords || []).join(', '),
+    "inLanguage": "en-IN",
+    "isAccessibleForFree": true,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#quick-answer", "h1"]
+    },
     "author": [{
       "@type": "Organization",
       "name": "Scaleezy Retail Intelligence Desk",
-      "url": "https://www.scaleezy.com"
+      "url": SITE_URL
     }],
     "publisher": {
       "@type": "Organization",
       "name": "Scaleezy",
+      "url": SITE_URL,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.scaleezy.com/logo.png"
+        "url": `${SITE_URL}/assets/logo.png`
       }
     }
+  };
+
+  const faqSchema = post.faqs?.length ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": post.faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  } : null;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+      { "@type": "ListItem", "position": 2, "name": "Insights", "item": `${SITE_URL}/blogs` },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": pageUrl }
+    ]
   };
 
   const howToSchema = post.id === 14 ? {
@@ -233,6 +338,10 @@ export default function BlogPost() {
       </div>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
       {howToSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       )}
@@ -258,6 +367,9 @@ export default function BlogPost() {
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/60 font-semibold text-[var(--color-primary)] uppercase tracking-wider text-xs">
                 <Sparkles size={12} className="text-emerald-600" />
                 {post.category}
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-black/8 font-semibold text-gray-600 uppercase tracking-wider text-xs" title="Where this article sits in your decision">
+                {FUNNEL_STAGES[stage].label}
               </span>
               <span className="inline-flex items-center gap-1.5 text-gray-500 font-medium">
                 <Calendar size={14} className="text-gray-400" />
@@ -361,38 +473,57 @@ export default function BlogPost() {
             {/* MAIN ARTICLE CONTENT (lg:col-span-8) */}
             <article className="lg:col-span-8 min-w-0">
 
-              {/* Executive Summary / Key Takeaways Callout Card */}
-              <div className="mb-10 sm:mb-12 p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-emerald-50/70 via-white to-emerald-50/30 border border-emerald-200/80 shadow-sm relative overflow-hidden">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="w-6 h-6 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center">
-                    <Sparkles size={13} />
-                  </span>
-                  <h3 className="font-bold text-xs sm:text-sm tracking-wider uppercase text-[var(--color-primary)]">
-                    Executive Takeaways • 60-Second Brief
-                  </h3>
+              {/* Quick Answer: a direct, quotable answer for featured snippets and AI assistants */}
+              {post.quickAnswer && (
+                <section
+                  id="quick-answer"
+                  aria-label="Quick answer"
+                  className="mb-8 p-6 sm:p-7 rounded-2xl bg-white border border-black/8 shadow-sm"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-6 h-6 rounded-full bg-[var(--color-accent)] text-[var(--color-primary)] flex items-center justify-center">
+                      <Zap size={13} />
+                    </span>
+                    <h2 className="font-bold text-xs sm:text-sm tracking-wider uppercase text-[var(--color-primary)] m-0">
+                      Quick answer
+                    </h2>
+                  </div>
+                  <p className="text-base sm:text-lg text-gray-800 leading-relaxed m-0">
+                    {post.quickAnswer}
+                  </p>
+                </section>
+              )}
+
+              {/* Key Takeaways Callout Card */}
+              {takeaways.length > 0 && (
+                <div className="mb-10 sm:mb-12 p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-emerald-50/70 via-white to-emerald-50/30 border border-emerald-200/80 shadow-sm relative overflow-hidden">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-6 h-6 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center">
+                      <Sparkles size={13} />
+                    </span>
+                    <h3 className="font-bold text-xs sm:text-sm tracking-wider uppercase text-[var(--color-primary)]">
+                      Key takeaways • {readingTime}-minute read
+                    </h3>
+                  </div>
+                  <ul className="space-y-2 text-sm sm:text-base text-gray-800">
+                    {takeaways.map((t, i) => (
+                      <li key={i} className="flex items-start gap-2.5">
+                        <CheckCircle2 size={16} className="text-[var(--color-primary)] shrink-0 mt-1" />
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium mb-3">
-                  Key strategic points for apparel boutique owners, multi-store retailers, and fashion brand founders:
-                </p>
-                <ul className="space-y-2 text-xs sm:text-sm text-gray-800">
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 size={16} className="text-[var(--color-primary)] shrink-0 mt-0.5" />
-                    <span>Real-time inventory and clienteling intelligence prevent stockouts and dead stock.</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 size={16} className="text-[var(--color-primary)] shrink-0 mt-0.5" />
-                    <span>Multi-store synchronization eliminates manual reconciliations across retail locations.</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 size={16} className="text-[var(--color-primary)] shrink-0 mt-0.5" />
-                    <span>Unified billing, CRM, and WhatsApp campaigns increase repeat festive visits by up to 34%.</span>
-                  </li>
-                </ul>
-              </div>
+              )}
 
               {/* Markdown Styled Typography */}
               <div className="prose prose-base sm:prose-lg max-w-none text-gray-800 leading-relaxed">
-                <ReactMarkdown 
+                {[contentBefore, contentAfter].map((part, idx) => part && (
+                <React.Fragment key={idx}>
+                {idx === 1 && (
+                  <BlogLeadMagnet magnet={post.leadMagnet} stage={stage} module={post.module} slug={post.slug} />
+                )}
+                <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={{
                     h2: ({ node, children, ...props }) => {
@@ -502,28 +633,90 @@ export default function BlogPost() {
                     }
                   }}
                 >
-                  {post.content}
+                  {part}
                 </ReactMarkdown>
+                </React.Fragment>
+                ))}
+                {/* Posts without a marker still get the lead magnet after the article */}
+                {!post.content.includes('{{lead-magnet}}') && post.leadMagnet && (
+                  <BlogLeadMagnet magnet={post.leadMagnet} stage={stage} module={post.module} slug={post.slug} />
+                )}
               </div>
+
+              {/* FAQ: answers people ask search engines and AI assistants, marked up as FAQPage */}
+              {post.faqs?.length > 0 && (
+                <section id="faq" aria-labelledby="faq-heading" className="mt-14">
+                  <h2 id="faq-heading" className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--color-primary)] mb-6 flex items-center gap-2">
+                    <HelpCircle size={24} className="shrink-0" />
+                    <span>Frequently asked questions</span>
+                  </h2>
+                  <div className="divide-y divide-black/8 rounded-2xl border border-black/8 bg-white shadow-2xs overflow-hidden">
+                    {post.faqs.map((f, i) => (
+                      <details key={i} className="group" open={i === 0}>
+                        <summary className="cursor-pointer list-none px-5 sm:px-6 py-4 sm:py-5 flex items-start justify-between gap-4 text-base sm:text-lg font-semibold text-[var(--color-charcoal)] hover:text-[var(--color-primary)] transition-colors">
+                          <span>{f.q}</span>
+                          <ChevronRight size={18} className="shrink-0 mt-1 text-gray-400 transition-transform group-open:rotate-90" />
+                        </summary>
+                        <div className="px-5 sm:px-6 pb-5 -mt-1 text-sm sm:text-base text-gray-700 leading-relaxed">
+                          {f.a}
+                        </div>
+                      </details>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {/* Funnel: where to go next */}
+              {nextStepPosts.length > 0 && (
+                <section aria-labelledby="next-step-heading" className="mt-12">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-xs font-bold uppercase tracking-widest text-[var(--color-primary)]">
+                      Your next step
+                    </span>
+                    <span className="h-px flex-1 bg-black/8" />
+                  </div>
+                  <h3 id="next-step-heading" className="text-lg sm:text-xl font-bold text-[var(--color-charcoal)] mb-4">
+                    {stage === 'awareness' ? 'Ready to compare approaches?' : 'Ready to decide?'}
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {nextStepPosts.map(np => (
+                      <Link
+                        key={np.id}
+                        to={`/blog/${np.slug}`}
+                        className="group flex items-start gap-4 p-4 rounded-2xl bg-white border border-black/8 hover:border-emerald-300 hover:shadow-md transition-all"
+                      >
+                        <img src={np.img} alt="" loading="lazy" className="w-20 h-20 rounded-xl object-cover shrink-0 bg-gray-100" />
+                        <div className="min-w-0">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500">{FUNNEL_STAGES[np.funnelStage].label} • {np.category}</span>
+                          <p className="font-bold text-sm sm:text-base text-[var(--color-charcoal)] group-hover:text-[var(--color-primary)] leading-snug line-clamp-2 mt-1">{np.title}</p>
+                          <span className="inline-flex items-center gap-1 text-xs font-bold text-[var(--color-primary)] mt-2">
+                            Read next <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
 
               {/* Post-Article Conversion Banner */}
               <div className="mt-14 p-8 rounded-3xl bg-[var(--color-primary)] text-white shadow-xl relative overflow-hidden">
                 <div className="relative z-10 max-w-xl">
                   <span className="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-2 inline-block">
-                    Scaleezy Commerce Engine
+                    {cta.eyebrow}
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
-                    Modernize your apparel boutique today.
+                    {cta.title}
                   </h3>
                   <p className="text-emerald-100 text-sm sm:text-base mb-6 leading-relaxed">
-                    Stop fighting disconnected spreadsheets, manual bill books, and dead inventory. Switch to India&apos;s fastest retail platform.
+                    {cta.body}
                   </p>
                   <div className="flex flex-wrap items-center gap-3">
                     <Link
-                      to="/request-access"
+                      to={requestHref}
                       className="px-6 py-3 rounded-full bg-white text-[var(--color-primary)] font-bold text-sm hover:bg-emerald-50 transition-colors shadow-md inline-flex items-center gap-2"
                     >
-                      <span>Request Platform Access</span>
+                      <span>{cta.button}</span>
                       <ArrowUpRight size={16} />
                     </Link>
                     <Link
@@ -594,22 +787,42 @@ export default function BlogPost() {
                   <Building2 size={22} />
                 </span>
                 <h4 className="font-bold text-base text-[var(--color-charcoal)] mb-2">
-                  Operating multi-store or boutique retail?
+                  {cta.side}
                 </h4>
                 <p className="text-xs text-gray-600 leading-relaxed mb-5">
-                  See how Scaleezy replaces 4 disjointed tools with 1 connected apparel ecosystem.
+                  {cta.sideBody}
                 </p>
                 <Link
-                  to="/request-access"
+                  to={requestHref}
                   className="w-full py-2.5 px-4 rounded-xl bg-[var(--color-primary)] text-white text-xs font-bold hover:bg-emerald-900 transition-colors shadow-sm inline-flex items-center justify-center gap-1.5"
                 >
-                  <span>Request Platform Access</span>
+                  <span>{cta.button}</span>
                   <ArrowUpRight size={14} />
                 </Link>
                 <p className="text-[11px] text-gray-500 mt-2.5">
-                  ✓ Free setup &bull; No lock-in &bull; Dedicated support
+                  ✓ 14-day free trial &bull; Onboarding included &bull; No lock-in
                 </p>
               </div>
+
+              {/* Topics covered: visible keyword tags that also help search */}
+              {post.keywords?.length > 0 && (
+                <div className="p-5 rounded-2xl bg-white border border-black/8 shadow-2xs">
+                  <p className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-3">
+                    Topics covered
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {post.keywords.map((k) => (
+                      <Link
+                        key={k}
+                        to={`/blogs?q=${encodeURIComponent(k)}`}
+                        className="text-xs px-2.5 py-1 rounded-lg bg-gray-100 text-gray-700 font-medium hover:bg-emerald-50 hover:text-[var(--color-primary)] transition-colors"
+                      >
+                        {k}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Quick Share Widget */}
               <div className="p-5 rounded-2xl bg-white border border-black/8 shadow-2xs text-center">

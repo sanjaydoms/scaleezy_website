@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { 
   Search, 
   Clock, 
@@ -15,27 +15,40 @@ import Footer from './Footer';
 import usePageMeta from './usePageMeta';
 import { submitNewsletter } from '../lib/supabase';
 import { MotifCommerceThread } from './BackgroundMotifs';
-import { blogs } from '../data/blogs';
+import { blogs, FUNNEL_STAGES } from '../data/blogs';
 
 const CATEGORIES = [
   { id: 'all', label: 'All Articles' },
   { id: 'inventory', label: 'Inventory & Stock' },
+  { id: 'tech', label: 'Billing, POS & Software' },
   { id: 'marketing', label: 'Marketing & WhatsApp' },
-  { id: 'tech', label: 'Retail Tech & POS' },
   { id: 'customer', label: 'Clienteling & CRM' },
+  { id: 'growth', label: 'Growth, GST & Finance' },
   { id: 'tryon', label: 'AI Virtual Try-On' },
   { id: 'logistics', label: 'Logistics & Ops' }
+];
+
+// Reader journey filter: Learn (awareness) → Compare (consideration) → Decide (decision)
+const STAGES = [
+  { id: 'all', label: 'Every stage' },
+  { id: 'awareness', label: 'Learn', hint: 'Understand the problem' },
+  { id: 'consideration', label: 'Compare', hint: 'Weigh approaches and tools' },
+  { id: 'decision', label: 'Decide', hint: 'Pricing, comparisons, checklists' }
 ];
 
 function getCategoryGroup(cat = '') {
   if (cat.includes('Inventory')) return 'inventory';
   if (cat.includes('Marketing')) return 'marketing';
-  if (cat.includes('Technology')) return 'tech';
+  if (cat.includes('Technology') || cat.includes('Billing')) return 'tech';
   if (cat.includes('Customer') || cat.includes('Loyalty')) return 'customer';
   if (cat.includes('Try-On')) return 'tryon';
-  if (cat.includes('Logistics') || cat.includes('Product')) return 'logistics';
+  if (cat.includes('Logistics') || cat.includes('Product') || cat.includes('Operations')) return 'logistics';
+  if (cat.includes('Growth') || cat.includes('Finance') || cat.includes('Analytics')) return 'growth';
   return 'all';
 }
+
+// Turns a keyword like "boutique billing software" into a #BoutiqueBillingSoftware chip
+const toHashtag = (k) => '#' + k.split(/\s+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('').replace(/[^\w]/g, '');
 
 function calculateReadingTime(content, excerpt) {
   const text = (content || '') + ' ' + (excerpt || '');
@@ -47,8 +60,18 @@ function calculateReadingTime(content, excerpt) {
 export default function BlogsPage() {
   usePageMeta("Scaleezy Blog — Insights for Fashion Retail", "Practical guides on inventory, customer retention, marketing and operations for boutiques and apparel brands.");
 
+  const [searchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedStage, setSelectedStage] = useState('all');
+  const urlQuery = searchParams.get('q');
+  const [searchQuery, setSearchQuery] = useState(urlQuery || '');
+  const [appliedUrlQuery, setAppliedUrlQuery] = useState(urlQuery);
+
+  // Keyword chips on article pages link here with ?q=...; adopt a new URL query when it changes.
+  if (urlQuery !== appliedUrlQuery) {
+    setAppliedUrlQuery(urlQuery);
+    if (urlQuery !== null) setSearchQuery(urlQuery);
+  }
   const [emailInput, setEmailInput] = useState('');
   const [emailSubscribed, setEmailSubscribed] = useState(false);
   const [isSubmittingEmail, setIsSubmittingEmail] = useState(false);
@@ -70,19 +93,23 @@ export default function BlogsPage() {
       const matchesCategory =
         selectedCategory === 'all' || getCategoryGroup(post.category) === selectedCategory;
 
+      const matchesStage = selectedStage === 'all' || post.funnelStage === selectedStage;
+
       const q = searchQuery.toLowerCase().trim();
       const matchesSearch =
         !q ||
         post.title.toLowerCase().includes(q) ||
         post.excerpt.toLowerCase().includes(q) ||
-        post.category.toLowerCase().includes(q);
+        post.category.toLowerCase().includes(q) ||
+        (post.keywords || []).some(k => k.toLowerCase().includes(q)) ||
+        (post.faqs || []).some(f => f.q.toLowerCase().includes(q));
 
-      return matchesCategory && matchesSearch;
+      return matchesCategory && matchesStage && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [selectedCategory, selectedStage, searchQuery]);
 
   // Featured Lead Story (Displayed when on "All" with no active search)
-  const isDefaultView = selectedCategory === 'all' && !searchQuery.trim();
+  const isDefaultView = selectedCategory === 'all' && selectedStage === 'all' && !searchQuery.trim();
   const featuredPost = isDefaultView ? filteredBlogs[0] : null;
   const gridPosts = isDefaultView ? filteredBlogs.slice(1) : filteredBlogs;
 
@@ -146,7 +173,7 @@ export default function BlogsPage() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search 15+ articles by topic, keyword..."
+                placeholder={`Search ${blogs.length} articles by topic, keyword or question...`}
                 className="w-full pl-10 pr-9 py-2.5 sm:py-3 rounded-full bg-white border border-black/12 text-sm text-[var(--color-charcoal)] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/20 focus:border-[var(--color-primary)] transition-all shadow-xs"
               />
               {searchQuery && (
@@ -187,6 +214,28 @@ export default function BlogsPage() {
                   }`}>
                     {count}
                   </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* FUNNEL STAGE ROW */}
+          <div className="flex flex-wrap items-center gap-2 mb-10 -mt-4">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-gray-500 mr-1">Where are you?</span>
+            {STAGES.map((st) => {
+              const isActive = selectedStage === st.id;
+              return (
+                <button
+                  key={st.id}
+                  onClick={() => setSelectedStage(st.id)}
+                  title={st.hint}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 border ${
+                    isActive
+                      ? 'bg-[var(--color-accent)] text-[var(--color-primary)] border-transparent shadow-sm'
+                      : 'bg-transparent hover:bg-white text-gray-600 border-black/10'
+                  }`}
+                >
+                  {st.label}
                 </button>
               );
             })}
@@ -243,9 +292,9 @@ export default function BlogsPage() {
                       </p>
 
                       <div className="flex flex-wrap gap-2 mb-6">
-                        <span className="text-xs px-2.5 py-1 rounded-lg bg-gray-100 text-gray-700 font-medium">#InventoryAging</span>
-                        <span className="text-xs px-2.5 py-1 rounded-lg bg-gray-100 text-gray-700 font-medium">#DeadStock</span>
-                        <span className="text-xs px-2.5 py-1 rounded-lg bg-gray-100 text-gray-700 font-medium">#RetailTelemetry</span>
+                        {(featuredPost.keywords?.length ? featuredPost.keywords.slice(0, 3) : [featuredPost.category]).map((k) => (
+                          <span key={k} className="text-xs px-2.5 py-1 rounded-lg bg-gray-100 text-gray-700 font-medium">{toHashtag(k)}</span>
+                        ))}
                       </div>
                     </div>
 
@@ -309,7 +358,7 @@ export default function BlogsPage() {
                         <div className="flex items-center gap-2 text-xs text-gray-500 font-medium mb-2.5">
                           <span>{post.date}</span>
                           <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-                          <span className="text-emerald-700 font-semibold">Operational Guide</span>
+                          <span className="text-emerald-700 font-semibold">{FUNNEL_STAGES[post.funnelStage]?.label || 'Guide'}</span>
                         </div>
 
                         <h3 className="text-lg sm:text-xl font-bold text-[var(--color-primary)] group-hover:text-emerald-700 transition-colors leading-snug line-clamp-2 mb-3">
@@ -348,6 +397,7 @@ export default function BlogsPage() {
                 onClick={() => {
                   setSearchQuery('');
                   setSelectedCategory('all');
+                  setSelectedStage('all');
                 }}
                 className="px-6 py-2.5 rounded-full bg-[var(--color-primary)] text-white text-xs font-bold uppercase tracking-wider hover:bg-black transition-colors"
               >

@@ -1,0 +1,62 @@
+# Scaleezy
+
+> Scaleezy is an operating system for apparel commerce built for Indian boutiques, saree stores, fashion retailers and apparel brands. It connects inventory, billing and POS, CRM, marketing, virtual try-on, analytics and logistics on one data layer.
+
+Scaleezy publishes practical, plain-language guides for boutique owners on inventory, GST billing, customer retention, WhatsApp marketing, virtual try-on and multi-store operations. Content is written for Indian fashion retail and uses rupee examples.
+
+## Product
+
+- [Modules overview](https://scaleezy.com/modules): Inventory, CRM, Boutique storefront, POS, Tryon2buy virtual try-on, Marketing, Analytics, Billing Desk, Logistics
+- [How it works](https://scaleezy.com/how-it-works)
+- [Solutions by business type](https://scaleezy.com/solutions)
+- [Pricing](https://scaleezy.com/#pricing): single boutique from ₹2,499/month, multi-store growth plan ₹5,999/month, enterprise custom; 14-day free trial
+- [Request access](https://scaleezy.com/request-access)
+
+## Guides: choosing software
+
+- [Boutique billing software in India: what it must do in 2026](https://scaleezy.com/blog/boutique-billing-software-india)
+- [Best inventory management software for boutiques in India](https://scaleezy.com/blog/best-inventory-management-software-for-boutiques-india)
+- [Tally vs boutique software](https://scaleezy.com/blog/tally-vs-boutique-software)
+- [Boutique software pricing in India](https://scaleezy.com/blog/boutique-software-pricing-india)
+- [POS vs billing software vs ERP for boutiques](https://scaleezy.com/blog/pos-vs-billing-software-vs-erp-boutique)
+- [Shopify alternatives for Indian fashion brands](https://scaleezy.com/blog/shopify-alternatives-for-indian-fashion-brands)
+- [Scaleezy vs Shopify for apparel](https://scaleezy.com/blog/scaleezy-vs-shopify-for-apparel)
+- [How to choose inventory software for a clothing store](https://scaleezy.com/blog/how-to-choose-inventory-software-clothing-store)
+- [Boutique management software: what to look for](https://scaleezy.com/blog/boutique-management-software-what-to-look-for)
+
+## Guides: inventory and operations
+
+- [GST on clothing in India: rates, HSN codes and invoicing](https://scaleezy.com/blog/gst-on-clothing-india-rates-hsn-invoicing)
+- [Stock audit checklist for clothing stores](https://scaleezy.com/blog/stock-audit-checklist-clothing-store)
+- [Barcode system for a clothing store](https://scaleezy.com/blog/barcode-system-for-clothing-store-setup-guide)
+- [Multi-store inventory management for clothing chains](https://scaleezy.com/blog/multi-store-inventory-management-clothing-chains)
+- [Open-to-buy planning for fashion retailers](https://scaleezy.com/blog/open-to-buy-planning-fashion-retail)
+- [How to reduce dead stock in a clothing store](https://scaleezy.com/blog/how-to-reduce-dead-stock-in-clothing-store)
+- [Inventory turnover ratio for fashion retail](https://scaleezy.com/blog/inventory-turnover-ratio-fashion-retail)
+- [SKU naming convention for clothing](https://scaleezy.com/blog/sku-naming-convention-for-clothing)
+- [Returns and exchange policy for boutiques](https://scaleezy.com/blog/returns-and-exchange-policy-for-boutiques)
+- [How to reduce RTO in fashion ecommerce](https://scaleezy.com/blog/how-to-reduce-rto-in-fashion-ecommerce)
+
+## Guides: customers, marketing and growth
+
+- [WhatsApp Business API for boutiques](https://scaleezy.com/blog/whatsapp-business-api-for-boutiques)
+- [Customer lifetime value for fashion retail](https://scaleezy.com/blog/customer-lifetime-value-fashion-retail)
+- [12 fashion retail KPIs for boutique owners](https://scaleezy.com/blog/fashion-retail-kpis-boutique-owners-should-track)
+- [Boutique pricing strategy: markup, margins and discounts](https://scaleezy.com/blog/boutique-pricing-strategy-markup-margin-discounts)
+- [How to start an online boutique in India](https://scaleezy.com/blog/how-to-start-an-online-boutique-in-india)
+- [Fashion retail growth in tier-2 India](https://scaleezy.com/blog/fashion-retail-growth-tier-2-india-hyderabad-jaipur-surat-lucknow)
+- [Wedding season planning for bridal boutiques](https://scaleezy.com/blog/wedding-season-planning-bridal-boutiques)
+- [AI virtual try-on for sarees and lehengas](https://scaleezy.com/blog/ai-virtual-try-on-sarees-lehengas)
+- [Does virtual try-on increase sales?](https://scaleezy.com/blog/does-virtual-try-on-increase-sales)
+- [How to get repeat customers for your boutique](https://scaleezy.com/blog/how-to-get-repeat-customers-boutique)
+- [Loyalty program ideas for clothing stores](https://scaleezy.com/blog/loyalty-program-ideas-for-clothing-stores)
+- [Diwali marketing ideas for clothing stores](https://scaleezy.com/blog/diwali-marketing-ideas-for-clothing-stores)
+- [Instagram marketing for boutiques](https://scaleezy.com/blog/instagram-marketing-for-boutiques)
+- [WhatsApp commerce for fashion sellers](https://scaleezy.com/blog/whatsapp-commerce-for-fashion-sellers)
+- [AI in fashion retail](https://scaleezy.com/blog/ai-in-fashion-retail)
+
+## Optional
+
+- [All articles](https://scaleezy.com/blogs)
+- [About Scaleezy](https://scaleezy.com/about-scaleezy)
+- [Sitemap](https://scaleezy.com/sitemap.xml)

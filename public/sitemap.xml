@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Core Platform Pages -->
   <url>
     <loc>https://scaleezy.com/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -33,7 +33,7 @@
   </url>
   <url>
     <loc>https://scaleezy.com/blogs</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
@@ -116,6 +116,208 @@
     <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+
+  <!-- 2026 SEO / AEO / GEO article series -->
+  <url>
+    <loc>https://scaleezy.com/blog/how-to-start-an-online-boutique-in-india</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/how-to-start-an-online-boutique-in-india.jpg</image:loc>
+      <image:title>How to Start an Online Boutique in India in 2026: A Step-by-Step Guide</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/boutique-billing-software-india</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/boutique-billing-software-india.jpg</image:loc>
+      <image:title>Boutique Billing Software in India: What It Must Do in 2026 (and What to Skip)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/best-inventory-management-software-for-boutiques-india</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/best-inventory-management-software-for-boutiques-india.jpg</image:loc>
+      <image:title>Best Inventory Management Software for Boutiques in India (2026 Buyer's Guide)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/gst-on-clothing-india-rates-hsn-invoicing</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/gst-on-clothing-india-rates-hsn-invoicing.jpg</image:loc>
+      <image:title>GST on Clothing in India: Rates, HSN Codes and Invoicing Made Simple for Boutiques</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/whatsapp-business-api-for-boutiques</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/whatsapp-business-api-for-boutiques.jpg</image:loc>
+      <image:title>WhatsApp Business API for Boutiques: Setup, Costs and Messages That Actually Convert</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/tally-vs-boutique-software</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/tally-vs-boutique-software.jpg</image:loc>
+      <image:title>Tally vs Boutique Software: Do You Need Both?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/shopify-alternatives-for-indian-fashion-brands</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/shopify-alternatives-for-indian-fashion-brands.jpg</image:loc>
+      <image:title>Shopify Alternatives for Indian Fashion Brands: An Honest 2026 Comparison</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/boutique-software-pricing-india</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/boutique-software-pricing-india.jpg</image:loc>
+      <image:title>Boutique Software Pricing in India: What You Should Actually Pay in 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/stock-audit-checklist-clothing-store</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/stock-audit-checklist-clothing-store.jpg</image:loc>
+      <image:title>Stock Audit Checklist for Clothing Stores: How to Count Inventory Without Closing for a Day</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/pos-vs-billing-software-vs-erp-boutique</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/pos-vs-billing-software-vs-erp-boutique.jpg</image:loc>
+      <image:title>POS vs Billing Software vs ERP: What Does a Boutique Actually Need?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/multi-store-inventory-management-clothing-chains</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/multi-store-inventory-management-clothing-chains.jpg</image:loc>
+      <image:title>Multi-Store Inventory Management for Clothing Chains: How to Stop Losing Stock Between Stores</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/boutique-pricing-strategy-markup-margin-discounts</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/boutique-pricing-strategy-markup-margin-discounts.jpg</image:loc>
+      <image:title>Boutique Pricing Strategy: Markup, Margins and Discount Rules That Protect Profit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/ai-virtual-try-on-sarees-lehengas</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/ai-virtual-try-on-sarees-lehengas.jpg</image:loc>
+      <image:title>AI Virtual Try-On for Sarees and Lehengas: What Actually Works in 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/customer-lifetime-value-fashion-retail</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/customer-lifetime-value-fashion-retail.jpg</image:loc>
+      <image:title>Customer Lifetime Value for Fashion Retail: How to Calculate It and Grow It</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/wedding-season-planning-bridal-boutiques</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/wedding-season-planning-bridal-boutiques.jpg</image:loc>
+      <image:title>Wedding Season Planning for Bridal Boutiques: A 12-Week Plan for November to February</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/barcode-system-for-clothing-store-setup-guide</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/barcode-system-for-clothing-store-setup-guide.jpg</image:loc>
+      <image:title>How to Set Up a Barcode System for a Clothing Store: Hardware, Labels and Workflow</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/fashion-retail-kpis-boutique-owners-should-track</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/fashion-retail-kpis-boutique-owners-should-track.jpg</image:loc>
+      <image:title>12 Fashion Retail KPIs Every Boutique Owner Should Track (and How Often)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/open-to-buy-planning-fashion-retail</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/open-to-buy-planning-fashion-retail.jpg</image:loc>
+      <image:title>Open-to-Buy Planning for Fashion Retailers: How Much Stock to Buy and When</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/fashion-retail-growth-tier-2-india-hyderabad-jaipur-surat-lucknow</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/fashion-retail-growth-tier-2-india-hyderabad-jaipur-surat-lucknow.jpg</image:loc>
+      <image:title>Fashion Retail in Tier-2 India: How Boutiques in Hyderabad, Jaipur, Surat and Lucknow Are Growing in 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://scaleezy.com/blog/returns-and-exchange-policy-for-boutiques</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://scaleezy.com/assets/blog/returns-and-exchange-policy-for-boutiques.jpg</image:loc>
+      <image:title>Returns and Exchange Policy for Boutiques: A Template That Protects You and Keeps Customers</image:title>
+    </image:image>
   </url>
 
   <!-- Active Blog Articles -->

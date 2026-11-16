@@ -2,3 +2,16 @@ User-agent: *
 Allow: /
 
 Sitemap: https://scaleezy.com/sitemap.xml
+
+# AI crawlers welcome; see /llms.txt for a curated index
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
