@@ -53,7 +53,7 @@ const modules = [
   {
     id: 'billing-desk',
     slug: 'billing-desk',
-    externalUrl: null,
+    externalUrl: 'https://billingdesk.scaleezy.com/',
     colSpan: 'col-span-1 sm:col-span-1 lg:col-span-3',
     rowSpan: 'lg:row-span-1',
     label: 'Billing Desk',

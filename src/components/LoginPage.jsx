@@ -27,6 +27,11 @@ const WORKSPACES = [
     name: 'Tryon2buy',
     desc: 'AI virtual try-on studio',
     url: 'https://www.tryon2buy.com/'
+  },
+  {
+    name: 'Billing Desk',
+    desc: 'Quotations, proformas & GST invoices',
+    url: 'https://billingdesk.scaleezy.com/'
   }
 ];
 

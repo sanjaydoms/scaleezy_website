@@ -10,7 +10,9 @@ export const MODULE_URLS = {
   pos: null, // Coming Soon
   marketing: 'https://marketing.scaleezy.com/',
   analytics: null, // Coming Soon
-  'billing-desk': null, // Coming Soon
+  'billing-desk': 'https://billingdesk.scaleezy.com/',
+  'billing desk': 'https://billingdesk.scaleezy.com/', // display-name key used by the request-access form
+  billing: 'https://billingdesk.scaleezy.com/',
   logistics: null // Coming Soon
 };
 
@@ -552,8 +554,8 @@ export const MODULES_DATA = [
     slug: 'billing-desk',
     name: 'Billing Desk',
     fullName: 'Scaleezy Billing Desk',
-    externalUrl: null,
-    isLive: false,
+    externalUrl: 'https://billingdesk.scaleezy.com/',
+    isLive: true,
     tagline: 'Quotations, Proformas & GST Tax Invoices',
     badge: 'Module 08',
     heroHeadline: 'From quotation to GST tax invoice in minutes, not evenings.',

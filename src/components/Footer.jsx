@@ -138,6 +138,10 @@ export default function Footer() {
                 <span>Marketing</span>
                 <span className="text-xs text-white/50 group-hover:text-white">↗</span>
               </a>
+              <a href="https://billingdesk.scaleezy.com/" target="_blank" rel="noopener noreferrer" className="text-white/85 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
+                <span>Billing Desk</span>
+                <span className="text-xs text-white/50 group-hover:text-white">↗</span>
+              </a>
               <Link to="/modules/crm" className="text-white/75 hover:text-white transition-colors text-sm font-medium flex items-center justify-between group max-w-[200px]">
                 <span>CRM</span>
                 <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-amber-400 text-black leading-none">Soon</span>
